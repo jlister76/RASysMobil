@@ -1,0 +1,49 @@
+<md-toolbar layout layout-align="space-between center" style="background-color:rgb(49,56,173);padding:0rem;max-height:8vh;" md-whiteframe="3">
+  <div layout layout-align="start start" style="">
+    <a href="" ng-click="openLeftMenu()" style="padding:0;color:white; margin:0 1rem;text-decoration:none;">
+      <i class="material-icons" style="font-size:6rem;">menu</i>
+    </a>
+
+  </div>
+</md-toolbar>
+<div>
+  <md-sidenav  md-component-id="left" md-disable-backdrop="true" class="md-sidenav-left" md-is-open="isSidenavOpen"
+               md-whiteframe="4" style="max-width:15vw!important;background-color: rgba(6,6,6,0.81);">
+    <div layout="column" layout-align="start center" class="md-padding" style="width:100%;color:#cccccc;">
+      <a href="" layout=column layout-align="center center" ng-click="openLeftMenu()" class="md-secondary" style="background-color:transparent; padding:.5rem;margin:1rem;">
+        <i class="material-icons" style="border:solid thin dodgerblue;font-size:5rem;margin:1rem;">clear</i>
+      </a>
+
+      <div layout layout-align="center center" md-sidenav-focus class="md-padding">
+        <div ng-if="location">
+          <span ><i class="material-icons" style="font-size:4rem; color:rgb(255,122,34);">location_on</i></span>
+        </div>
+      </div>
+      <hr style="border-top:1px solid #999999;width:80%;">
+      <div>
+        <a href="" ng-controller="LogOutCtrl" ng-click="logout()" layout layout-align="center center" style="padding:1rem;">
+          <p> <i class="material-icons" style="font-size:4rem;color:dodgerblue;">power_settings_new</i></p>
+        </a>
+      </div>
+      <hr style="border-top:1px solid #999999;width:80%;">
+      <div>
+        <a href="" ui-sref="ra-mobile.main" ng-click="openLeftMenu()" layout layout-align="center center" style="padding:1rem;color:white; text-decoration: none;">
+          <p> <i class="material-icons" style="font-size:4rem;color:dodgerblue;">home</i></p>
+        </a>
+      </div>
+      <hr style="border-top:1px solid #999999;width:80%;">
+      <div>
+        <a href="" ui-sref="ra-mobile.new.assessment" ng-click="openLeftMenu()" layout layout-align="center center" style="padding:1rem;color:white; text-decoration: none;">
+          <p> <i class="material-icons" style="font-size:4rem;color:dodgerblue;">add</i></p>
+        </a>
+      </div>
+      <hr style="border-top:1px solid #999999;width:80%;">
+      <div>
+        <a href="" ng-click="openLeftMenu()" layout layout-align="center center" style="padding:1rem;color:white; text-decoration: none;">
+          <p> <i class="material-icons" style="font-size:4rem;color:dodgerblue;">search</i></p>
+        </a>
+      </div>
+    </div>
+  </md-sidenav>
+</div>
+<div flex layout="column" ui-view ></div>

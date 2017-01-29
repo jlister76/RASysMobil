@@ -1,0 +1,119 @@
+<div layout="column" layout-align="center start" class="md-display-2">
+  <div style="padding:1rem 1rem">
+    <div layout layout-align="space-between start">
+      <a href="" ui-sref="ra-mobile.coaching({id:assessmentId,active:assessmentStatus})" class="md-padding" style="text-decoration:none;"><i class="material-icons" style="font-size:6rem;color:dodgerblue;">navigate_before</i></a>
+      <a href="" ui-sref="ra-mobile.verify({id:assessmentId,active:assessmentStatus})" class="md-padding" style="text-decoration:none;"><i class="material-icons" style="font-size:6rem;color:dodgerblue;">navigate_next</i></a>
+    </div>
+    <div  style="width:100%;margin-top:1rem;">
+      <div layout="column" style="padding:1rem;">
+        <div style="padding:.5rem;width:100%;">
+          <h4 style="margin-top:0;">Recognizing & Reacting </h4>
+
+        </div>
+        <div layout >
+          <p ng-cloak style="font-size:2.5rem;" >For 30 minutes have <em ng-cloak>{{ employee.fname }} {{ employee.lname }}</em> identify and react in a safe manner to each hazard encountered. You will document each hazard and {{ employee.fname }}'s reaction.</p>
+        </div>
+      </div>
+      <div style="width:100%;font-size:3rem;">
+
+        <div layout="column" class="" md-whiteframe="2" style=";background: whitesmoke;margin:2rem;padding:1rem;">
+          <form name="identifiedHazardForm" ng-submit="save(selectedHazard,behavior,comments,lat,lng)">
+            <div>
+              <label for="hazards" style="margin-bottom:1rem;">Hazard<span style="color:indianred;">*</span></label>
+              <select ng-model="selectedHazard" ng-options="x for x in hazards" id="hazards"
+                      style="width:100%;" required></select>
+            </div>
+            <div layout="column" style="margin:2rem 0;">
+              <span style="margin-bottom:2rem;">Reaction<span style="color:indianred;">*</span></span>
+              <div>
+                <input name="behavior" ng-model="behavior" type="radio" ng-value="safe" id="safe" required><label
+                for="safe">Safe</label>
+              </div>
+              <div>
+                <input name="behavior" ng-model="behavior" type="radio" ng-value="at_risk" id="at-risk"><label
+                for="at-risk">At-Risk</label>
+              </div>
+            </div>
+            <div layout="column" class="md-padding" style="width:100%;">
+              <label for="comments" style="margin-bottom:2rem;">Comments<span style="color:indianred;">*</span></label>
+              <textarea ng-model="comments" id="comments" rows="5" required></textarea>
+            </div>
+            <div layout layout-align="center center">
+              <md-button ng-disabled="identifiedHazardForm.$invalid" type="submit" ng-dblclick="preventClick()"
+                         style="margin-top:1.5rem; border: solid thin darkslategrey;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">
+                Save
+              </md-button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div ng-if="identifiedHazards.length >= 1" layout="column" layout-align="start start" style="width:100%;padding: 3rem 2rem;font-size:3rem;">
+      <h4>Identified Hazards</h4>
+      <div ng-repeat="ih in identifiedHazards" class="" style="width:100%;" >
+        <md-card style="background:whitesmoke;margin:1rem;padding:1rem;">
+          <md-card-content >
+            <div ng-if="ih.reaction === 'at-risk'" layout layout-align="end start">
+              <span><i class="material-icons" style="font-size:3rem;color:rgba(255,69,0,0.81);">warning</i></span>
+            </div>
+            <div ng-if="ih.reaction === 'safe'" layout layout-align="end start">
+              <span><i class="material-icons" style="font-size:3rem;color:forestgreen;">check_circle</i></span>
+            </div>
+            <div layout layout-align="start center">
+              <h5 style="margin:0 1rem;">Hazard:</h5>
+              <span style="font-size:2.5rem;">{{ih.type}}</span>
+            </div>
+            <div layout layout-align="start center">
+              <h5 style="margin:0 1rem;">Reaction:</h5>
+              <span style="font-size:2.5rem;">{{ih.reaction}}</span>
+            </div>
+            <div layout="column" layout-align="start">
+              <h5 style="margin:0 1rem;">Comments:</h5>
+              <p style="margin-bottom:0;font-size:2.5rem;">{{ih.comments}}</p>
+            </div>
+          </md-card-content>
+          <md-divider></md-divider>
+          <md-card-footer layout >
+            <div layout="column" style="width:100%;">
+              <div layout layout-align="space-between start" style="color:#cccccc;">
+                <md-button ng-click="deleteIdentifiedHazard(ih.id)" ng-dblclick="preventClick()" style="width:30%;background-color: whitesmoke;border:solid thin darkgrey; text-align: center;font-size:2rem;color:darkgrey;"><p><i class="material-icons" style="font-size:3rem;color:darkgrey;">delete</i></p></md-button>
+                <md-button ng-click="showUpdateForm =!showUpdateForm" style="width:30%;background-color:whitesmoke ;border:solid thin #9E9E9E; text-align: center;font-size:2rem;color:darkgrey;"><p><i class="material-icons" style="font-size:3rem;color:darkgrey;">edit</i></p></md-button>
+              </div>
+              <div layout>
+                <div ng-if="showUpdateForm" ng-init="showUpdateForm = false" style="margin-top:2rem;width:100%;">
+                  <form name="updateHazardForm" ng-submit="updateIdentifiedHazard(ih.id,selectedHazard,behavior,comments,assessmentId,assessmentStatus,lat,lng)" >
+                    <div layout="column" style="padding:1rem;width:100%;">
+                      <div>
+                        <label for="hazards" style="margin-bottom:1rem;">Hazard</label><span style="color:indianred;">*</span>
+                        <select ng-model="selectedHazard" ng-init="selectedHazard = ih.type" ng-options="x for x in hazards" id="" style="width:100%;" required></select>
+                      </div>
+
+                      <div layout="column" style="margin:2rem 0;">
+                        <span style="margin-bottom:2rem;">Reaction</span><span style="color:indianred;">*</span>
+
+                        <div ng-init="behavior = ih.reaction">
+                          <input name="behavior" ng-model="behavior" type="radio" ng-value="safe"><label for="safe" required>Safe</label>
+                        </div>
+                        <div>
+                          <input name="behavior" ng-model="behavior" type="radio" ng-value="at_risk"><label for="at-risk">At-Risk</label>
+                        </div>
+                      </div>
+                      <div layout="column" class="md-padding" style="width:100%;">
+                        <label for="comments" style="margin-bottom:2rem;">Comments</label><span style="color:indianred;">*</span>
+                        <textarea ng-model="comments" ng-init="comments = ih.comments" rows="5" required></textarea>
+                      </div>
+
+                      <div layout layout-align="center center">
+                        <md-button ng-disabled="updateHazardForm.$invalid" type="submit" style="background-color:dodgerblue;color:white;margin-top:1.5rem; border: solid thin darkslategrey;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">Update</md-button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </md-card-footer>
+        </md-card>
+      </div>
+    </div>
+  </div>
+</div>

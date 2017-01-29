@@ -1,0 +1,51 @@
+{
+  "name": "employee",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "fname": {
+      "type": "string",
+      "required": true
+    },
+    "lname": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "employeeNumber": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "region": {
+      "type": "belongsTo",
+      "model": "region",
+      "foreignKey": ""
+    },
+    "division": {
+      "type": "belongsTo",
+      "model": "division",
+      "foreignKey": ""
+    },
+    "project": {
+      "type": "belongsTo",
+      "model": "project",
+      "foreignKey": ""
+    },
+    "group": {
+      "type": "belongsTo",
+      "model": "group",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

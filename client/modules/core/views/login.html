@@ -1,0 +1,33 @@
+<div  layout="column" layout-align="start center" class="md-padding" style="padding:2rem;">
+  <div layout layout-align="center start"
+       style="width:40%;height:8rem; background-image: url('../../../img/HCI_logo.png');
+       background-size: contain; background-position: center;background-repeat:no-repeat; "></div>
+  <div layout layout-align="start center"><p class="md-display-3" style="color:#555565;">Risk Assessment</p></div>
+  <div flex layout="column" layout-align="center center" style="width: 100%; margin-top:1rem;">
+    <div ng-show="err" class="md-display-1" style="color: coral">Invalid Username and/or password. Please try again.</div>
+    <div layout layout-align="center center" class="md-padding" style="width:100%;">
+      <form name="logIn" ng-submit="login(user.email,user.password)" style="width:100%; padding:1rem;">
+        <div layout="column" layout-align="center start">
+          <md-input-container style="width:100%; margin:2rem;">
+            <label for="email" class="md-display-2" >Email</label>
+            <input type="email" id="email" ng-model="user.email" style="height:6rem;font-size:4rem;">
+          </md-input-container>
+          <md-input-container style="width:100%;margin:2rem;">
+            <label for="password" class="md-display-2">Password</label>
+            <input type="password" id="password" ng-model="user.password" style="height:6rem;font-size:4rem;">
+          </md-input-container>
+        </div>
+        <div layout="column" layout-align="start center">
+          <md-button class="md-raised md-display-2" type="submit" id="sign-in-button" style="margin-top:1rem; width:60%; height: 8rem; background-color: #005EB8;color:white; font-size:3rem;border-radius:1rem;" >Sign-In</md-button>
+        </div>
+        <div layout layout-align="center center">
+          <div layout layout-align="center center" style="margin-top:1rem;width:100%;">
+            <a href="#" style="margin-top: 2rem;text-decoration: none; width:auto;"><p class="md-display-2">Forgot Password?</p></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+

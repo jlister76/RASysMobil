@@ -1,0 +1,47 @@
+{
+  "name": "appuser",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "first_name":{
+      "type": "string"
+    },
+    "last_name":{
+      "type": "string"
+    },
+    "jobTitle": {
+      "type": "string",
+      "required": true
+    },
+    "accessLevelType": {
+      "type": "string",
+      "required": true
+    },
+    "accessLevelGroupId": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW",
+      "property": "find"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW",
+      "property": "find"
+    }
+  ],
+  "methods": {}
+}

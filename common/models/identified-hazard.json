@@ -1,0 +1,39 @@
+{
+  "name": "identifiedHazard",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "reaction": {
+      "type": "string",
+      "required": false
+    },
+    "location": {
+      "type": "geopoint"
+    },
+    "comments": {
+      "type": "string",
+      "required": false
+    },
+    "phase": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "riskAssessment": {
+      "type": "belongsTo",
+      "model": "riskAssessment",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

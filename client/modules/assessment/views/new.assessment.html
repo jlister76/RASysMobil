@@ -1,0 +1,123 @@
+<!--This view is responsible for serving data based on the user's access level
+    and confirming the employee selection prior to beginning the risk assessment-->
+
+<div layout="column" layout-align="start center" class="md-display-2 md-padding">
+
+  <div layout layout-align="center center" class="md-display-1">
+    <span ng-if="showProjects || showGroups || showEmployees" ng-click="toDivisionList()" style="padding:1rem; background-color: #ededed; border-radius:15px;">Divisions</span>
+    <span ng-if="showGroups || showEmployees"><i class="material-icons" style="font-size: 2.5rem;">chevron_right</i></span>
+    <span ng-if="showGroups || showEmployees" ng-click="toProjectList()" style="padding:1rem; background-color: #ededed; border-radius:15px;">Projects</span>
+    <span ng-if="showEmployees"><i class="material-icons" style="font-size: 2.5rem;">chevron_right</i></span>
+    <span ng-if="showEmployees" ng-click="toGroupList()" style="padding:1rem; background-color: #ededed; border-radius:15px;">Groups</span>
+
+  </div>
+  <!--Regional Access-->
+  <div ng-if="showDivisions" style="width:100%;"><h4>Divisions</h4>
+    <div  ng-model="group.id" layout layout-align="start center" ng-repeat="group in groups">
+      <a  href="" ng-click="listProjects(group.id)" style="color:#444444;width:100%; text-decoration: none;">
+        <div layout="column"  class="md-padding" style="width:100%;">
+          <md-card layout layout-align="space-between center" class="md-padding" style="width: 100%;height:10rem;background-color:whitesmoke;">
+            <span style="color:#333;">{{ group.title }}</span>
+            <span><i class="material-icons" style="color:#999;font-size: 5rem;">chevron_right</i></span>
+          </md-card>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!------------------->
+
+  <!--Division Access-->
+
+  <div ng-if="showProjects" style="width:100%;"><h4>Projects</h4>
+    <div  ng-model="group.id" layout layout-align="start center" ng-repeat="group in groups">
+      <a  href="" ng-click="listGroups(group.id)" style="color:#444444;width:100%; text-decoration: none;">
+        <div layout="column"  class="md-padding" style="width:100%;">
+          <md-card layout layout-align="space-between center" class="md-padding" style="width: 100%;height:10rem;background-color:whitesmoke;">
+            <span>{{ group.title }}</span>
+            <span><i class="material-icons" style="color:#999;font-size: 5rem;">chevron_right</i></span>
+          </md-card>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!------------------->
+
+  <!--Project Access-->
+  <div ng-if="showGroups" style="width:100%;"><h4>Groups</h4>
+    <div  ng-model="group.id" layout layout-align="start center" ng-repeat="group in groups">
+      <a  href="" ng-click="listEmployees(group.id)" style="color:#444444;width:100%; text-decoration: none;">
+        <div layout="column"  class="md-padding" style="width:100%;">
+          <md-card layout layout-align="space-between center" class="md-padding" style="width: 100%;height:10rem;background-color:whitesmoke;">
+            <span>{{ group.title }}</span>
+            <span><i class="material-icons" style="color:#999;font-size: 5rem;">chevron_right</i></span>
+          </md-card>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!------------------->
+
+  <!--Group Access-->
+  <div ng-if="showEmployees" style="width:100%;"><h4>Employees</h4>
+    <div  layout layout-align="start center" ng-repeat="employee in employees">
+      <a  href="" ng-click="start(employee);" ng-dblclick="preventClick()" style="color:#444444;width:100%; text-decoration: none;">
+        <div layout="column"  class="md-padding" style="width:100%;">
+          <md-card layout layout-align="space-between center" class="md-padding" style="width: 100%;height:10rem;background-color:whitesmoke;">
+            <span>{{ employee.fname }} , {{ employee.lname }}</span>
+            <span><i class="material-icons" style="color:#999;font-size: 5rem;">chevron_right</i></span>
+          </md-card>
+        </div>
+      </a>
+    </div>
+  </div>
+  <!------------------->
+  <!--List-->
+  <div ng-if="list" layout="column" style="width:100%;">
+    <div layout layout-align="space-between center">
+      <div>
+        <h4 style="margin:0;">Open Assessments</h4>
+      </div>
+      <div layout layout-align="start start">
+        <md-button ng-click="selectEmployee()" style="">
+          <span><i class="material-icons" style="font-size:5rem;color:dodgerblue;">add_box</i></span>
+        </md-button>
+      </div>
+    </div>
+    <md-card ng-model="assessment" ng-repeat="assessment in assessments">
+      <md-card-content style="width:100%;height:100%;padding:0;">
+        <div layout>
+
+          <div layout layout-align="center center" style="width:6rem;background-color:rgba(211,211,211,0.81);">
+            <a href="" ng-click="deleteAssessment(assessment.id)" ng-dblclick="preventClick()">
+              <i class="material-icons" style="font-size:4rem;color:darkgrey;">delete</i>
+            </a>
+          </div>
+          <a href="" layout ng-dblclick="preventClick()"
+             ng-click="doAssessment(assessment.id,assessment.active,assessment.phase)"
+             style="text-decoration:none;color:#333;width:100%;">
+          <div layout="column" layout-align="start" class="md-padding" style="background-color:whitesmoke;width:100%;">
+
+              <div layout layout-align="start start">
+                <span class="md-display-2"><strong>{{assessment.employee.fname}} {{assessment.employee.lname}}</strong></span>
+              </div>
+              <div layout layout-align="start start">
+                <span class="md-display-2"><em>{{assessment.phase}}</em></span>
+              </div>
+              <div layout layout-align="start start" style="">
+                <span class="md-display-1" style="color:#999999;"><em>Hazards</em> {{assessment.identifiedHazards.length }}</span>
+              </div>
+              <div>
+              </div>
+
+          </div>
+          <div layout layout-align="center center" style="background-color:whitesmoke;">
+            <span><i class="material-icons" style="color:#999;font-size: 5rem;">chevron_right</i></span>
+          </div>
+          </a>
+
+        </div>
+      </md-card-content>
+    </md-card>
+  </div>
+  <!------------------->
+  </div>

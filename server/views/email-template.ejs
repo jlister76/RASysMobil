@@ -1,0 +1,88 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+  <style>
+    .flex-container {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row-reverse;
+      flex-direction: column;
+      width: 400px;
+      height: 250px;
+      background-color: lightgrey;
+    }
+    .flex-item {
+      background-color: cornflowerblue;
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="message">
+
+      <p>Hello, <%= employee.fname %>. To evaluate your safety awareness you were recently observed
+        by <%=user.first_name%> <%=user.last_name%>. A summary of these findings are shown below.</p>
+
+      <div id="content" style="background-color:#e2e2e2;padding:1rem;border-radius:2px;margin:1rem;">
+        <div style="float: right;">
+          <a href="http://localhost:3000/api/riskassessments/<%=id%>/verified"
+             style="padding:.5rem 1rem;background-color:#2db42d;color:white;border:solid thin limegreen;" >Verify Assessment</a>
+
+        </div>
+        <header><h3>Summary</h3></header>
+        <span style="color:#999999;"><small>This assessment was completed on <%= date %>.</small></span>
+
+        <h4><%= conditions %> weather conditions</h4>
+
+        <section background-color:#e2e2e2;>
+          <% if(evaluation.length >= 1){ %>
+          <div style="height:auto;background-color:navy;padding:.5rem;margin-top:1rem;">
+            <h5 style="color:white;margin:0;">Evaluation</h5>
+          </div>
+          <% for(var i = 0; i < evaluation.length; i++){ %>
+
+          <div
+            style="background-color:#f7f7f7;border-bottom:solid thin #e2e2e2; padding:.5rem;">
+            <div>
+              <p style="padding:0rem;margin:0rem;"><strong>Hazard: </strong><%= evaluation[i].type %></p>
+              <p style="padding:0rem;margin:0rem;"><strong>Reaction: </strong><%= evaluation[i].reaction %></p>
+              <p style="padding:0rem;margin:0rem;"><strong>Comments: </strong><%= evaluation[i].comments %></p>
+            </div>
+            <div style="width:30%;">
+              <a href="http://maps.googleapis.com/maps/api/staticmap?&size=450x250&maptype=roadmap' +
+      '&markers=color:blue%7Clabel:S%7C<%=evaluation[i].location.lat%>,<%=evaluation[i].location.lng%>&scale=2">View Map</a>
+            </div>
+          </div>
+
+          <% } %>
+
+          <% } %>
+
+          <% if(recognize.length >= 1){ %>
+          <div style="height:auto;background-color:navy;padding:.5rem;margin-top:1rem;">
+            <h5 style="color:white;margin:0;">Recognize & React</h5>
+          </div>
+
+          <% for(var j = 0; j < recognize.length; j++){ %>
+          <div style="border-bottom:solid thin #e2e2e2;background-color:#f7f7f7;padding:.5rem;">
+            <p style="padding:0rem;margin:0rem;"><strong>Hazard: </strong><%= recognize[j].type %></p>
+            <p style="padding:0rem;margin:0rem;"><strong>Reaction: </strong><%= recognize[j].reaction %></p>
+            <p style="padding:0rem;margin:0rem;"><strong>Comments: </strong><%= recognize[j].comments %></p>
+          </div>
+          <% } %>
+          <% } %>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,73 @@
+{
+  "name": "riskAssessment",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "active": {
+      "type": "Boolean",
+      "required": true
+    },
+    "phase": {
+      "type": "String",
+      "required": true
+    },
+    "expirationDate": {
+      "type": "Date",
+      "default": null
+    },
+    "validLicense": {
+      "type": "Boolean",
+      "default": null
+    },
+    "phase1Timer": {
+      "type": "number",
+      "default": 0
+    },
+    "phase2Timer": {
+      "type": "number",
+      "default": 0
+    },
+    "phase3Timer": {
+      "type": "number",
+      "default": 0
+    },
+    "duration": {
+      "type": "number",
+      "default": 0
+    },
+    "completed_on": {
+      "type": "date"
+    },
+    "employee_verification": {
+      "type": "string",
+      "default": null
+    },
+    "condition": {
+      "type": "String",
+      "default": null
+    }
+  },
+  "validations": [],
+  "relations": {
+    "employee": {
+      "type": "belongsTo",
+      "model": "employee",
+      "foreignKey": ""
+    },
+    "identifiedHazards": {
+      "type": "hasMany",
+      "model": "identifiedHazard",
+      "foreignKey": ""
+    },
+    "appuser": {
+      "type": "belongsTo",
+      "model": "appuser",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
