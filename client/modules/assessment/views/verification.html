@@ -4,13 +4,12 @@
       <a href="" ui-sref="ra-mobile.recognize({id:assessmentId,active:assessmentStatus})" class="md-padding" style="text-decoration:none;"><i class="material-icons" style="font-size:6rem;color:dodgerblue;">navigate_before</i></a>
       </div>
     <div layout="column"  style="margin-top:1rem;padding:2rem;width:100%;">
-      <div layout layout-align="space-between center" style="width:100%;padding:1rem;">
-        <div>
-          <h4 style="margin:0rem;">Summary</h4>
+      <div layout="column"  style="width:100%;padding:1rem;">
+        <div layout layout-align="start start" style="width:100%;">
+          <h4 style="margin:1rem;">Summary</h4>
         </div>
-        <div>
-          <a href="" ng-click="deleteAssessment(assessmentId)" ng-dblclick="preventClick()" class="md-padding" style="text-decoration:none;"><i class="material-icons" style="font-size:5rem;color:#888;">delete_forever</i></a>
-          <a href="" ng-click="complete(assessment)" ng-class="{disabled:btnDisabled(),activeSubmit:!btnDisabled}" style="text-decoration:none; "><i class="material-icons" style="font-size:5rem;">backup</i></a>
+        <div layout layout-align="end start" style="width:100%;">
+          <a href="" ng-click="deleteAssessment(assessmentId)" ng-dblclick="preventClick()" class="md-padding" style="text-decoration:none;color:white;background-color:indianred;">delete</a>
         </div>
       </div>
 
@@ -25,17 +24,20 @@
           </div>
         </div>
         <div layout layout-align="start center" style="width:100%;border-top:solid thin darkgrey;padding: 2rem 0;">
-          <h5 style="margin:1rem 1rem;">Safe Reactions</h5>
-          <span style="margin-right:3rem;">{{ safeReactions.length }} out of {{ allReactions.length }}</span>
+          <div layout layout-align="space-between start" style="width:100%;">
+            <h5 style="margin:1rem 1rem;">Safe Reactions <span class="isError">*</span></h5>
+            <span ng-if="allReactions.length < 1" class="isError"><small>must identify hazard</small></span>
+          </div>
+          <span ng-if="allReactions.length >= 1"style="margin-right:3rem;">{{ safeReactions.length }} out of {{ allReactions.length }}</span>
         </div>
         <div layout="column" style="width:100%;border-top:solid thin darkgrey;padding: 2rem 0;">
           <div layout layout-align="space-between center" style="width:100%;">
             <div layout layout-align="start center">
-              <h5 style="margin:1rem 1rem;">Weather Conditions</h5>
+              <h5 style="margin:1rem 1rem;">Weather Conditions <span class="isError">*</span></h5>
               <span>{{ condition  }}</span>
             </div>
             <div>
-              <a href="" ng-click="showWeatherConditionsForm = !showWeatherConditionsForm">update</a>
+              <a href="" ng-click="showWeatherConditionsForm = !showWeatherConditionsForm" ng-class="{isError:condition === null}">update</a>
             </div>
           </div>
           <div layout="column" ng-if="showWeatherConditionsForm" ng-init="showWeatherConditionsForm = false">
@@ -46,7 +48,7 @@
                         style="width:100%;" required></select>
                 <div layout layout-align="end start">
                   <md-button ng-disabled="weatherConditionForm.$invalid" type="submit" class="md-padding"
-                             ng-class="{activeSubmit: weatherConditionForm.$valid}"
+                             ng-class="{active: weatherConditionForm.$valid}"
                              style="margin-top:1.5rem; border: solid thin darkslategrey;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">
                     <span>UPDATE</span></md-button>
                 </div>
@@ -58,13 +60,13 @@
 
           <div layout layout-align="space-between center" style="width:100%;">
             <div layout layout-align="start center">
-              <h5 style="margin:1rem 1rem;">Driver License</h5>
-              <span ng-class="{isError: invalidLicense === 1}">{{ driverLicense }} </span>
-              <span ng-if="validLicense === 1" class="isValid" style="margin-left:.5rem;">
+              <h5 style="margin:1rem 1rem;">Driver License <span class="isError">*</span></h5>
+              <span ng-class="{isError: validLicense != true,isValid: validLicense === true}">{{ driverLicense }} </span>
+              <span ng-if="validLicense === true" class="isValid" style="margin-left:.5rem;">
                 <i class="material-icons" style="font-size:2.5rem;">verified_user</i></span>
             </div>
             <div layout>
-              <a href="" ng-click="showLicenseForm =!showLicenseForm">update</a>
+              <a href="" ng-click="showLicenseForm =!showLicenseForm" ng-class="{isError:validLicense != true}">update</a>
             </div>
           </div>
           <div ng-if="showLicenseForm" ng-init="showLicenseForm = false" layout layout-align="start center"
@@ -107,7 +109,7 @@
 
                 <div layout layout-align="end start">
                   <md-button ng-disabled="driverLicenseForm.$invalid" type="submit" class="md-padding"
-                             ng-class="{activeSubmit: driverLicenseForm.$valid}"
+                             ng-class="{active: driverLicenseForm.$valid}"
                              style="margin-top:1.5rem; border: solid thin darkslategrey;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">
                     <span>SET</span></md-button>
                 </div>
@@ -127,14 +129,22 @@
             <h5 style="margin:1rem 1rem;">Location</h5>
             <div><a href="" ng-click="updateLocation()" ng-dblclick="preventClick()"><i class="material-icons" style="font-size:4rem;font-weight:bolder;color:rgba(0,128,0,0.51);">autorenew</i></a></div>
           </div>
-          <div>
-          </div>
           <div layout style="margin-top:2rem;">
             <img src="{{ url }}" alt="google map" />
           </div>
         </div>
       </div>
     </div><!--End of card-->
+    <div layout layout-align="center center" style="width:100%;">
+      <form name="completeAssessmentForm" ng-submit="complete()">
+        <md-button ng-disabled="isDisabled()" type="submit" class="md-padding"
+                   ng-class="{active:reqsMet()}"
+                   style="margin-top:1.5rem; padding:.5rem; width:auto;height:6rem;text-align: center; font-size:2rem;">
+          <span>COMPLETE</span>
+        </md-button>
+      </form>
+
+    </div>
   </div>
 
 </div>

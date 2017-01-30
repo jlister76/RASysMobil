@@ -4,10 +4,17 @@ body {
   color:#333;
 
 }
+p {
+  font-size: 3.8rem;
+}
+span {
+  font-size: 2.6rem;
+}
 
 a {
   text-decoration: none;
   color:dodgerblue;
+  font-size: 2.5rem;
 }
 input[type="radio"] {
   width:3rem;
@@ -19,18 +26,17 @@ input[type="radio"]+label {
   font-size:3rem;
   color:cornflowerblue;
 }
-.activeSubmit {
+.active {
   color: white;
   background-color:dodgerblue;
-  border: solid thin darkslategray;
+  border: solid thin darkslategrey;
 }
 .disabled {
-
   cursor: not-allowed;
-  opacity: .1;
+  opacity: .2;
 }
 .isError {
-  color:indianred;
+  color:goldenrod;
 }
 .isValid {
   color: green;

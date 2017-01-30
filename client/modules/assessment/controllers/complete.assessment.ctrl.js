@@ -458,11 +458,13 @@
           $scope.assessmentStatus = ra[0].active;
           $scope.employee = ra[0].employee;
           $scope.expirationDate = ra[0].expirationDate;
-          $scope.condition = ra[0].condition;
           $scope.weatherConditions = ["Fair","Windy","Wet","Foggy","Snowing","Icey"];
           $scope.safeReactions =[];
           $scope.allReactions = ra[0].identifiedHazards;
-          $scope.condition = "not set";
+          $scope.condition = ra[0].condition;
+          $scope.validLicense = ra[0].validLicense;
+
+
           for(var h in ra[0].identifiedHazards){
             console.log(ra[0].identifiedHazards[h]);
             if(ra[0].identifiedHazards[h].reaction === "safe"){
@@ -477,20 +479,6 @@
                 .$promise.then(function(success){console.log(success);$state.reload();})
             }
           };
-          if(ra[0].employee_verification === null){
-            $scope.verification = "get verification";
-          }else if(ra[0].employee_verification === "sent"){
-            $scope.verification = "resend";
-          }
-          if(ra[0].validLicense === null){
-            $scope.driverLicense = "-- -- --";
-          }else if(ra[0].validLicense != true){
-            $scope.invalidLicense = 1;
-            $scope.driverLicense = "Expired License";
-          }else{
-            $scope.driverLicense = "Verified";
-            $scope.validLicense = 1;
-          }
 
           var year = moment().year();
           $scope.months = [];
@@ -547,18 +535,14 @@
 
             }
           });
-          $scope.btnDisabled = function(){
+          $scope.isDisabled = function(){
 
             if(ra[0].expirationDate != null && ra[0].condition != null && ra[0].identifiedHazards.length > 0){
-              console.log("false");
               return false;
             }
-              console.log("true");
               return true;
-
-
           };
-          $scope.complete = function(assessment){
+          $scope.reqsMet = function(){
             if(ra[0].expirationDate === null){
               alert("Please enter the expiration date for the employee's driver license.")
             }else if (ra[0].condition === null){
@@ -566,9 +550,14 @@
             }else if(ra[0].identifiedHazards.length < 0){
               alert("No hazards have been identified. At least one hazard must be identified to complete this risk assessment");
             }else if(ra[0].expirationDate != null && ra[0].condition != null && ra[0].identifiedHazards.length > 0){
+              return true;
+            }
+            return false;
+          };
+          $scope.complete = function(assessment){
+            if($scope.reqsMet === true){
               complete(assessment);
             }
-
             function complete(assessment){
               $http.post('api/Riskassessments/verify', {"assessment":assessment})
                 .then(function(success){console.log(success);
@@ -578,8 +567,6 @@
                     .catch(function(err){console.error(err)});
                 });
             };
-
-
           };
         });
 
