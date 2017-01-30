@@ -12,8 +12,8 @@
     "project": 2,
     "group": 2,
     "employee": 2,
-    "riskAssessment": 80,
-    "identifiedHazard": 87
+    "riskAssessment": 82,
+    "identifiedHazard": 90
   },
   "models": {
     "User": {},
@@ -90,7 +90,8 @@
       "76": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2022-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":2297,\"phase2Timer\":3154,\"phase3Timer\":30513,\"duration\":0.5994,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":76,\"completed_on\":\"2017-01-29T20:05:42.224Z\"}",
       "77": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2023-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":326186,\"phase2Timer\":117679,\"phase3Timer\":125981,\"duration\":9.497433333333333,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":77,\"completed_on\":\"2017-01-30T04:19:10.256Z\"}",
       "78": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2017-01-01T06:00:00.000Z\",\"validLicense\":false,\"phase1Timer\":83926,\"phase2Timer\":81157,\"phase3Timer\":205168,\"duration\":6.17085,\"employee_verification\":\"sent\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":78,\"completed_on\":\"2017-01-30T04:27:44.529Z\"}",
-      "79": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2018-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":24868,\"phase2Timer\":13786,\"phase3Timer\":14939,\"duration\":0.8932166666666667,\"employee_verification\":\"true\",\"condition\":\"Wet\",\"employeeId\":1,\"appuserId\":1,\"id\":79,\"completed_on\":\"2017-01-30T04:40:38.943Z\"}"
+      "79": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2018-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":24868,\"phase2Timer\":13786,\"phase3Timer\":14939,\"duration\":0.8932166666666667,\"employee_verification\":\"true\",\"condition\":\"Wet\",\"employeeId\":1,\"appuserId\":1,\"id\":79,\"completed_on\":\"2017-01-30T04:40:38.943Z\"}",
+      "81": "{\"active\":true,\"phase\":\"Evaluation\",\"expirationDate\":null,\"validLicense\":null,\"phase1Timer\":97649,\"phase2Timer\":0,\"phase3Timer\":0,\"duration\":0,\"employee_verification\":null,\"condition\":null,\"employeeId\":1,\"appuserId\":1,\"id\":81}"
     },
     "identifiedHazard": {
       "41": "{\"type\":\"Snow/Ice\",\"reaction\":\"at-risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Risky!\",\"phase\":\"Evaluation\",\"riskAssessmentId\":56,\"id\":41}",
@@ -137,7 +138,10 @@
       "83": "{\"type\":\"Surface Transition\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Go home safe!\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":77,\"id\":83}",
       "84": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"safe\",\"location\":{\"lat\":32.987830599999995,\"lng\":-96.8342887},\"comments\":\"Testing this out 1...2...3\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":77,\"id\":84}",
       "85": "{\"type\":\"Surface Transition\",\"reaction\":\"safe\",\"location\":{\"lat\":32.987830599999995,\"lng\":-96.8342887},\"comments\":\"Testing this out too!\",\"phase\":\"Evaluation\",\"riskAssessmentId\":77,\"id\":85}",
-      "86": "{\"type\":\"Snow/Ice\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"comments galore\",\"phase\":\"Evaluation\",\"riskAssessmentId\":79,\"id\":86}"
+      "86": "{\"type\":\"Snow/Ice\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"comments galore\",\"phase\":\"Evaluation\",\"riskAssessmentId\":79,\"id\":86}",
+      "87": "{\"type\":\"Snow/Ice\",\"reaction\":\"0\",\"location\":{\"lat\":32.9878496,\"lng\":32.9878496},\"comments\":\"Testing\",\"phase\":\"Evaluation\",\"riskAssessmentId\":80,\"id\":87}",
+      "88": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"0\",\"location\":{\"lat\":32.9878606,\"lng\":32.9878606},\"comments\":\"test\",\"phase\":\"Evaluation\",\"riskAssessmentId\":81,\"id\":88}",
+      "89": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"test\",\"phase\":\"Evaluation\",\"riskAssessmentId\":81,\"id\":89}"
     }
   }
 }

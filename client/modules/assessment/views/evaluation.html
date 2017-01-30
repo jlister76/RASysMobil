@@ -22,7 +22,7 @@
             </div>
             <div layout="column" style="margin:2rem 0;">
               <div layout>
-                <label style="margin-bottom:1rem;border:solid thin green;">Reaction</label><span class="isRequired">*</span>
+                <label style="margin-bottom:1rem;">Reaction</label><span class="isRequired">*</span>
               </div>
               <div>
                 <input name="behavior" ng-model="behavior" type="radio" ng-value="safe" id="safe" required><label
@@ -54,7 +54,7 @@
       <div ng-repeat="ih in identifiedHazards" class="" style="width:100%;" >
         <md-card style="background:whitesmoke;margin:1rem;padding:1rem;">
           <md-card-content >
-            <div ng-if="ih.reaction === 'at-risk'" layout layout-align="end start">
+            <div ng-if="ih.reaction === 'At-Risk'" layout layout-align="end start">
               <span><i class="material-icons" style="font-size:3rem;color:rgba(255,69,0,0.81);">warning</i></span>
             </div>
             <div ng-if="ih.reaction === 'safe'" layout layout-align="end start">
