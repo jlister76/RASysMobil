@@ -464,6 +464,12 @@
           $scope.condition = ra[0].condition;
           $scope.validLicense = ra[0].validLicense;
 
+          if(ra[0].validLicense === true){
+            $scope.driverLicense = "Verified";
+          }else if (ra[0].validLicense != true){
+            $scope.driverLicense = "Expired";
+          }
+
 
           for(var h in ra[0].identifiedHazards){
             console.log(ra[0].identifiedHazards[h]);

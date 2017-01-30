@@ -35,8 +35,11 @@ input[type="radio"]+label {
   cursor: not-allowed;
   opacity: .2;
 }
-.isError {
+.isRequired {
   color:goldenrod;
+}
+.isError {
+  color: indianred;
 }
 .isValid {
   color: green;
