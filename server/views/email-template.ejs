@@ -72,6 +72,10 @@
             <p style="padding:0rem;margin:0rem;"><strong>Reaction: </strong><%= recognize[j].reaction %></p>
             <p style="padding:0rem;margin:0rem;"><strong>Comments: </strong><%= recognize[j].comments %></p>
           </div>
+          <div style="width:30%;">
+            <a href="http://maps.googleapis.com/maps/api/staticmap?&size=450x250&maptype=roadmap' +
+      '&markers=color:blue%7Clabel:S%7C<%=recognize[i].location.lat%>,<%=recognize[i].location.lng%>&scale=2&key=<%=key%>">View Map</a>
+          </div>
           <% } %>
           <% } %>
         </section>

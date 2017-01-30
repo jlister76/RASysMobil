@@ -5,6 +5,7 @@ var app = require('../../server/server');
 var path = require('path');
 var moment = require('moment');
 
+
 module.exports = function(Riskassessment) {
 
   // send an email
@@ -17,9 +18,10 @@ module.exports = function(Riskassessment) {
     hazards = ra[0].identifiedHazards,
     completed_on = moment().format('dddd, MMM Do YYYY'),
     conditions = ra[0].condition,
-    evaluation = [], recognize =[];
+    evaluation = [], recognize =[],
+    key = process.env.MAP_KEY;
 
-  console.log(hazards[0].location.lat, ra[0].identifiedHazards.length, ra[0].identifiedHazards[0],ra[0].identifiedHazards[1],ra[0].identifiedHazards[2]);
+  console.log(key, ra[0].identifiedHazards.length, ra[0].identifiedHazards[0],ra[0].identifiedHazards[1],ra[0].identifiedHazards[2]);
   for(var i=0; i<hazards.length; i++){
     if(hazards[i].phase === "Evaluation"){
       evaluation.push(hazards[i]);

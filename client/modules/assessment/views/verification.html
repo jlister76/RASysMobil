@@ -135,8 +135,8 @@
         </div>
       </div>
     </div><!--End of card-->
-    <div layout layout-align="center center" style="width:100%;">
-      <form name="completeAssessmentForm" ng-submit="complete()">
+    <div layout layout-align="center center" style="width:100%;margin-bottom:2rem;">
+      <form name="completeAssessmentForm" ng-submit="complete(assessment)">
         <md-button ng-disabled="isDisabled()" type="submit" class="md-padding"
                    ng-class="{active:reqsMet()}"
                    style="margin-top:1.5rem; padding:.5rem; width:auto;height:6rem;text-align:center; font-size:2rem;">

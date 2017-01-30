@@ -21,22 +21,22 @@
                       style="width:100%;" required></select>
             </div>
             <div layout="column" style="margin:2rem 0;">
-             <div layout>
-               <label style="margin-bottom:2rem;">Reaction</label><span class="isRequired">*</span>
-             </div>
+              <div layout>
+                <label style="margin-bottom:1rem;border:solid thin green;">Reaction</label><span class="isRequired">*</span>
+              </div>
               <div>
-                <input name="behavior" ng-model="behavior" type="radio" ng-value="Safe" id="safe" required><label
+                <input name="behavior" ng-model="behavior" type="radio" ng-value="safe" id="safe" required><label
                 for="safe">Safe</label>
               </div>
               <div>
-                <input name="behavior" ng-model="behavior" type="radio" ng-value="At-Risk" id="at-risk"><label
+                <input name="behavior" ng-model="behavior" type="radio" ng-value="at_risk" id="at-risk"><label
                 for="at-risk">At-Risk</label>
               </div>
             </div>
             <div layout="column" class="md-padding" style="width:100%;">
-             <div layout>
-               <label for="comments" style="margin-bottom:2rem;">Comments</label><span class="isRequired">*</span>
-             </div>
+              <div layout>
+                <label for="comments" style="margin-bottom:1rem;">Comments</label><span class="isRequired">*</span>
+              </div>
               <textarea ng-model="comments" id="comments" rows="5" required></textarea>
             </div>
             <div layout layout-align="center center">
@@ -85,15 +85,12 @@
                   <form name="updateHazardForm" ng-submit="updateIdentifiedHazard(ih.id,selectedHazard,behavior,comments,assessmentId,assessmentStatus,lat,lng)" >
                     <div layout="column" style="padding:1rem;width:100%;">
                       <div>
-                        <label for="hazards" style="margin-bottom:1rem;"><h4>Hazard</h4></label><span class="isRequired">*</span>
+                        <label for="hazards" style="margin-bottom:1rem;">Hazard</label><span class="isRequired">*</span>
                         <select ng-model="selectedHazard" ng-init="selectedHazard = ih.type" ng-options="x for x in hazards" id="" style="width:100%;" required></select>
                       </div>
 
-                      <div layout="column" style="margin:2rem 0;">
-                        <div layout>
-                          <label style="margin-bottom:2rem;">Reaction</label> <span class="isRequired">*</span>
-                        </div>
-
+                      <div style="margin:2rem 0;">
+                        <label style="margin-bottom:2rem;">Reaction</label> <span class="isRequired">*</span>
                         <div ng-init="behavior = ih.reaction">
                           <input name="behavior" ng-model="behavior" type="radio" ng-value="Safe"><label for="safe" required>Safe</label>
                         </div>
@@ -103,7 +100,7 @@
                       </div>
                       <div layout="column" class="md-padding" style="width:100%;">
                        <div layout>
-                         <label for="comments" style="margin-bottom:2rem;"><h4>Comments</h4></label><span class="isRequired">*</span>
+                         <label for="comments" style="margin-bottom:2rem;">Comments</label><span class="isRequired">*</span>
                        </div>
                         <textarea ng-model="comments" ng-init="comments = ih.comments" rows="5" required></textarea>
                       </div>

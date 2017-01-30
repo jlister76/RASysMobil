@@ -12,8 +12,8 @@
     "project": 2,
     "group": 2,
     "employee": 2,
-    "riskAssessment": 79,
-    "identifiedHazard": 84
+    "riskAssessment": 80,
+    "identifiedHazard": 87
   },
   "models": {
     "User": {},
@@ -88,8 +88,9 @@
       "74": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2021-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":1984,\"phase2Timer\":3135,\"phase3Timer\":233066,\"duration\":3.96975,\"employee_verification\":\"true\",\"condition\":\"Wet\",\"employeeId\":1,\"appuserId\":1,\"id\":74,\"completed_on\":\"2017-01-29T07:34:21.877Z\"}",
       "75": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2023-03-03T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":23136,\"phase2Timer\":14520,\"phase3Timer\":69718,\"duration\":1.7895666666666667,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":75,\"completed_on\":\"2017-01-29T19:25:22.234Z\"}",
       "76": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2022-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":2297,\"phase2Timer\":3154,\"phase3Timer\":30513,\"duration\":0.5994,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":76,\"completed_on\":\"2017-01-29T20:05:42.224Z\"}",
-      "77": "{\"active\":true,\"phase\":\"Coaching\",\"expirationDate\":\"2023-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":36648,\"phase2Timer\":66071,\"phase3Timer\":62239,\"duration\":2.2075666666666667,\"employee_verification\":null,\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":77,\"completed_on\":\"2017-01-30T03:10:11.775Z\"}",
-      "78": "{\"active\":true,\"phase\":\"Coaching\",\"expirationDate\":\"2017-01-01T06:00:00.000Z\",\"validLicense\":false,\"phase1Timer\":83926,\"phase2Timer\":78051,\"phase3Timer\":199300,\"duration\":3.8147333333333333,\"employee_verification\":null,\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":78,\"completed_on\":\"2017-01-30T02:39:14.773Z\"}"
+      "77": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2023-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":326186,\"phase2Timer\":117679,\"phase3Timer\":125981,\"duration\":9.497433333333333,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":77,\"completed_on\":\"2017-01-30T04:19:10.256Z\"}",
+      "78": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2017-01-01T06:00:00.000Z\",\"validLicense\":false,\"phase1Timer\":83926,\"phase2Timer\":81157,\"phase3Timer\":205168,\"duration\":6.17085,\"employee_verification\":\"sent\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":78,\"completed_on\":\"2017-01-30T04:27:44.529Z\"}",
+      "79": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2018-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":24868,\"phase2Timer\":13786,\"phase3Timer\":14939,\"duration\":0.8932166666666667,\"employee_verification\":\"true\",\"condition\":\"Wet\",\"employeeId\":1,\"appuserId\":1,\"id\":79,\"completed_on\":\"2017-01-30T04:40:38.943Z\"}"
     },
     "identifiedHazard": {
       "41": "{\"type\":\"Snow/Ice\",\"reaction\":\"at-risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Risky!\",\"phase\":\"Evaluation\",\"riskAssessmentId\":56,\"id\":41}",
@@ -128,13 +129,15 @@
       "74": "{\"type\":\"Snow/Ice\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Safe emplolyee\",\"phase\":\"Evaluation\",\"riskAssessmentId\":75,\"id\":74}",
       "75": "{\"type\":\"Wet Grass/Mud\",\"reaction\":\"at-risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Slipped in the wet grass.\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":75,\"id\":75}",
       "76": "{\"type\":\"Snow/Ice\",\"reaction\":\"at-risk\",\"location\":{\"lat\":32.9878758,\"lng\":-96.83429079999999},\"comments\":\"Risky!\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":76,\"id\":76}",
-      "77": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Comments\",\"phase\":\"Evaluation\",\"riskAssessmentId\":77,\"id\":77}",
       "78": "{\"type\":\"Snow/Ice\",\"reaction\":\"at-risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Slipped on the ice.\",\"phase\":\"Evaluation\",\"riskAssessmentId\":78,\"id\":78}",
       "79": "{\"type\":\"Wet Grass/Mud\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9878488,\"lng\":-96.8342926},\"comments\":\"Walked around the mud to drier land.\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":78,\"id\":79}",
       "80": "{\"type\":\"Snow/Ice\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9878205,\"lng\":-96.8342849},\"comments\":\"test\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":78,\"id\":80}",
       "81": "{\"type\":\"Poison Ivy/Oak/Sumac\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Did not walk through the poison oak.\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":78,\"id\":81}",
       "82": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9878412,\"lng\":-96.8343079},\"comments\":\"More comments\",\"phase\":\"Evaluation\",\"riskAssessmentId\":78,\"id\":82}",
-      "83": "{\"type\":\"Surface Transition\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Go home safe!\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":77,\"id\":83}"
+      "83": "{\"type\":\"Surface Transition\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Go home safe!\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":77,\"id\":83}",
+      "84": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"safe\",\"location\":{\"lat\":32.987830599999995,\"lng\":-96.8342887},\"comments\":\"Testing this out 1...2...3\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":77,\"id\":84}",
+      "85": "{\"type\":\"Surface Transition\",\"reaction\":\"safe\",\"location\":{\"lat\":32.987830599999995,\"lng\":-96.8342887},\"comments\":\"Testing this out too!\",\"phase\":\"Evaluation\",\"riskAssessmentId\":77,\"id\":85}",
+      "86": "{\"type\":\"Snow/Ice\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"comments galore\",\"phase\":\"Evaluation\",\"riskAssessmentId\":79,\"id\":86}"
     }
   }
 }

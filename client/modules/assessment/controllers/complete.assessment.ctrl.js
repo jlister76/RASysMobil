@@ -466,7 +466,7 @@
 
           if(ra[0].validLicense === true){
             $scope.driverLicense = "Verified";
-          }else if (ra[0].validLicense != true){
+          }else if (ra[0].validLicense === false){
             $scope.driverLicense = "Expired";
           }
 
@@ -548,22 +548,16 @@
               return true;
           };
           $scope.reqsMet = function(){
-            if(ra[0].expirationDate === null){
-              alert("Please enter the expiration date for the employee's driver license.")
-            }else if (ra[0].condition === null){
-              alert("Please set the weather conditions.")
-            }else if(ra[0].identifiedHazards.length < 0){
-              alert("No hazards have been identified. At least one hazard must be identified to complete this risk assessment");
-            }else if(ra[0].expirationDate != null && ra[0].condition != null && ra[0].identifiedHazards.length > 0){
-              return true;
-            }
+            if(ra[0].expirationDate != null && ra[0].condition != null && ra[0].identifiedHazards.length > 0){
+              return true;            }
             return false;
           };
           $scope.complete = function(assessment){
-            if($scope.reqsMet === true){
-              complete(assessment);
-            }
+            console.log("In the scope Fn", $scope.reqsMet());
+            complete(assessment);
+
             function complete(assessment){
+              console.log("Running Complete Fn",assessment);
               $http.post('api/Riskassessments/verify', {"assessment":assessment})
                 .then(function(success){console.log(success);
                   RiskAssessment.updateAttributes({id:assessment[0].id, employee_verification: "sent",active: false})
