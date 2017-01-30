@@ -470,7 +470,6 @@
             $scope.driverLicense = "Expired";
           }
 
-
           for(var h in ra[0].identifiedHazards){
             console.log(ra[0].identifiedHazards[h]);
             if(ra[0].identifiedHazards[h].reaction === "safe"){
