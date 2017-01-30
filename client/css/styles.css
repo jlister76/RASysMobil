@@ -5,15 +5,17 @@ body {
 
 }
 p {
-  font-size: 3.8rem;
+  font-size: 2em;
+  color: #666666;
 }
 span {
-  font-size: 2.6rem;
+
+  color: #666666;
 }
 
 a {
   text-decoration: none;
-  color:dodgerblue;
+  color: #888888;
   font-size: 2.5rem;
 }
 input[type="radio"] {
@@ -26,10 +28,16 @@ input[type="radio"]+label {
   font-size:3rem;
   color:cornflowerblue;
 }
+label {
+  font-size:.95em;
+  font-weight:bold;
+}
 .active {
-  color: white;
   background-color:dodgerblue;
   border: solid thin darkslategrey;
+}
+.active span {
+  color: white!important;
 }
 .disabled {
   cursor: not-allowed;

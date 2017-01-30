@@ -1,7 +1,7 @@
 {
   "ids": {
     "User": 1,
-    "AccessToken": 76,
+    "AccessToken": 78,
     "ACL": 1,
     "RoleMapping": 1,
     "Role": 1,
@@ -13,7 +13,7 @@
     "group": 2,
     "employee": 2,
     "riskAssessment": 79,
-    "identifiedHazard": 78
+    "identifiedHazard": 84
   },
   "models": {
     "User": {},
@@ -49,7 +49,8 @@
       "u09nCVS7ZMUR4NIfGwtyipz58EPiJs72lFZQMJWGa1mP9qpbBtW5dHTdeOmNwafv": "{\"id\":\"u09nCVS7ZMUR4NIfGwtyipz58EPiJs72lFZQMJWGa1mP9qpbBtW5dHTdeOmNwafv\",\"ttl\":1209600,\"created\":\"2017-01-23T15:34:13.465Z\",\"userId\":1}",
       "6NrGmShnYNORRXghQB8NiK5qMndwKAouuPCq9eAFlGy0B4Vj5DKtRNCKp4G1a4iM": "{\"id\":\"6NrGmShnYNORRXghQB8NiK5qMndwKAouuPCq9eAFlGy0B4Vj5DKtRNCKp4G1a4iM\",\"ttl\":1209600,\"created\":\"2017-01-26T01:00:00.061Z\",\"userId\":1}",
       "GZyZI1llHCr6qEcyaHDaXJ1OOj1fySm3yxusgvLaOhq0ApGjwJl7Lw8l7ukRpRNV": "{\"id\":\"GZyZI1llHCr6qEcyaHDaXJ1OOj1fySm3yxusgvLaOhq0ApGjwJl7Lw8l7ukRpRNV\",\"ttl\":1209600,\"created\":\"2017-01-26T02:01:51.030Z\",\"userId\":1}",
-      "RZUyyGdOhieJ4PkKw8AwzbqlJVt00sGGENLRPFjFjkUyGRUG4wnNl6AFflhT5c4o": "{\"id\":\"RZUyyGdOhieJ4PkKw8AwzbqlJVt00sGGENLRPFjFjkUyGRUG4wnNl6AFflhT5c4o\",\"ttl\":1209600,\"created\":\"2017-01-26T04:25:54.383Z\",\"userId\":1}"
+      "RZUyyGdOhieJ4PkKw8AwzbqlJVt00sGGENLRPFjFjkUyGRUG4wnNl6AFflhT5c4o": "{\"id\":\"RZUyyGdOhieJ4PkKw8AwzbqlJVt00sGGENLRPFjFjkUyGRUG4wnNl6AFflhT5c4o\",\"ttl\":1209600,\"created\":\"2017-01-26T04:25:54.383Z\",\"userId\":1}",
+      "T1p419eFnSHkd3frAp8mGI9PQ1ZlcoBKAZ87wJYxDqtpRPlUA9SkniHqBGcjLurd": "{\"id\":\"T1p419eFnSHkd3frAp8mGI9PQ1ZlcoBKAZ87wJYxDqtpRPlUA9SkniHqBGcjLurd\",\"ttl\":1209600,\"created\":\"2017-01-30T03:00:35.428Z\",\"userId\":1}"
     },
     "ACL": {},
     "RoleMapping": {},
@@ -87,8 +88,8 @@
       "74": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2021-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":1984,\"phase2Timer\":3135,\"phase3Timer\":233066,\"duration\":3.96975,\"employee_verification\":\"true\",\"condition\":\"Wet\",\"employeeId\":1,\"appuserId\":1,\"id\":74,\"completed_on\":\"2017-01-29T07:34:21.877Z\"}",
       "75": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2023-03-03T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":23136,\"phase2Timer\":14520,\"phase3Timer\":69718,\"duration\":1.7895666666666667,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":75,\"completed_on\":\"2017-01-29T19:25:22.234Z\"}",
       "76": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2022-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":2297,\"phase2Timer\":3154,\"phase3Timer\":30513,\"duration\":0.5994,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":76,\"completed_on\":\"2017-01-29T20:05:42.224Z\"}",
-      "77": "{\"active\":true,\"phase\":\"Verification\",\"expirationDate\":\"2023-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":9708,\"phase2Timer\":5696,\"phase3Timer\":10377,\"duration\":0.4296833333333333,\"employee_verification\":null,\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":77,\"completed_on\":\"2017-01-30T00:30:20.793Z\"}",
-      "78": "{\"active\":true,\"phase\":\"Verification\",\"expirationDate\":\"2017-01-01T06:00:00.000Z\",\"validLicense\":false,\"phase1Timer\":1787,\"phase2Timer\":2945,\"phase3Timer\":11410,\"duration\":0.26903333333333335,\"employee_verification\":null,\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":78,\"completed_on\":\"2017-01-30T01:43:51.656Z\"}"
+      "77": "{\"active\":true,\"phase\":\"Coaching\",\"expirationDate\":\"2023-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":36648,\"phase2Timer\":66071,\"phase3Timer\":62239,\"duration\":2.2075666666666667,\"employee_verification\":null,\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":77,\"completed_on\":\"2017-01-30T03:10:11.775Z\"}",
+      "78": "{\"active\":true,\"phase\":\"Coaching\",\"expirationDate\":\"2017-01-01T06:00:00.000Z\",\"validLicense\":false,\"phase1Timer\":83926,\"phase2Timer\":78051,\"phase3Timer\":199300,\"duration\":3.8147333333333333,\"employee_verification\":null,\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":78,\"completed_on\":\"2017-01-30T02:39:14.773Z\"}"
     },
     "identifiedHazard": {
       "41": "{\"type\":\"Snow/Ice\",\"reaction\":\"at-risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Risky!\",\"phase\":\"Evaluation\",\"riskAssessmentId\":56,\"id\":41}",
@@ -127,7 +128,13 @@
       "74": "{\"type\":\"Snow/Ice\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Safe emplolyee\",\"phase\":\"Evaluation\",\"riskAssessmentId\":75,\"id\":74}",
       "75": "{\"type\":\"Wet Grass/Mud\",\"reaction\":\"at-risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Slipped in the wet grass.\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":75,\"id\":75}",
       "76": "{\"type\":\"Snow/Ice\",\"reaction\":\"at-risk\",\"location\":{\"lat\":32.9878758,\"lng\":-96.83429079999999},\"comments\":\"Risky!\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":76,\"id\":76}",
-      "77": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Comments\",\"phase\":\"Evaluation\",\"riskAssessmentId\":77,\"id\":77}"
+      "77": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Comments\",\"phase\":\"Evaluation\",\"riskAssessmentId\":77,\"id\":77}",
+      "78": "{\"type\":\"Snow/Ice\",\"reaction\":\"at-risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Slipped on the ice.\",\"phase\":\"Evaluation\",\"riskAssessmentId\":78,\"id\":78}",
+      "79": "{\"type\":\"Wet Grass/Mud\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9878488,\"lng\":-96.8342926},\"comments\":\"Walked around the mud to drier land.\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":78,\"id\":79}",
+      "80": "{\"type\":\"Snow/Ice\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9878205,\"lng\":-96.8342849},\"comments\":\"test\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":78,\"id\":80}",
+      "81": "{\"type\":\"Poison Ivy/Oak/Sumac\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Did not walk through the poison oak.\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":78,\"id\":81}",
+      "82": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9878412,\"lng\":-96.8343079},\"comments\":\"More comments\",\"phase\":\"Evaluation\",\"riskAssessmentId\":78,\"id\":82}",
+      "83": "{\"type\":\"Surface Transition\",\"reaction\":\"safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Go home safe!\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":77,\"id\":83}"
     }
   }
 }

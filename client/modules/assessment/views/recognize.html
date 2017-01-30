@@ -19,12 +19,14 @@
         <div layout="column" class="" md-whiteframe="2" style=";background: whitesmoke;margin:2rem;padding:1rem;">
           <form name="identifiedHazardForm" ng-submit="save(selectedHazard,behavior,comments,lat,lng)">
             <div>
-              <label for="hazards" style="margin-bottom:1rem;">Hazard<span style="color:indianred;">*</span></label>
+              <label for="hazards" style="margin-bottom:1rem;">Hazard</label><span class="isRequired">*</span>
               <select ng-model="selectedHazard" ng-options="x for x in hazards" id="hazards"
                       style="width:100%;" required></select>
             </div>
             <div layout="column" style="margin:2rem 0;">
-              <span style="margin-bottom:2rem;">Reaction<span style="color:indianred;">*</span></span>
+              <div layout>
+                <label style="margin-bottom:1rem;border:solid thin green;">Reaction</label><span class="isRequired">*</span>
+              </div>
               <div>
                 <input name="behavior" ng-model="behavior" type="radio" ng-value="safe" id="safe" required><label
                 for="safe">Safe</label>
@@ -35,12 +37,14 @@
               </div>
             </div>
             <div layout="column" class="md-padding" style="width:100%;">
-              <label for="comments" style="margin-bottom:2rem;">Comments<span style="color:indianred;">*</span></label>
+              <div layout>
+                <label for="comments" style="margin-bottom:1rem;">Comments</label><span class="isRequired">*</span>
+              </div>
               <textarea ng-model="comments" id="comments" rows="5" required></textarea>
             </div>
             <div layout layout-align="center center">
-              <md-button ng-disabled="identifiedHazardForm.$invalid" type="submit" ng-dblclick="preventClick()"
-                         style="margin-top:1.5rem; border: solid thin darkslategrey;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">
+              <md-button ng-disabled="identifiedHazardForm.$invalid" ng-class="{active:identifiedHazardForm.$valid}" type="submit" ng-dblclick="preventClick()"
+                         style="margin-top:1.5rem;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">
                 Save
               </md-button>
             </div>
@@ -84,12 +88,14 @@
                   <form name="updateHazardForm" ng-submit="updateIdentifiedHazard(ih.id,selectedHazard,behavior,comments,assessmentId,assessmentStatus,lat,lng)" >
                     <div layout="column" style="padding:1rem;width:100%;">
                       <div>
-                        <label for="hazards" style="margin-bottom:1rem;">Hazard</label><span style="color:indianred;">*</span>
+                        <label for="hazards" style="margin-bottom:1rem;">Hazard</label><span class="isRequired">*</span>
                         <select ng-model="selectedHazard" ng-init="selectedHazard = ih.type" ng-options="x for x in hazards" id="" style="width:100%;" required></select>
                       </div>
 
                       <div layout="column" style="margin:2rem 0;">
-                        <span style="margin-bottom:2rem;">Reaction</span><span style="color:indianred;">*</span>
+                        <div layout>
+                          <label style="margin-bottom:2rem;">Reaction</label><span class="isRequired">*</span>
+                        </div>
 
                         <div ng-init="behavior = ih.reaction">
                           <input name="behavior" ng-model="behavior" type="radio" ng-value="safe"><label for="safe" required>Safe</label>
@@ -99,12 +105,14 @@
                         </div>
                       </div>
                       <div layout="column" class="md-padding" style="width:100%;">
-                        <label for="comments" style="margin-bottom:2rem;">Comments</label><span style="color:indianred;">*</span>
+                        <div layout>
+                          <label for="comments" style="margin-bottom:2rem;">Comments</label><span class="isRequired">*</span>
+                        </div>
                         <textarea ng-model="comments" ng-init="comments = ih.comments" rows="5" required></textarea>
                       </div>
 
                       <div layout layout-align="center center">
-                        <md-button ng-disabled="updateHazardForm.$invalid" type="submit" style="background-color:dodgerblue;color:white;margin-top:1.5rem; border: solid thin darkslategrey;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">Update</md-button>
+                        <md-button ng-disabled="updateHazardForm.$invalid" ng-class="{active:updateHazardForm.$valid}" type="submit" style="margin-top:1.5rem; padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">Update</md-button>
                       </div>
                     </div>
                   </form>

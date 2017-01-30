@@ -25,15 +25,15 @@
         </div>
         <div layout layout-align="start center" style="width:100%;border-top:solid thin darkgrey;padding: 2rem 0;">
           <div layout layout-align="space-between start" style="width:100%;">
-            <h5 style="margin:1rem 1rem;">Safe Reactions <span class="isRequired">*</span></h5>
+            <h5 style="margin:1rem 1rem;">Safe Reactions <span>*</span></h5>
             <span ng-if="allReactions.length < 1" class="isRequired"><small>must identify hazard</small></span>
           </div>
-          <span ng-if="allReactions.length >= 1"style="margin-right:3rem;">{{ safeReactions.length }} out of {{ allReactions.length }}</span>
+          <span ng-if="allReactions.length >= 1"style="width:60%;text-align: right;">{{ safeReactions.length }} out of {{ allReactions.length }}</span>
         </div>
         <div layout="column" style="width:100%;border-top:solid thin darkgrey;padding: 2rem 0;">
           <div layout layout-align="space-between center" style="width:100%;">
             <div layout layout-align="start center">
-              <h5 style="margin:1rem 1rem;">Weather Conditions <span class="isRequired">*</span></h5>
+              <h5 style="margin:1rem 1rem;">Weather Conditions <span>*</span></h5>
               <span>{{ condition  }}</span>
             </div>
             <div>
@@ -60,7 +60,7 @@
 
           <div layout layout-align="space-between center" style="width:100%;">
             <div layout layout-align="start center">
-              <h5 style="margin:1rem 1rem;">Driver License <span class="isRequired">*</span></h5>
+              <h5 style="margin:1rem 1rem;">Driver License <span>*</span></h5>
               <span ng-class="{isError: validLicense != true,isValid: validLicense === true}">{{ driverLicense }} </span>
               <span ng-if="validLicense === true" class="isValid" style="margin-left:.5rem;">
                 <i class="material-icons" style="font-size:2.5rem;">verified_user</i></span>
@@ -139,8 +139,8 @@
       <form name="completeAssessmentForm" ng-submit="complete()">
         <md-button ng-disabled="isDisabled()" type="submit" class="md-padding"
                    ng-class="{active:reqsMet()}"
-                   style="margin-top:1.5rem; padding:.5rem; width:auto;height:6rem;text-align: center; font-size:2rem;">
-          <span>COMPLETE</span>
+                   style="margin-top:1.5rem; padding:.5rem; width:auto;height:6rem;text-align:center; font-size:2rem;">
+          complete
         </md-button>
       </form>
 
