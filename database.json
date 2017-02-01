@@ -1,7 +1,7 @@
 {
   "ids": {
     "User": 1,
-    "AccessToken": 78,
+    "AccessToken": 79,
     "ACL": 1,
     "RoleMapping": 1,
     "Role": 1,
@@ -50,7 +50,8 @@
       "6NrGmShnYNORRXghQB8NiK5qMndwKAouuPCq9eAFlGy0B4Vj5DKtRNCKp4G1a4iM": "{\"id\":\"6NrGmShnYNORRXghQB8NiK5qMndwKAouuPCq9eAFlGy0B4Vj5DKtRNCKp4G1a4iM\",\"ttl\":1209600,\"created\":\"2017-01-26T01:00:00.061Z\",\"userId\":1}",
       "GZyZI1llHCr6qEcyaHDaXJ1OOj1fySm3yxusgvLaOhq0ApGjwJl7Lw8l7ukRpRNV": "{\"id\":\"GZyZI1llHCr6qEcyaHDaXJ1OOj1fySm3yxusgvLaOhq0ApGjwJl7Lw8l7ukRpRNV\",\"ttl\":1209600,\"created\":\"2017-01-26T02:01:51.030Z\",\"userId\":1}",
       "RZUyyGdOhieJ4PkKw8AwzbqlJVt00sGGENLRPFjFjkUyGRUG4wnNl6AFflhT5c4o": "{\"id\":\"RZUyyGdOhieJ4PkKw8AwzbqlJVt00sGGENLRPFjFjkUyGRUG4wnNl6AFflhT5c4o\",\"ttl\":1209600,\"created\":\"2017-01-26T04:25:54.383Z\",\"userId\":1}",
-      "T1p419eFnSHkd3frAp8mGI9PQ1ZlcoBKAZ87wJYxDqtpRPlUA9SkniHqBGcjLurd": "{\"id\":\"T1p419eFnSHkd3frAp8mGI9PQ1ZlcoBKAZ87wJYxDqtpRPlUA9SkniHqBGcjLurd\",\"ttl\":1209600,\"created\":\"2017-01-30T03:00:35.428Z\",\"userId\":1}"
+      "T1p419eFnSHkd3frAp8mGI9PQ1ZlcoBKAZ87wJYxDqtpRPlUA9SkniHqBGcjLurd": "{\"id\":\"T1p419eFnSHkd3frAp8mGI9PQ1ZlcoBKAZ87wJYxDqtpRPlUA9SkniHqBGcjLurd\",\"ttl\":1209600,\"created\":\"2017-01-30T03:00:35.428Z\",\"userId\":1}",
+      "RKIBzAkGrEhvPyhipDlzfZrJVANWGiKko8orIw5YH52ESLYANVYvB1FHPUhqfxw6": "{\"id\":\"RKIBzAkGrEhvPyhipDlzfZrJVANWGiKko8orIw5YH52ESLYANVYvB1FHPUhqfxw6\",\"ttl\":1209600,\"created\":\"2017-02-01T14:58:25.101Z\",\"userId\":1}"
     },
     "ACL": {},
     "RoleMapping": {},
@@ -95,7 +96,7 @@
       "82": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2018-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":25009,\"phase2Timer\":14184,\"phase3Timer\":209755,\"duration\":4.149133333333333,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":82,\"completed_on\":\"2017-02-01T02:46:13.671Z\"}",
       "83": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2018-02-03T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":1484,\"phase2Timer\":2274,\"phase3Timer\":33306,\"duration\":0.6177333333333334,\"employee_verification\":\"sent\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":83,\"completed_on\":\"2017-02-01T11:25:17.309Z\"}",
       "84": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2018-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":2000,\"phase2Timer\":2700,\"phase3Timer\":24865,\"duration\":0.49275,\"employee_verification\":\"sent\",\"condition\":\"Snowing\",\"employeeId\":1,\"appuserId\":1,\"id\":84,\"completed_on\":\"2017-02-01T11:39:08.159Z\"}",
-      "87": "{\"active\":true,\"phase\":\"Verification\",\"expirationDate\":null,\"validLicense\":null,\"phase1Timer\":1913,\"phase2Timer\":2633,\"phase3Timer\":38471,\"duration\":0.71695,\"employee_verification\":null,\"condition\":null,\"employeeId\":1,\"appuserId\":1,\"id\":87,\"completed_on\":\"2017-02-01T12:51:51.531Z\"}"
+      "87": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2018-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":1913,\"phase2Timer\":2633,\"phase3Timer\":38471,\"duration\":0.71695,\"employee_verification\":\"sent\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":87,\"completed_on\":\"2017-02-01T14:59:39.452Z\"}"
     },
     "identifiedHazard": {
       "41": "{\"type\":\"Snow/Ice\",\"reaction\":\"at-risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Risky!\",\"phase\":\"Evaluation\",\"riskAssessmentId\":56,\"id\":41}",
