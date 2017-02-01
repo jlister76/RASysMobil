@@ -43,15 +43,14 @@
           </div>
           <% for(var i = 0; i < evaluation.length; i++){ %>
 
-          <div
-            style="background-color:#f7f7f7;border-bottom:solid thin #e2e2e2; padding:.5rem;">
+          <div style="background-color:#f7f7f7;border-bottom:solid thin #e2e2e2; padding:.5rem;">
             <div>
               <p style="padding:0rem;margin:0rem;"><strong>Hazard: </strong><%= evaluation[i].type %></p>
               <p style="padding:0rem;margin:0rem;"><strong>Reaction: </strong><%= evaluation[i].reaction %></p>
               <p style="padding:0rem;margin:0rem;"><strong>Comments: </strong><%= evaluation[i].comments %></p>
             </div>
             <div style="width:30%;">
-              <a href="http://maps.googleapis.com/maps/api/staticmap?&size=450x250&maptype=roadmap' +
+              <a href="https://maps.googleapis.com/maps/api/staticmap?&size=450x250&maptype=roadmap' +
       '&markers=color:blue%7Clabel:S%7C<%=evaluation[i].location.lat%>,<%=evaluation[i].location.lng%>&scale=2&key<%=key%>">View Map</a>
             </div>
           </div>
@@ -67,14 +66,17 @@
 
           <% for(var j = 0; j < recognize.length; j++){ %>
           <div style="border-bottom:solid thin #e2e2e2;background-color:#f7f7f7;padding:.5rem;">
-            <p style="padding:0rem;margin:0rem;"><strong>Hazard: </strong><%= recognize[j].type %></p>
-            <p style="padding:0rem;margin:0rem;"><strong>Reaction: </strong><%= recognize[j].reaction %></p>
-            <p style="padding:0rem;margin:0rem;"><strong>Comments: </strong><%= recognize[j].comments %></p>
-          </div>
-          <div style="width:30%;">
-            <a href="https://maps.googleapis.com/maps/api/staticmap?&size=450x250&maptype=roadmap' +
+            <div>
+              <p style="padding:0rem;margin:0rem;"><strong>Hazard: </strong><%= recognize[j].type %></p>
+              <p style="padding:0rem;margin:0rem;"><strong>Reaction: </strong><%= recognize[j].reaction %></p>
+              <p style="padding:0rem;margin:0rem;"><strong>Comments: </strong><%= recognize[j].comments %></p>
+            </div>
+            <div style="width:30%;">
+              <a href="https://maps.googleapis.com/maps/api/staticmap?&size=450x250&maptype=roadmap' +
       '&markers=color:blue%7Clabel:S%7C<%=recognize[j].location.lat%>,<%=recognize[j].location.lng%>&scale=2&key=<%=key%>">View Map</a>
+            </div>
           </div>
+
           <% } %>
           <% } %>
         </section>
