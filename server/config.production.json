@@ -1,6 +1,6 @@
 {
   "restApiRoot": "/api",
-  "host": "https://rasysmobile.azuarewebsites.net",
+  "host": "https://rasysmobile.azurewebsites.net",
   "port": 443,
   "remoting": {
     "context": false,
