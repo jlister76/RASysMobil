@@ -4,6 +4,7 @@ var loopback = require("loopback");
 var app = require('../../server/server');
 var path = require('path');
 var moment = require('moment');
+var config = require('config');
 
 
 module.exports = function(Riskassessment) {
@@ -22,7 +23,7 @@ module.exports = function(Riskassessment) {
     key = process.env.MAP_KEY,
     baseUrl = app.get('url').replace(/\/$/, '');
 
-  console.log(key, ra[0].identifiedHazards.length, ra[0].identifiedHazards[0],ra[0].identifiedHazards[1],ra[0].identifiedHazards[2]);
+  console.log(config.host);
   for(var i=0; i<hazards.length; i++){
     if(hazards[i].phase === "Evaluation"){
       evaluation.push(hazards[i]);
