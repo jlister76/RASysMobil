@@ -4,7 +4,7 @@ var loopback = require("loopback");
 var app = require('../../server/server');
 var path = require('path');
 var moment = require('moment');
-var config = require('../../config.env.json');
+var config = require('../../server/config.env.json');
 
 
 module.exports = function(Riskassessment) {
