@@ -8,8 +8,20 @@
         <div layout layout-align="start start" style="width:100%;">
           <h4 style="margin:1rem;">Summary</h4>
         </div>
-        <div layout layout-align="end start" style="width:100%;">
-          <a href="" ng-click="deleteAssessment(assessmentId)" ng-dblclick="preventClick()" class="md-padding" style="text-decoration:none;color:white;background-color:indianred;">delete</a>
+        <div layout layout-align="end center" style="width:100%;">
+          <form name="completeAssessmentForm" ng-submit="complete(assessment)">
+            <md-button ng-disabled="isDisabled()" type="submit" class="md-padding"
+                       ng-class="{active:reqsMet(),disabled: isDisabled()}"
+                       style="padding:.5rem; width:auto;height:6rem;border:solid thin lightgray;text-align:center; font-size:2rem;">
+
+              complete
+            </md-button>
+          </form>
+          <md-button ng-click="deleteAssessment(assessmentId)" ng-dblclick="preventClick()"
+                     class="md-padding"
+                     style="padding:.5rem; width:auto;height:6rem;border:solid thin lightgray;text-align:center; font-size:2rem;background-color: indianred;color:white!important;">
+            delete
+          </md-button>
         </div>
       </div>
 
@@ -136,13 +148,7 @@
       </div>
     </div><!--End of card-->
     <div layout layout-align="center center" style="width:100%;margin-bottom:2rem;">
-      <form name="completeAssessmentForm" ng-submit="complete(assessment)">
-        <md-button ng-disabled="isDisabled()" type="submit" class="md-padding"
-                   ng-class="{active:reqsMet()}"
-                   style="margin-top:1.5rem; padding:.5rem; width:auto;height:6rem;text-align:center; font-size:2rem;">
-          complete
-        </md-button>
-      </form>
+
 
     </div>
   </div>
