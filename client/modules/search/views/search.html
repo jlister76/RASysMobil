@@ -1,16 +1,29 @@
 <div class="md-display-2">
   <div class="md-padding">
     <h3>Search</h3>
-    <div layout layout-align="space-between center" style="margin: 2rem">
-      <div layout layout-align="center center" style="width:6rem; height:6rem;background-color:dodgerblue;color:white;text-align: center;">Q1</div>
-      <div layout layout-align="center center" style="width:6rem; height:6rem;background-color:dodgerblue;color:white;text-align: center;">Q2</div>
-      <div layout layout-align="center center" style="width:6rem; height:6rem;background-color:dodgerblue;color:white;text-align: center;">Q3</div>
-      <div layout layout-align="center center" style="width:6rem; height:6rem;background-color:dodgerblue;color:white;text-align: center;">Q4</div>
-    </div>
-    <div ng-repeat="month in months" style="margin-top: 2rem;">
-      <div layout layout-align="center center" class="md-padding" style="margin:1rem;border:solid thin #444444;background-color:rgba(68,68,68,0.31);">
-        {{month}}
-      </div>
-    </div>
+    <md-card style="background-color:whitesmoke;" style="width:100%;">
+      <md-card-header>
+        <h5>By Quarter</h5>
+      </md-card-header>
+      <md-card-content>
+        <div layout layout-align="space-between center" style="margin: 2rem">
+          <div layout layout-align="center center" style="width:6rem; height:6rem;background-color:dodgerblue;color:white;text-align: center;">Q1</div>
+          <div layout layout-align="center center" style="width:6rem; height:6rem;background-color:dodgerblue;color:white;text-align: center;">Q2</div>
+          <div layout layout-align="center center" style="width:6rem; height:6rem;background-color:dodgerblue;color:white;text-align: center;">Q3</div>
+          <div layout layout-align="center center" style="width:6rem; height:6rem;background-color:dodgerblue;color:white;text-align: center;">Q4</div>
+        </div>
+      </md-card-content>
+    </md-card>
+
+    <md-card>
+      <md-card-header style="background-color: whitesmoke;">
+        <h5>By Month</h5>
+      </md-card-header>
+      <md-card-content>
+        <div style="margin: 2rem;width:100%;">
+          <select ng-model="selectedMonth" ng-options="x for x in months" style="width:80%;"></select>
+        </div>
+      </md-card-content>
+    </md-card>
   </div>
 </div>
