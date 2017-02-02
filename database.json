@@ -12,8 +12,8 @@
     "project": 2,
     "group": 2,
     "employee": 2,
-    "riskAssessment": 97,
-    "identifiedHazard": 113
+    "riskAssessment": 98,
+    "identifiedHazard": 114
   },
   "models": {
     "User": {},
@@ -85,7 +85,8 @@
       "93": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driverLicenseExpiration\":\"2021-03-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":2710,\"phase2Timer\":3339,\"phase3Timer\":34995,\"duration\":0.6840666666666667,\"employee_verification\":\"sent\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":93,\"completed_on\":\"2017-02-02T16:54:04.535Z\"}",
       "94": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driverLicenseExpiration\":\"2018-03-03T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":3112,\"phase2Timer\":5175,\"phase3Timer\":25923,\"duration\":0.5701666666666667,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":94,\"completed_on\":\"2017-02-02T17:05:48.762Z\"}",
       "95": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driverLicenseExpiration\":\"2019-03-03T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":1166,\"phase2Timer\":1864,\"phase3Timer\":32264,\"duration\":0.5882333333333334,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":95,\"completed_on\":\"2017-02-02T17:26:38.843Z\"}",
-      "96": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driverLicenseExpiration\":\"2020-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":2027,\"phase2Timer\":3619,\"phase3Timer\":30542,\"duration\":0.6031333333333333,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":96,\"completed_on\":\"2017-02-02T17:30:42.706Z\"}"
+      "96": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driverLicenseExpiration\":\"2020-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":2027,\"phase2Timer\":3619,\"phase3Timer\":30542,\"duration\":0.6031333333333333,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":96,\"completed_on\":\"2017-02-02T17:30:42.706Z\"}",
+      "97": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driverLicenseExpiration\":\"2018-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":1000,\"phase2Timer\":1654,\"phase3Timer\":27369,\"duration\":0.5003833333333333,\"employee_verification\":\"sent\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":97,\"completed_on\":\"2017-02-02T18:23:13.458Z\"}"
     },
     "identifiedHazard": {
       "105": "{\"type\":\"Snow/Ice\",\"reaction\":\"At Risk\",\"location\":{\"lat\":32.9184208,\"lng\":-96.9036251},\"comments\":\"test\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":91,\"id\":105}",
@@ -95,7 +96,8 @@
       "109": "{\"type\":\"Snow/Ice\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.9184318,\"lng\":-96.9036308},\"comments\":\"comments\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":93,\"id\":109}",
       "110": "{\"type\":\"Snow/Ice\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.918433,\"lng\":-96.9036275},\"comments\":\"Comments\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":94,\"id\":110}",
       "111": "{\"type\":\"Snow/Ice\",\"reaction\":\"At Risk\",\"location\":{\"lat\":32.9184297,\"lng\":-96.9036287},\"comments\":\"Risky!\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":95,\"id\":111}",
-      "112": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.9184262,\"lng\":-96.9036331},\"comments\":\"Comments\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":96,\"id\":112}"
+      "112": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.9184262,\"lng\":-96.9036331},\"comments\":\"Comments\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":96,\"id\":112}",
+      "113": "{\"type\":\"Snow/Ice\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.9184391,\"lng\":-96.9036229},\"comments\":\"test\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":97,\"id\":113}"
     }
   }
 }
