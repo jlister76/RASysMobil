@@ -458,7 +458,7 @@
           $scope.assessmentStatus = ra[0].active;
           $scope.employee = ra[0].employee;
           $scope.expirationDate = ra[0].expirationDate;
-          $scope.weatherConditions = ["Fair","Windy","Wet","Foggy","Snowing","Icey"];
+          $scope.weatherConditions = ["Fair","Windy","Wet","Foggy","Snowing","Icy"];
           $scope.safeReactions =[];
           $scope.allReactions = ra[0].identifiedHazards;
           $scope.condition = ra[0].condition;
