@@ -22,8 +22,8 @@ module.exports = function(Riskassessment) {
     conditions = ra[0].condition,
     evaluation = [], recognize =[],
     key = process.env.MAP_KEY,
-    url = app.get('url');
-console.log(url);
+    url = app.get('url').replace(/\/$/, '');
+console.log("RiskAssessment.js ", url,host,port);
 
   for(var i=0; i<hazards.length; i++){
     if(hazards[i].phase === "Evaluation"){
