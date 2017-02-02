@@ -44,8 +44,11 @@ label {
 }
 .disabled {
   cursor: not-allowed;
-  opacity: .5;
+ opcaity: .5;
   border: solid thin lightgrey;
+}
+.disabled span {
+  color:lightgrey;
 }
 .isRequired {
   color:goldenrod;

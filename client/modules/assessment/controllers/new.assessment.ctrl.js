@@ -201,8 +201,12 @@
             $scope.selectedEmployee = employee;
           };
       $scope.start = function(employee){
-        console.log(employee);
-        RiskAssessment.create({appuserId: ctx.id, employeeId: employee.id, phase:"Evaluation", active: true})
+        var qtr = moment().quarter(),
+          yr = moment().year(),
+          mo = moment().month();
+          console.log(qtr,yr,mo);
+
+        RiskAssessment.create({appuserId: ctx.id, employeeId: employee.id, quarter: qtr, year: yr, month: mo, phase:"Evaluation", active: true})
           .$promise
           .then(function(assessment){
             console.log(assessment);

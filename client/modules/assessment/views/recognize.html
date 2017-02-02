@@ -20,19 +20,19 @@
           <form name="identifiedHazardForm" ng-submit="save(selectedHazard,behavior,comments,lat,lng)">
             <div>
               <label for="hazards" style="margin-bottom:1rem;">Hazard</label><span class="isRequired">*</span>
-              <select ng-model="selectedHazard" ng-options="x for x in hazards" id="hazards"
-                      style="width:100%;" required></select>
+              <select ng-model="selectedHazard" ng-options="x for x in hazards" id="hazards" required
+                      style="width:100%;" ></select>
             </div>
             <div layout="column" style="margin:2rem 0;">
               <div layout>
                 <label style="margin-bottom:1rem;">Reaction</label><span class="isRequired">*</span>
               </div>
               <div>
-                <input name="behavior" ng-model="behavior" type="radio" ng-value="safe" id="safe" required><label
+                <input name="behavior" ng-model="behavior" type="radio" value="Safe" id="safe" required><label
                 for="safe">Safe</label>
               </div>
               <div>
-                <input name="behavior" ng-model="behavior" type="radio" ng-value="at_risk" id="at-risk"><label
+                <input name="behavior" ng-model="behavior" type="radio" value="At Risk" id="At-Risk"><label
                 for="at-risk">At-Risk</label>
               </div>
             </div>
@@ -43,7 +43,7 @@
               <textarea ng-model="comments" id="comments" rows="5" required></textarea>
             </div>
             <div layout layout-align="center center">
-              <md-button ng-disabled="identifiedHazardForm.$invalid" ng-class="{active:identifiedHazardForm.$valid}" type="submit" ng-dblclick="preventClick()"
+              <md-button ng-disabled="identifiedHazardForm.$invalid" ng-class="{active:identifiedHazardForm.$valid, disabled:identifiedHazardForm.$invalid}" type="submit" ng-dblclick="preventClick()"
                          style="margin-top:1.5rem;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">
                 Save
               </md-button>
@@ -57,10 +57,10 @@
       <div ng-repeat="ih in identifiedHazards" class="" style="width:100%;" >
         <md-card style="background:whitesmoke;margin:1rem;padding:1rem;">
           <md-card-content >
-            <div ng-if="ih.reaction === 'at_risk'" layout layout-align="end start">
+            <div ng-if="ih.reaction === 'At Risk'" layout layout-align="end start">
               <span><i class="material-icons" style="font-size:3rem;color:rgba(255,69,0,0.81);">warning</i></span>
             </div>
-            <div ng-if="ih.reaction === 'safe'" layout layout-align="end start">
+            <div ng-if="ih.reaction === 'Safe'" layout layout-align="end start">
               <span><i class="material-icons" style="font-size:3rem;color:forestgreen;">check_circle</i></span>
             </div>
             <div layout layout-align="start center">
@@ -96,12 +96,11 @@
                         <div layout>
                           <label style="margin-bottom:2rem;">Reaction</label><span class="isRequired">*</span>
                         </div>
-
                         <div ng-init="behavior = ih.reaction">
-                          <input name="behavior" ng-model="behavior" type="radio" ng-value="safe"><label for="safe" required>Safe</label>
+                          <input name="behavior" ng-model="behavior" type="radio" value="Safe"><label for="safe" required>Safe</label>
                         </div>
                         <div>
-                          <input name="behavior" ng-model="behavior" type="radio" ng-value="at_risk"><label for="at-risk">At-Risk</label>
+                          <input name="behavior" ng-model="behavior" type="radio" value="At Risk"><label for="at-risk">At-Risk</label>
                         </div>
                       </div>
                       <div layout="column" class="md-padding" style="width:100%;">

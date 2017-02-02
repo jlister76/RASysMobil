@@ -5,6 +5,7 @@ var app = require('../../server/server');
 var path = require('path');
 var moment = require('moment');
 var host = app.get('host');
+var port = app.get('port');
 
 
 module.exports = function(Riskassessment) {
@@ -22,8 +23,8 @@ module.exports = function(Riskassessment) {
     evaluation = [], recognize =[],
     key = process.env.MAP_KEY,
     url = app.get('url').replace(/\/$/, '');
+console.log(url);
 
-  console.log(host);
   for(var i=0; i<hazards.length; i++){
     if(hazards[i].phase === "Evaluation"){
       evaluation.push(hazards[i]);
@@ -33,7 +34,7 @@ module.exports = function(Riskassessment) {
   }
 
     // create a custom object your want to pass to the email template. You can create as many key-value pairs as you want
-    var messageVars = {host:host,baseUrl: url, id: id, user: user, employee: employee, evaluation: evaluation, recognize:recognize, date: completed_on,conditions: conditions,key:key};
+    var messageVars = {host:host, port: port, url: url, id: id, user: user, employee: employee, evaluation: evaluation, recognize:recognize, date: completed_on,conditions: conditions,key:key};
 
     // prepare a loopback template renderer
     var renderer = loopback.template(path.resolve(__dirname, '../../server/views/email-template.ejs'));

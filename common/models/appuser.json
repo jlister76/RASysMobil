@@ -6,21 +6,21 @@
     "validateUpsert": true
   },
   "properties": {
-    "first_name":{
+    "first_name": {
       "type": "string"
     },
-    "last_name":{
+    "last_name": {
       "type": "string"
     },
     "jobTitle": {
       "type": "string",
       "required": true
     },
-    "accessLevelType": {
+    "accessLevel": {
       "type": "string",
       "required": true
     },
-    "accessLevelGroupId": {
+    "accessLevelAreaId": {
       "type": "number",
       "required": true
     }

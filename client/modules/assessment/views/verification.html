@@ -13,7 +13,6 @@
             <md-button ng-disabled="isDisabled()" type="submit" class="md-padding"
                        ng-class="{active:reqsMet(),disabled: isDisabled()}"
                        style="padding:.5rem; width:auto;height:6rem;border:solid thin lightgray;text-align:center; font-size:2rem;">
-
               complete
             </md-button>
           </form>
@@ -32,8 +31,23 @@
             <span>{{ employee.fname }} {{ employee.lname  }}</span>
           </div>
           <div>
-            <a href="">update</a>
+            <a href="" ng-click="showChangeEmployeeForm = !showChangeEmployeeForm; getEmployeeList()">update</a>
           </div>
+        </div>
+        <div layout="column" ng-if="showChangeEmployeeForm" ng-init="showChangeEmployeeForm = false" style="width:100%;">
+          <form name="changeEmployeeForm" ng-submit="changeEmployee(selectedEmployeeId)">
+            <label for="employee"><small><em>Select Employee</em></small></label>
+            <select ng-model="selectedEmployeeId" id="employee"
+                    style="width:100%;" required>
+              <option ng-repeat="employee in employeeList" value="{{employee.id}}">{{employee.fname}} {{employee.lname}}</option>
+            </select>
+            <div layout layout-align="end start">
+              <md-button ng-disabled="changeEmployeeForm.$invalid" type="submit" class="md-padding"
+                         ng-class="{disabled: changeEmployeeForm.$invalid, active: changeEmployeeForm.$valid}"
+                         style="margin-top:1.5rem; padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">
+                set</md-button>
+            </div>
+          </form>
         </div>
         <div layout layout-align="start center" style="width:100%;border-top:solid thin darkgrey;padding: 2rem 0;">
           <div layout layout-align="space-between center" style="">
@@ -60,9 +74,9 @@
                         style="width:100%;" required></select>
                 <div layout layout-align="end start">
                   <md-button ng-disabled="weatherConditionForm.$invalid" type="submit" class="md-padding"
-                             ng-class="{active: weatherConditionForm.$valid}"
-                             style="margin-top:1.5rem; border: solid thin darkslategrey;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">
-                    <span>UPDATE</span></md-button>
+                             ng-class="{disabled: weatherConditionForm.$invalid, active: weatherConditionForm.$valid}"
+                             style="margin-top:1.5rem; padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">
+                   set</md-button>
                 </div>
               </form>
 
@@ -121,9 +135,9 @@
 
                 <div layout layout-align="end start">
                   <md-button ng-disabled="driverLicenseForm.$invalid" type="submit" class="md-padding"
-                             ng-class="{active: driverLicenseForm.$valid}"
+                             ng-class="{active: driverLicenseForm.$valid, disabled:driverLicenseForm.$invalid}"
                              style="margin-top:1.5rem; border: solid thin darkslategrey;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">
-                    <span>SET</span></md-button>
+                    set</md-button>
                 </div>
 
               </div>

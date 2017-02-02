@@ -400,7 +400,7 @@
 
 
     })
-    .controller('VerficationCtrl', function($scope,$state,$stateParams,RiskAssessment,IdentifiedHazard,Timer,KeyService,$http){
+    .controller('VerficationCtrl', function($scope,$state,$stateParams,RiskAssessment,IdentifiedHazard,Employee,Timer,KeyService,$http){
         Timer.clear();
       //Geo Location
       navigator.geolocation.getCurrentPosition(successCallback,
@@ -454,16 +454,60 @@
         .then(function(ra){
           console.log(ra[0].appuser);
           $scope.assessment = ra;
+          $scope.user = ra[0].appuser;
           $scope.assessmentId = ra[0].id;
           $scope.assessmentStatus = ra[0].active;
           $scope.employee = ra[0].employee;
-          $scope.expirationDate = ra[0].expirationDate;
+          $scope.expirationDate = ra[0].driverLicenseExpiration;
           $scope.weatherConditions = ["Fair","Windy","Wet","Foggy","Snowing","Icy"];
           $scope.safeReactions =[];
           $scope.allReactions = ra[0].identifiedHazards;
           $scope.condition = ra[0].condition;
           $scope.validLicense = ra[0].validLicense;
+          console.log(ra[0].appuser);
 
+          $scope.getEmployeeList = function(user){
+            var type = ra[0].appuser.accessLevelType;
+            console.log(type);
+            switch (type) {
+              case "regional":
+                getRegionalEmployees(ra[0].appuser.accessLevelAreaId);
+                break;
+              case "division":
+                getDivisionalEmployees(ra[0].appuser.accessLevelAreaId);
+                break;
+              case "project":
+                getProjectEmployees(ra[0].appuser.accessLevelAreaId);
+                break;
+              case "group":
+                getGroupEmployees(ra[0].appuser.accessLevelAreaId);
+                break;
+
+            }//matches users access type and loads the corresponding data
+          };
+          function getRegionalEmployees(areaId){
+            Employee.find({filter:{where:{regionId: areaId}}})
+              .$promise.then(function(data){$scope.employeeList = data;})
+          };
+          function getDivisionalEmployees(areaId){
+            Employee.find({filter:{where:{divisionId: areaId}}})
+              .$promise.then(function(data){$scope.employeeList = data;})
+          };
+          function getProjectEmployees(areaId){
+            Employee.find({filter:{where:{projectId: areaId}}})
+              .$promise.then(function(data){$scope.employeeList = data;})
+          };
+          function getGroupEmployees(areaId){
+            Employee.find({filter:{where:{groupId: areaId}}})
+              .$promise.then(function(data){$scope.employeeList = data;})
+          };
+
+          $scope.changeEmployee = function(selectedEmployeeId){
+            var accessLevel = ra[0].appuser.accessLevelType;
+            console.log(accessLevel);
+            RiskAssessment.updateAttributes({id: ra[0].id, employeeId: selectedEmployeeId})
+              .$promise.then(function(data){ $state.reload(); console.log(data)}).catch(function(err){console.error(err)})
+          };
           if(ra[0].validLicense === true){
             $scope.driverLicense = "Verified";
           }else if (ra[0].validLicense === false){
@@ -507,7 +551,7 @@
             }
 
             function saveExpirationDate(raId,date, licenseStatus){
-              RiskAssessment.updateAttributes({id:raId, expirationDate: date, validLicense: licenseStatus}).$promise.then(function(update){ $state.reload(); console.log(update, "Expiration date saved.")}).catch(function(err){console.error(err)})
+              RiskAssessment.updateAttributes({id:raId, driverLicenseExpiration: date, validLicense: licenseStatus}).$promise.then(function(update){ $state.reload(); console.log(update, "Expiration date saved.")}).catch(function(err){console.error(err)})
             };
           };
           var duration = (Number(ra[0].phase1Timer)+ Number(ra[0].phase2Timer) + Number(ra[0].phase3Timer)) / 60000;
@@ -542,22 +586,22 @@
           });
           $scope.isDisabled = function(){
 
-            if(ra[0].expirationDate != null && ra[0].condition != null && ra[0].identifiedHazards.length > 0){
+            if(ra[0].driverLicenseExpiration != null && ra[0].condition != null && ra[0].identifiedHazards.length > 0){
               return false;
             }
               return true;
           };
           $scope.reqsMet = function(){
-            if(ra[0].expirationDate != null && ra[0].condition != null && ra[0].identifiedHazards.length > 0){
+            if(ra[0].driverLicenseExpiration != null && ra[0].condition != null && ra[0].identifiedHazards.length > 0){
               return true;            }
             return false;
           };
           $scope.complete = function(assessment){
-            console.log("In the scope Fn", $scope.reqsMet());
+
             complete(assessment);
 
             function complete(assessment){
-              console.log("Running Complete Fn",assessment);
+
               $http.post('api/Riskassessments/verify', {"assessment":assessment})
                 .then(function(success){console.log(success);
                   RiskAssessment.updateAttributes({id:assessment[0].id, employee_verification: "sent",active: false})
