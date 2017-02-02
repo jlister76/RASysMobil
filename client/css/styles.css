@@ -29,14 +29,14 @@ input[type="radio"] {
 }
 input[type="radio"]+label {
   font-size:3rem;
-  color:cornflowerblue;
+  color:#0E4EA0;
 }
 label {
   font-size:.95em;
   font-weight:bold;
 }
 .active {
-  background-color:dodgerblue;
+  background-color:#0E4EA0;
   border: solid thin darkslategrey;
 }
 .active span {
@@ -44,7 +44,7 @@ label {
 }
 .disabled {
   cursor: not-allowed;
- opcaity: .5;
+ opacity: .5;
   border: solid thin lightgrey;
 }
 .disabled span {

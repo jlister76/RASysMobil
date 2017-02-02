@@ -9,6 +9,7 @@
       'ngMessages',
       'com.module.core',
       'com.module.assessment',
+      'com.module.search',
       'ng.deviceDetector'
       ])
 })();
