@@ -12,7 +12,7 @@
     "project": 2,
     "group": 2,
     "employee": 2,
-    "riskAssessment": 89,
+    "riskAssessment": 90,
     "identifiedHazard": 99
   },
   "models": {
@@ -96,7 +96,7 @@
       "83": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2018-02-03T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":1484,\"phase2Timer\":2274,\"phase3Timer\":33306,\"duration\":0.6177333333333334,\"employee_verification\":\"sent\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":83,\"completed_on\":\"2017-02-01T11:25:17.309Z\"}",
       "84": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2018-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":2000,\"phase2Timer\":2700,\"phase3Timer\":24865,\"duration\":0.49275,\"employee_verification\":\"sent\",\"condition\":\"Snowing\",\"employeeId\":1,\"appuserId\":1,\"id\":84,\"completed_on\":\"2017-02-01T11:39:08.159Z\"}",
       "87": "{\"active\":true,\"phase\":\"Verification\",\"expirationDate\":null,\"validLicense\":null,\"phase1Timer\":1913,\"phase2Timer\":2633,\"phase3Timer\":38471,\"duration\":0.71695,\"employee_verification\":null,\"condition\":null,\"employeeId\":1,\"appuserId\":1,\"id\":87,\"completed_on\":\"2017-02-02T11:27:02.725Z\"}",
-      "88": "{\"active\":true,\"phase\":\"Evaluation\",\"expirationDate\":null,\"validLicense\":null,\"phase1Timer\":11273,\"phase2Timer\":0,\"phase3Timer\":0,\"duration\":0,\"employee_verification\":null,\"condition\":null,\"employeeId\":1,\"appuserId\":1,\"id\":88}"
+      "89": "{\"active\":true,\"phase\":\"Verification\",\"expirationDate\":null,\"validLicense\":null,\"phase1Timer\":2739,\"phase2Timer\":3418,\"phase3Timer\":4363,\"duration\":0.17533333333333334,\"employee_verification\":null,\"condition\":null,\"employeeId\":1,\"appuserId\":1,\"id\":89,\"completed_on\":\"2017-02-02T12:04:19.807Z\"}"
     },
     "identifiedHazard": {
       "41": "{\"type\":\"Snow/Ice\",\"reaction\":\"at-risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Risky!\",\"phase\":\"Evaluation\",\"riskAssessmentId\":56,\"id\":41}",
