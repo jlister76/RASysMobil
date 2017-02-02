@@ -22,7 +22,7 @@ module.exports = function(Riskassessment) {
     conditions = ra[0].condition,
     evaluation = [], recognize =[],
     key = process.env.MAP_KEY,
-    url = app.get('url').replace(/\/$/, '');
+    url = app.get('url');
 console.log(url);
 
   for(var i=0; i<hazards.length; i++){
