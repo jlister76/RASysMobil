@@ -54,7 +54,7 @@
       <div ng-repeat="ih in identifiedHazards" class="" style="width:100%;" >
         <md-card style="background:whitesmoke;margin:1rem;padding:1rem;">
           <md-card-content >
-            <div ng-if="ih.reaction === 'At-Risk'" layout layout-align="end start">
+            <div ng-if="ih.reaction === 'at_risk'" layout layout-align="end start">
               <span><i class="material-icons" style="font-size:3rem;color:rgba(255,69,0,0.81);">warning</i></span>
             </div>
             <div ng-if="ih.reaction === 'safe'" layout layout-align="end start">
@@ -92,10 +92,10 @@
                       <div style="margin:2rem 0;">
                         <label style="margin-bottom:2rem;">Reaction</label> <span class="isRequired">*</span>
                         <div ng-init="behavior = ih.reaction">
-                          <input name="behavior" ng-model="behavior" type="radio" ng-value="Safe"><label for="safe" required>Safe</label>
+                          <input name="behavior" ng-model="behavior" type="radio" ng-value="safe"><label for="safe" required>Safe</label>
                         </div>
                         <div>
-                          <input name="behavior" ng-model="behavior" type="radio" ng-value="At-Risk"><label for="at-risk">At-Risk</label>
+                          <input name="behavior" ng-model="behavior" type="radio" ng-value="at_risk"><label for="at-risk">At-Risk</label>
                         </div>
                       </div>
                       <div layout="column" class="md-padding" style="width:100%;">
