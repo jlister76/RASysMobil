@@ -1,69 +1,89 @@
 <div class="md-display-2">
   <div class="md-padding">
-    <h3>Search</h3>
+
+   <div layout layout-align="space-between center" style="width:100%;">
+     <h3>Search</h3>
+     <div layout style="width:60%;">
+
+         <span>year*</span>
+         <select ng-model="selectedYear" ng-init="selectedYear = currentYear" ng-options="year for year in years" id="year" style="width:70%;" required></select>
+
+     </div>
+   </div>
+
     <md-card style="width:100%;margin:1rem;background-color:whitesmoke;">
+      <form name="monthly">
       <md-card-header>
-        <span>By Month</span>
+        <span ng-if="!showByMonth">
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>
+        </span>
+        <span ng-if="showByMonth">
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
+        </span>
+        <span ng-click="showByMonth = !showByMonth;showByQtr=false;showByEmployee=false" ng-init="showByMonth = true" style="color:#0E4EA0;">search by month</span>
+
       </md-card-header>
-      <md-card-content>
-        <form action="">
+      <md-card-content ng-if="showByMonth">
+
           <div style="margin: 2rem;width:100%;">
-            <select ng-model="selectedMonth" ng-options="month.number as month.name for month in months" style="width:80%;"></select>
+            <select ng-model="selectedMonth" ng-options="month.number as month.name for month in months" style="width:80%;" required></select>
           </div>
-          <div layout layout-align="end center" style="width:100%;margin-top:2rem;">
-            <md-button type="submit" class="active md-display-2"
-                       style="margin-top:1.5rem;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">Search</md-button>
-          </div>
-        </form>
+        <div layout layout-align="end center" style="width:100%;margin-top:2rem;">
+          <md-button type="submit" class="active md-display-2"
+                     ng-disabled="monthly.$invalid"
+                     style="margin-top:1.5rem;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">Search</md-button>
+        </div>
       </md-card-content>
-      <md-card-footer>
-      </md-card-footer>
+      </form>
     </md-card>
     <md-card style="width:100%;margin:1rem;background-color:whitesmoke;">
+      <form name="qtly">
       <md-card-header>
-        <span>By Quarter</span>
+         <span ng-if="!showByQtr">
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>
+        </span>
+        <span ng-if="showByQtr">
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
+        </span>
+        <span ng-click="showByQtr = !showByQtr;showByMonth =false;showByEmployee = false" ng-init="showByQtr = false" style="color:#0E4EA0;">search by quarter</span>
       </md-card-header>
-      <md-card-content >
-        <form name="searchForm">
+      <md-card-content ng-if="showByQtr" >
           <div layout layout-align="start center" style="width:100%;padding:2rem;">
-
-
               <input name="qtr" ng-model="selectedQtr" type="radio" value="1" id="q1" style="height:4rem;width:4rem;" required><label
               for="q1" style="margin-right:2rem;">Q1</label>
-
-
               <input name="qtr" ng-model="selectedQtr" type="radio" value="2" id="q2" style="height:4rem;width:4rem;"><label
               for="q2" style="margin-right:2rem;">Q2</label>
-
               <input name="qtr" ng-model="selectedQtr" type="radio" value="3" id="q3" style="height:4rem;width:4rem;"><label
               for="q3" style="margin-right:2rem;">Q3</label>
-
               <input name="qtr" ng-model="selectedQtr" type="radio" value="4" id="q4" style="height:4rem;width:4rem;"><label
               for="q4" style="margin-right:2rem;">Q4</label>
-
-
-
           </div>
-          <div layout layout-align="end center" style="width:100%;margin-top:2rem;">
-            <md-button type="submit" class="active md-display-2"
-                       style="margin-top:1.5rem;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">Search</md-button>
-          </div>
-        </form>
+        <div layout layout-align="end center" style="width:100%;margin-top:2rem;">
+          <md-button type="submit" class="active md-display-2"
+                     ng-disabled="qtly.$invalid"
+                     style="margin-top:1.5rem;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">Search</md-button>
+        </div>
       </md-card-content>
-      <md-card-footer>
-      </md-card-footer>
+      </form>
     </md-card>
     <md-card style="width:100%;margin:1rem;background-color:whitesmoke;">
       <md-card-header>
-        <span>By Year</span>
+         <span ng-if="!showByEmployee">
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>
+        </span>
+        <span ng-if="showByEmployee">
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
+        </span>
+        <span ng-click="showByEmployee = !showByEmployee;showByMonth=false;showByQtr=false" ng-init="showByEmployee = false" style="color:#0E4EA0;">search by employee</span>
       </md-card-header>
-      <md-card-content>
-        <form action="">
+      <md-card-content ng-if="showByEmployee">
+        <form name="byEmployee">
           <div style="margin: 2rem;width:100%;">
-            <select ng-model="selectedYear" ng-options="year for year in years" style="width:80%;"></select>
+            <select ng-model="selectedEmployee"  style="width:80%;"></select>
           </div>
           <div layout layout-align="end center" style="width:100%;margin-top:2rem;">
             <md-button type="submit" class="active md-display-2"
+                       ng-disabled="byEmployee.$invalid"
                        style="margin-top:1.5rem;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">Search</md-button>
           </div>
         </form>
@@ -71,7 +91,6 @@
       <md-card-footer>
       </md-card-footer>
     </md-card>
-
 
   </div>
 </div>
