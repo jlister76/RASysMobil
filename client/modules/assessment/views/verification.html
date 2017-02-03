@@ -38,9 +38,9 @@
           <form name="changeEmployeeForm" ng-submit="changeEmployee(selectedEmployeeId)">
             <label for="employee"><small><em>Select Employee</em></small></label>
             <select ng-model="selectedEmployeeId" id="employee"
-                    style="width:100%;" required>
-              <option ng-repeat="employee in employeeList" value="{{employee.id}}">{{employee.fname}} {{employee.lname}}</option>
-            </select>
+                             style="width:100%;" required>
+            <option ng-repeat="employee in employeeList" value="{{employee.id}}">{{employee.fname}} {{employee.lname}}</option>
+          </select>
             <div layout layout-align="end start">
               <md-button ng-disabled="changeEmployeeForm.$invalid" type="submit" class="md-padding"
                          ng-class="{disabled: changeEmployeeForm.$invalid, active: changeEmployeeForm.$valid}"

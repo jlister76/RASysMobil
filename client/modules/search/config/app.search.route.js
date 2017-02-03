@@ -24,5 +24,15 @@
           templateUrl: 'modules/search/views/search.html',
           controller: 'SearchCtrl'
         })
+      .state('ra-mobile.monthly', {
+        url:'/monthly?yr&mo',
+       resolve:{
+          ctx: function(AuthService){
+            return AuthService.getCurrent();
+          }
+       },
+        templateUrl: 'modules/search/views/results.html',
+        controller: 'MonthlyCtrl'
+      })
     })
 })();

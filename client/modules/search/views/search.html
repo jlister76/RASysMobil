@@ -5,14 +5,14 @@
      <h3>Search</h3>
      <div layout style="width:60%;">
 
-         <span style="margin:1rem;">year*</span>
+         <span style="margin:1rem;">year</span>
          <select ng-model="selectedYear" ng-init="selectedYear = currentYear" ng-options="year for year in years" id="year" style="width:70%;" required></select>
 
      </div>
    </div>
 
     <md-card style="width:100%;margin:1rem;background-color:whitesmoke;">
-      <form name="monthly">
+      <form name="monthly" ng-submit="queryByMonth(selectedYear,selectedMonth)">
       <md-card-header>
         <span ng-if="!showByMonth">
           <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>
@@ -37,7 +37,7 @@
       </form>
     </md-card>
     <md-card style="width:100%;margin:1rem;background-color:whitesmoke;">
-      <form name="qtly">
+      <form name="qtly" ng-submit="queryByQtr(selectedYear,selectedQtr)">
       <md-card-header>
          <span ng-if="!showByQtr">
           <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>
@@ -74,15 +74,19 @@
         <span ng-if="showByEmployee">
           <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
         </span>
-        <span ng-click="showByEmployee = !showByEmployee;showByMonth=false;showByQtr=false" ng-init="showByEmployee = false" style="color:#0E4EA0;">search by employee</span>
+        <span ng-click="showByEmployee = !showByEmployee;showByMonth=false;showByQtr=false;getEmployeeList()" ng-init="showByEmployee = false" style="color:#0E4EA0;">search by employee</span>
       </md-card-header>
       <md-card-content ng-if="showByEmployee">
-        <form name="byEmployee">
+        <form name="byEmployee" ng-submit="queryByEmployee(selectedYear,selectedEmployeeId)">
           <div style="margin: 2rem;width:100%;">
-            <select ng-model="selectedEmployee"  style="width:80%;"></select>
+            <select ng-model="selectedEmployeeId" id="employee"
+                    style="width:100%;" required>
+              <option ng-repeat="employee in employeeList" value="{{employee.id}}">{{employee.fname}} {{employee.lname}}</option>
+            </select>
+            {{ selectedEmployeeId }}
           </div>
           <div layout layout-align="end center" style="width:100%;margin-top:2rem;">
-            <md-button type="submit" class="active md-display-2"
+            <md-button type="submit" class="active"
                        ng-disabled="byEmployee.$invalid"
                        style="margin-top:1.5rem;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">Search</md-button>
           </div>
@@ -91,6 +95,6 @@
       <md-card-footer>
       </md-card-footer>
     </md-card>
-
+  <div ui-view style="width:100%;"></div>
   </div>
 </div>
