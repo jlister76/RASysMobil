@@ -55,6 +55,7 @@
         }
       ];
       $scope.quarters = [1,2,3,4];
+      $scope.years = [moment().subtract(5,'year').year(),moment().subtract(4,'year').year(), moment().subtract(3,'year').year(),moment().subtract(2,'year').year(),moment().subtract(1,'year').year(), moment().year()];
 
     })
 })();

@@ -10,7 +10,7 @@
           <div style="margin: 2rem;width:100%;">
             <select ng-model="selectedMonth" ng-options="month.number as month.name for month in months" style="width:80%;"></select>
           </div>
-          <div layout layout-align="end center" style="width:100%;">
+          <div layout layout-align="end center" style="width:100%;margin-top:2rem;">
             <md-button type="submit" class="active md-display-2"
                        style="margin-top:1.5rem;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">Search</md-button>
           </div>
@@ -28,23 +28,41 @@
           <div layout layout-align="start center" style="width:100%;padding:2rem;">
 
 
-              <input name="qtr" ng-model="selectedQtr" type="radio" value="1" id="q1" required><label
+              <input name="qtr" ng-model="selectedQtr" type="radio" value="1" id="q1" style="height:4rem;width:4rem;" required><label
               for="q1" style="margin-right:2rem;">Q1</label>
 
 
-              <input name="qtr" ng-model="selectedQtr" type="radio" value="2" id="q2"><label
+              <input name="qtr" ng-model="selectedQtr" type="radio" value="2" id="q2" style="height:4rem;width:4rem;"><label
               for="q2" style="margin-right:2rem;">Q2</label>
 
-              <input name="qtr" ng-model="selectedQtr" type="radio" value="3" id="q3"><label
+              <input name="qtr" ng-model="selectedQtr" type="radio" value="3" id="q3" style="height:4rem;width:4rem;"><label
               for="q3" style="margin-right:2rem;">Q3</label>
 
-              <input name="qtr" ng-model="selectedQtr" type="radio" value="4" id="q4"><label
+              <input name="qtr" ng-model="selectedQtr" type="radio" value="4" id="q4" style="height:4rem;width:4rem;"><label
               for="q4" style="margin-right:2rem;">Q4</label>
 
 
 
           </div>
-          <div layout layout-align="end center" style="width:100%;">
+          <div layout layout-align="end center" style="width:100%;margin-top:2rem;">
+            <md-button type="submit" class="active md-display-2"
+                       style="margin-top:1.5rem;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">Search</md-button>
+          </div>
+        </form>
+      </md-card-content>
+      <md-card-footer>
+      </md-card-footer>
+    </md-card>
+    <md-card style="width:100%;margin:1rem;background-color:whitesmoke;">
+      <md-card-header>
+        <span>By Year</span>
+      </md-card-header>
+      <md-card-content>
+        <form action="">
+          <div style="margin: 2rem;width:100%;">
+            <select ng-model="selectedYear" ng-options="year for year in years" style="width:80%;"></select>
+          </div>
+          <div layout layout-align="end center" style="width:100%;margin-top:2rem;">
             <md-button type="submit" class="active md-display-2"
                        style="margin-top:1.5rem;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">Search</md-button>
           </div>
