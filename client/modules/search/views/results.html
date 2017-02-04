@@ -2,19 +2,93 @@
   <div layout="column" class="md-padding" style="width:100%;">
     <div ng-repeat="result in results" style="font-size:2rem;margin:1rem;">
       <md-card style="background-color:whitesmoke;padding:1rem;">
-        <md-header >
+        <md-header layout layout-align="end center">
 
+          <div>
+            <span> {{ result.completed_on | date:'EEEE, MMM d, yyyy'}}</span>
+          </div>
         </md-header>
-        <md-card-content layout layout-align="space-between center" style="width:100%;margin:1rem;">
-          <p> <span>{{ result.employee.fname }} {{ result.employee.lname }}</span></p>
+        <md-card-content layout="column" style="width:100%;margin:1rem;">
+          <div layout layout-align="space-between center">
+            <div>
+              <img
+                src="http://maps.googleapis.com/maps/api/staticmap?&zoom=17&size=450x250&maptype=roadmap&markers=color:blue%7Clabel:S%7C32.988168,-96.834277&scale=2;"
+                alt="Location Map">
+            </div>
+            <div>
+              <div>
+                <span class="md-display-2" style="font-weight: bolder;margin:1rem;"> {{ result.employee.fname }} {{ result.employee.lname }}</span>
+              </div>
+              <div style="margin:1rem;">
+             <span ng-if="result.employee_verification === 'sent'" >
+            <a layout layout-align="center start" href="" ng-click="resend(result)"><i class="material-icons" style="font-size:6rem;color:darkgreen;">refresh</i></a>
+          </span>
+                <span ng-if="result.employee_verification === 'true'" >
+            <a layout layout-align="center start" href="" ng-click="resend(result)"><i class="material-icons" style="font-size:6rem;color:darkgreen;">verified_user</i></a>
+          </span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div ng-click="showHazards = !showHazards" ng-init="showHazards = false"layout layout-align="space-between center" class="active md-padding" style="margin:2rem .5rem;">
+              <span class="md-display-2" >Hazards & Reactions</span>
+              <span ng-if="!showHazards"><i class="material-icons" style="font-size:4rem;">expand_less</i></span>
+              <span ng-if="showHazards"><i class="material-icons" style="font-size:4rem;">expand_more</i></span>
+            </div>
+            <div ng-if="showHazards">
+              <div>
+                <h4>Evaluation</h4>
+              </div>
+              <div ng-repeat="hazard in result.identifiedHazards">
+                <div ng-if="hazard.phase === 'Evaluation'"  style="padding:1rem;border-bottom:solid thin #666666;">
+                    <div layout="column">
+                      <div layout>
+                        <span  style="margin:1rem;font-size:2.4rem;">Hazard:</span>
+                        <span  style="margin:1rem;font-size:2.4rem;">{{ hazard.type }}</span>
+                      </div>
+                      <div layout >
+                        <span style="margin:1rem;font-size:2.4rem;">Reaction: </span>
+                        <span style="margin:1rem;font-size:2.4rem;">{{ hazard.reaction }}</span>
+                      </div>
+                      <div layout >
+                        <span style="margin:1rem;font-size:2.4rem;">Comments: </span>
+                        <span style="margin:1rem;font-size:2.4rem;">{{ hazard.comments }}</span>
+                      </div>
+                    </div>
 
+                </div>
+              </div>
+              <div><h4>Recognize & React</h4></div>
+              <div ng-repeat="hazard in result.identifiedHazards">
+                <div ng-if="hazard.phase === 'Recognize & React'" style="padding:1rem;">
 
+                  <div layout="column">
+                    <div layout>
+                      <span  style="margin:1rem;font-size:2.4rem;">Hazard:</span>
+                      <span  style="margin:1rem;font-size:2.4rem;">{{ hazard.type }}</span>
+                    </div>
+                    <div layout >
+                      <span style="margin:1rem;font-size:2.4rem;">Reaction: </span>
+                      <span style="margin:1rem;font-size:2.4rem;">{{ hazard.reaction }}</span>
+                    </div>
+                    <div layout >
+                      <span style="margin:1rem;font-size:2.4rem;">Comments: </span>
+                      <span style="margin:1rem;font-size:2.4rem;">{{ hazard.comments }}</span>
+                    </div>
+                  </div>
+                  <md-divider></md-divider>
+                </div>
+              </div>
+            </div>
+          </div>
         </md-card-content>
         <md-card-footer layout layout-align="space-between center">
-          <span ng-if="result.employee_verification === 'sent'" >
-            <a layout layout-align="start center" href="" ng-click="resend(result)"><i class="material-icons" style="font-size:4rem;">refresh</i> Verification</a>
-          </span>
-          <a href="">View</a>
+          <div ng-if="result.duration < 540000 && result.duration > 60000">Duration {{ result.duration / 60000 }} minutes</div><!--milliseconds in a minute-->
+          <div ng-if="result.duration >= 540000">Duration <em>90+ minutes</em></div>
+          <div ng-if="result.duration < 60000">Duration <em>less than one minute</em></div>
+          <div>
+            <span>{{ result.condition}} weather conditions</span>
+          </div>
         </md-card-footer>
       </md-card>
     </div>

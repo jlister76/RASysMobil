@@ -107,13 +107,18 @@
           .$promise.then(function(results){$state.go('ra-mobile.results', {results:results}); console.log(results)}).catch(function(err){console.error(err)})
       };
     })
-    .controller('MonthlyCtrl', function($scope,$stateParams,ctx,RiskAssessment,$http){
+    .controller('MonthlyCtrl', function($scope,$stateParams,ctx,RiskAssessment,$http,KeyService){
       var yr = $stateParams.yr,
-        mo = $stateParams.mo;
+        mo = $stateParams.mo,
+        key = KeyService.key;
 
       RiskAssessment.find({filter:{include:['employee','identifiedHazards'],where:{active:false, appuserId: ctx.id, month: mo, year: yr}}})
         .$promise
-        .then(function(results){ $scope.results = results;})
+        .then(function(results){
+          console.log(results);
+          $scope.results = results;
+
+        })
         .catch(function(err){console.error(err)});
 
       $scope.resend = function(assessment){

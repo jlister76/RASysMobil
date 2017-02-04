@@ -15,10 +15,10 @@
       <form name="monthly" ng-submit="queryByMonth(selectedYear,selectedMonth)">
       <md-card-header>
         <span ng-if="!showByMonth">
-          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
         </span>
         <span ng-if="showByMonth">
-          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>
         </span>
         <span ng-click="showByMonth = !showByMonth;showByQtr=false;showByEmployee=false" ng-init="showByMonth = true" style="color:#0E4EA0;">search by month</span>
 
@@ -40,10 +40,10 @@
       <form name="qtly" ng-submit="queryByQtr(selectedYear,selectedQtr)">
       <md-card-header>
          <span ng-if="!showByQtr">
-          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
         </span>
         <span ng-if="showByQtr">
-          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>
         </span>
         <span ng-click="showByQtr = !showByQtr;showByMonth =false;showByEmployee = false" ng-init="showByQtr = false" style="color:#0E4EA0;">search by quarter</span>
       </md-card-header>
@@ -69,10 +69,10 @@
     <md-card style="width:100%;margin:1rem;background-color:whitesmoke;">
       <md-card-header>
          <span ng-if="!showByEmployee">
-          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
         </span>
         <span ng-if="showByEmployee">
-          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>
         </span>
         <span ng-click="showByEmployee = !showByEmployee;showByMonth=false;showByQtr=false;getEmployeeList()" ng-init="showByEmployee = false" style="color:#0E4EA0;">search by employee</span>
       </md-card-header>
