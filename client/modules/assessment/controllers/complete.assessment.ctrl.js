@@ -401,7 +401,7 @@
 
     })
     .controller('VerficationCtrl', function($scope,$state,$stateParams,RiskAssessment,IdentifiedHazard,Employee,Timer,KeyService,$http){
-        Timer.clear();
+
       //Geo Location
       navigator.geolocation.getCurrentPosition(successCallback,
         errorCallback,
@@ -573,7 +573,7 @@
               .catch(function(err,id){console.error(err, "Error deleting Risk Assessment",id)});
           };
 
-
+          console.log(duration);
           RiskAssessment.updateAttributes({id:ra[0].id, phase:"Verification", duration: duration, "completed_on": moment()})
             .$promise
             .then(function(ra){})

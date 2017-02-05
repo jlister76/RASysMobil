@@ -107,10 +107,11 @@
         </md-card-content>
         <md-card-footer layout layout-align="center center">
           <div layout style="color:#666666;">
+
             <div style="margin-right:.5rem;"><em>Assessment duration:</em></div>
-            <div ng-if="result.duration < 540000 && result.duration > 60000">{{ result.duration / 60000 }} minutes</div><!--milliseconds in a minute-->
-            <div ng-if="result.duration >= 540000">90+ minutes</div>
-            <div ng-if="result.duration < 60000">less than one minute</div>
+            <div ng-if="result.duration < 90 && result.duration > 1">{{ result.duration |number:0}} minutes</div><!--milliseconds in a minute-->
+            <div ng-if="result.duration >= 90">90+ minutes</div>
+            <div ng-if="result.duration < 1">less than one minute</div>
           </div>
         </md-card-footer>
       </md-card>
