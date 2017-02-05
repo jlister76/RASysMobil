@@ -110,31 +110,15 @@
           });
       };
     })
-    .controller('MainCtrl', function(AuthService, $scope, $state, $mdSidenav){
-        console.log("In main ctrl");
+    .controller('MainCtrl', function(AuthService, $scope, $state, $mdSidenav,ctx){
+        console.log("In main ctrl",ctx.groupId,ctx.type);
         var type,groupId;
-
       $scope.isSidenavOpen = false;
-
       $scope.openLeftMenu = function() {
         $mdSidenav('left').toggle();
       };
 
-      AuthService.getCurrent()
-        .$promise
-        .then(function(ctx){
-          type = ctx.accessLevelType;
-          groupId = ctx.accessLevelGroupId;
 
-          $scope.stateChange = function(){
-            console.log("Start",type);
-            $state.go('ra-mobile.new.assessment');
-          };
-
-        })
-        .catch(function(err){
-          console.error(err);
-        });
     })
     .controller('ToolBarCtrl', function($scope,$mdSidenav){
       $scope.isSidenavOpen = false;
@@ -142,14 +126,6 @@
       $scope.openLeftMenu = function() {
         $mdSidenav('left').toggle();
       };
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function(position){
-          $scope.$apply(function(){
-            $scope.location = position;
-            console.log(position.coords);
-          });
-        });
-      }
 
 
     })

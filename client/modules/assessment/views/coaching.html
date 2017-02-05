@@ -1,21 +1,24 @@
-<div layout="column" layout-align="center start" class="md-display-2">
-  <div style="padding:1rem 1rem">
+<div layout="column" layout-align="center start" class="md-display-2" >
+  <div style="padding:1rem;">
     <div layout layout-align="space-between center">
       <a href="" ui-sref="ra-mobile.evaluation({id:assessmentId,active:assessmentStatus})" class="md-padding nav"  style="text-decoration:none;"><i class="material-icons">navigate_before</i></a>
       <a href="" ui-sref="ra-mobile.recognize({id:assessmentId,active:assessmentStatus})" class="md-padding nav"  style="text-decoration:none;"><i class="material-icons">navigate_next</i></a>
     </div>
-    <div layout="column" layout-align="space-between" class="md-display-2" style="margin-top:1rem;padding:1rem;width:100%;">
-      <div style="width:100%;">
-        <h4 style="margin-top:0;">Coaching </h4>
+    <div layout="column" layout-align="space-between" class="md-display-2" style="margin:1rem;padding:1rem;width:100%;">
+      <div layout layout-align="start center" style="">
+        <h4 style="margin:0 2rem;">Coaching</h4>
+        <span ng-click="showHint = !showHint" ng-init="showHint = false" style="color:#666666;" ><small><em>show
+          <span ng-if="showHint === false">more</span><span ng-if="showHint === true">less</span></em></small></span>
 
       </div>
-      <div style="font-size:2rem;font-weight:200;">
-        <p>Coaching Tips</p>
-      </div>
-      <div >
+      <div ng-if="showHint" >
         <p style="font-size:2.5rem;">While observing <em ng-cloak>{{ employee.fname }} {{ employee.lname }}</em> for 30 minutes observe each hazard encountered
           and coach <em ng-cloak>{{ employee.fname }}</em> on how to avoid these hazards.</p>
       </div>
+      <div class="md-display-1" style="width:90vw;font-weight:200;">
+        <p>Coaching Tips</p>
+      </div>
+
     </div>
 
 

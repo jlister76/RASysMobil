@@ -6,11 +6,12 @@
     </div>
     <div  style="width:100%;margin-top:1rem;">
       <div layout="column" style="padding:1rem;">
-        <div style="padding:.5rem;width:100%;">
-          <h4 style="margin-top:0;">Recognizing & Reacting </h4>
-
+        <div layout style="padding:.5rem;width:100%;">
+          <h4 style="margin:0 1rem;">Recognizing & Reacting </h4>
+          <span ng-click="showHint = !showHint" ng-init="showHint = false" style="color:#666666;" ><small><em>show
+          <span ng-if="showHint === false">more</span><span ng-if="showHint === true">less</span></em></small></span>
         </div>
-        <div layout >
+        <div ng-if="showHint" layout >
           <p ng-cloak style="font-size:2.5rem;" >For 30 minutes have <em ng-cloak>{{ employee.fname }} {{ employee.lname }}</em> identify and react in a safe manner to each hazard encountered. You will document each hazard and {{ employee.fname }}'s reaction.</p>
         </div>
       </div>
@@ -27,11 +28,11 @@
               <div layout>
                 <label style="margin-bottom:1rem;">Reaction</label><span class="isRequired">*</span>
               </div>
-              <div>
+              <div layout layout-align="start center">
                 <input name="behavior" ng-model="behavior" type="radio" value="Safe" id="safe" required><label
                 for="safe">Safe</label>
               </div>
-              <div>
+              <div layout layout-align="start center">
                 <input name="behavior" ng-model="behavior" type="radio" value="At Risk" id="At-Risk"><label
                 for="at-risk">At-Risk</label>
               </div>
