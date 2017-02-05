@@ -69,9 +69,9 @@ module.exports = function(Riskassessment) {
       evaluation = [], recognize =[],
       key = process.env.MAP_KEY;
     if(host === "localhost"){
-      var url = "http://"+host+":"+port+"/api/riskassessments/"+id+"/verified";
+      var url = ":"+port+"/api/riskassessments/"+id+"/verified";
     }if(host != "localhost"){
-       url = "https://"+host+"/api/riskassessments/"+id+"/verified";
+       url = "/api/riskassessments/"+id+"/verified";
     }
     console.log(url);
 
