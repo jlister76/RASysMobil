@@ -71,7 +71,7 @@ module.exports = function(Riskassessment) {
     if(host === "localhost"){
       var url = "http://"+host+":"+port+"/api/riskassessments/"+id+"/verified";
     }if(host != "localhost"){
-       url = "http://"+host+"/api/riskassessments/"+id+"/verified";
+       url = "https://"+host+"/api/riskassessments/"+id+"/verified";
     }
     console.log(url);
 
