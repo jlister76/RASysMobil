@@ -111,7 +111,7 @@
       var yr = $stateParams.yr,
         mo = $stateParams.mo;
         $scope.key = KeyService.key;
-
+        console.log($scope.key);
 
       RiskAssessment.find({filter:{include:['employee','identifiedHazards'],where:{active:false, appuserId: ctx.id, month: mo, year: yr}}})
         .$promise
@@ -119,8 +119,10 @@
           console.log(results);
           $scope.results = results;
 
+
         })
         .catch(function(err){console.error(err)});
+
 
       $scope.resend = function(assessment){
           console.log("action fired", assessment);
