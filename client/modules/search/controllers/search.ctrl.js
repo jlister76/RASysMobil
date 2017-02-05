@@ -109,8 +109,8 @@
     })
     .controller('MonthlyCtrl', function($scope,$stateParams,ctx,RiskAssessment,$http,KeyService){
       var yr = $stateParams.yr,
-        mo = $stateParams.mo,
-        key = KeyService.key;
+        mo = $stateParams.mo;
+        $scope.key = KeyService.key;
 
       RiskAssessment.find({filter:{include:['employee','identifiedHazards'],where:{active:false, appuserId: ctx.id, month: mo, year: yr}}})
         .$promise
