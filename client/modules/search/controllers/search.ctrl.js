@@ -100,7 +100,7 @@
         .$promise.then(function(results){
         console.log(results);
         if(results.length < 1){
-          $scope.noResults = "0 results found";
+          $scope.noResults = "No risk assessments found.";
         }
         $scope.results = results;
       }).catch(function(err){console.error(err)})
@@ -122,7 +122,7 @@
         .$promise.then(function(results){
           console.log(results);
         if(results.length < 1){
-          $scope.noResults = "0 results found";
+          $scope.noResults = "No risk assessments found.";
         }
         $scope.results = results;
 
