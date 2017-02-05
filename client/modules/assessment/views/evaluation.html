@@ -14,7 +14,7 @@
       <div style="width:100%;font-size:3rem;">
 
         <div layout="column" class="" md-whiteframe="2" style=";background: whitesmoke;margin:2rem;padding:1rem;">
-          <form name="identifiedHazardForm" ng-submit="save(selectedHazard,behavior,comments,lat,lng)">
+          <form name="identifiedHazardForm" ng-submit="save(assessmentId,selectedHazard,behavior,comments,lat,lng)">
             <div>
               <label for="hazards" style="margin-bottom:1rem;">Hazard</label><span class="isRequired">*</span>
               <select ng-model="selectedHazard" ng-options="x for x in hazards" id="hazards"
