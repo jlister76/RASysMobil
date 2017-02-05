@@ -1,7 +1,10 @@
 <div layout style="width:100%;">
   <div layout="column" class="md-padding" style="width:100%;">
+    <div layout layout-align="start start" style="padding:1rem 1rem;">
+      <a href="" ui-sref="ra-mobile.search" class="md-padding" style="text-decoration:none;"><i class="material-icons" style="font-size:6rem;color:dodgerblue;">navigate_before</i></a>
+    </div>
     <div ng-repeat="result in results" style="font-size:2rem;margin:1rem;">
-      <md-card style="background-color:whitesmoke;padding:1rem;">
+      <md-card style="background-color:#F5F9F5;padding:1rem;">
         <md-header layout layout-align="space-between center">
 
           <div>
@@ -101,7 +104,7 @@
           </div>
         </md-card-content>
         <md-card-footer layout layout-align="center center">
-          <div layout style="color:#999999;">
+          <div layout style="color:#666666;">
             <div style="margin-right:.5rem;"><em>Assessment duration:</em></div>
             <div ng-if="result.duration < 540000 && result.duration > 60000">{{ result.duration / 60000 }} minutes</div><!--milliseconds in a minute-->
             <div ng-if="result.duration >= 540000">90+ minutes</div>
