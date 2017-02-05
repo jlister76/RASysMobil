@@ -26,10 +26,9 @@
       <md-card-content ng-if="showByMonth">
 
           <div style="margin: 2rem;width:100%;">
-            <select ng-model="selectedMonth" ng-init="selectedMonth = month"  style="width:80%;" required>
-              <option ng-repeat="m in months" ng-value="m">{{ m }}</option>
+            <select ng-model="selectedMonth"  style="width:80%;" required>
+              <option ng-repeat="m in months" value="{{ m }}">{{ m }}</option>
             </select>
-            {{ selectedMonth }}
           </div>
         <div layout layout-align="end center" style="width:100%;margin-top:2rem;">
           <md-button type="submit" class="active md-display-2"

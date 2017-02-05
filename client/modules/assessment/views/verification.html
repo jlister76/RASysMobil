@@ -60,10 +60,11 @@
           <div layout layout-align="space-between center" style="width:100%;">
             <div layout layout-align="start center">
               <h5 style="margin:1rem 1rem;">Weather Conditions <span>*</span></h5>
+              <span ng-if="condition === null"><small><em>not set</em></small></span>
               <span>{{ condition  }}</span>
             </div>
             <div>
-              <a href="" ng-click="showWeatherConditionsForm = !showWeatherConditionsForm" ng-class="{isRequired:condition === null}">update</a>
+              <a href="" ng-click="showWeatherConditionsForm = !showWeatherConditionsForm">update</a>
             </div>
           </div>
           <div layout="column" ng-if="showWeatherConditionsForm" ng-init="showWeatherConditionsForm = false">
@@ -87,12 +88,12 @@
           <div layout layout-align="space-between center" style="width:100%;">
             <div layout layout-align="start center">
               <h5 style="margin:1rem 1rem;">Driver License <span>*</span></h5>
+              <span ng-if="validLicense != true"><small><em>not set</em></small></span>
               <span ng-class="{isError: validLicense != true,isValid: validLicense === true}">{{ driverLicense }} </span>
-              <span ng-if="validLicense === true" class="isValid" style="margin-left:.5rem;">
-                <i class="material-icons" style="font-size:2.5rem;">verified_user</i></span>
+              <span ng-if="validLicense === true" class="isValid" style="margin-left:.5rem;"></span>
             </div>
             <div layout>
-              <a href="" ng-click="showLicenseForm =!showLicenseForm" ng-class="{isRequired:validLicense != true}">update</a>
+              <a href="" ng-click="showLicenseForm =!showLicenseForm">update</a>
             </div>
           </div>
           <div ng-if="showLicenseForm" ng-init="showLicenseForm = false" layout layout-align="start center"
@@ -153,7 +154,7 @@
           </div>
           <div layout layout-align="space-between center" style="margin-top: 1rem;">
             <h5 style="margin:1rem 1rem;">Location</h5>
-            <div><a href="" ng-click="updateLocation()" ng-dblclick="preventClick()"><i class="material-icons" style="font-size:4rem;font-weight:bolder;color:rgba(0,128,0,0.51);">autorenew</i></a></div>
+            <div><md-button ng-click="updateLocation()" ng-dblclick="preventClick()"><i class="material-icons" style="font-size:4rem;font-weight:bolder;color:dodgerblue;">gps_fixed</i></md-button></div>
           </div>
           <div layout style="margin-top:2rem;">
             <img src="{{ url }}" alt="google map" />

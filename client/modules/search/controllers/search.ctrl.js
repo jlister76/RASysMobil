@@ -4,9 +4,9 @@
   angular.module('com.module.search')
     .controller('SearchCtrl', function($scope, ctx,RiskAssessment,Employee,$state){
       $scope.user = ctx;
-      $scope.month = moment().format('MMMM');
-      console.log($scope.month);
+      $scope.selectedMonth = moment().format('MMMM');
       $scope.months = moment.months();
+      console.log($scope.selectedMonth,$scope.months);
       $scope.quarters = [1,2,3,4];
       $scope.years = [moment().subtract(5,'year').year(),moment().subtract(4,'year').year(), moment().subtract(3,'year').year(),moment().subtract(2,'year').year(),moment().subtract(1,'year').year(), moment().year()];
       $scope.currentYear = moment().year();
@@ -48,9 +48,10 @@
       };
 
       $scope.queryByMonth = function(yr,mo){
-        console.log(yr,mo);
 
-        $state.go('ra-mobile.monthly', {yr:yr,mo:mo});
+        var month = Number(moment().month(mo).format('M'))-1;//-1 months array index starts with zero
+        console.log(yr,month);
+        $state.go('ra-mobile.monthly', {yr:yr,mo:month});
              };
       $scope.queryByQtr = function(yr,qtr){
         RiskAssessment.find({filter:{include:['employee','identifiedHazards'],where: {active:false, appuserId: ctx.id, quarter: qtr, year: yr}}})
@@ -66,9 +67,9 @@
       var yr = $stateParams.yr,
         mo = $stateParams.mo;
         $scope.key = KeyService.key;
-        console.log($scope.key);
+        console.log(mo);
 
-      RiskAssessment.find({filter:{include:['employee','identifiedHazards'],where:{active:false, appuserId: ctx.id, month: mo, year: yr}}})
+      RiskAssessment.find({filter:{include:['employee','identifiedHazards','appuser'],where:{active:false, appuserId: ctx.id, month: mo, year: yr}}})
         .$promise
         .then(function(results){
           console.log(results);
@@ -80,14 +81,11 @@
 
 
       $scope.resend = function(assessment){
-          console.log("action fired", assessment);
-        $http.post('api/Riskassessments/verify', {"assessment":assessment})
-          .then(function(success){console.log(success);
-            RiskAssessment.updateAttributes({id:assessmentId})
-              .$promise
-              .then(function(success){console.log(success);})
-              .catch(function(err){console.error(err)});
-          });
+          console.log("resending verification email", assessment);
+        $http.post('api/Riskassessments/resend', {"assessment":assessment})
+          .then(function(success){console.log(success)})
+          .catch(function(err){console.error(err)})
+
       };
     })
 

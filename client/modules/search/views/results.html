@@ -14,8 +14,8 @@
             <div ng-if="result.employee_verification === 'sent'"
                  layout layout-align="center center"
                  style="width:100%;">
-              <md-button layout layout-align="center center" ng-click="rotate=true;rotated=true" class="active"><i
-                class="material-icons" ng-class="{rotate:rotate,disable:rotated}"
+              <md-button layout layout-align="center center" ng-click="resend(result);rotate=true;rotated=true" class="active"><i
+                class="material-icons"  ng-class="{rotate:rotate,disable:rotated}"
                 style="font-size:6rem;color:white;">refresh</i></md-button>
             </div>
           </div>
