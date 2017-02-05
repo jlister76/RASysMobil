@@ -21,10 +21,10 @@
               </div>
               <div style="margin:1rem;">
              <span ng-if="result.employee_verification === 'sent'" >
-            <a layout layout-align="center start" href="" ng-click="resend(result)"><i class="material-icons" style="font-size:6rem;color:darkgreen;">refresh</i></a>
+            <a layout layout-align="center start" href="" ng-click="rotate = true;rotated= true" ng-class="{rotate: rotate,disabled:rotated}"><i class="material-icons"  style="font-size:6rem;color:darkgreen;">refresh</i></a>
           </span>
                 <span ng-if="result.employee_verification === 'true'" >
-            <a layout layout-align="center start" href="" ng-click="resend(result)"><i class="material-icons" style="font-size:6rem;color:darkgreen;">verified_user</i></a>
+            <a layout layout-align="center start" href=""><i class="material-icons" style="font-size:5rem;color:darkgreen;">verified_user</i></a>
           </span>
               </div>
               <div style="margin:1rem;">
