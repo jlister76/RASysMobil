@@ -4,56 +4,9 @@
   angular.module('com.module.search')
     .controller('SearchCtrl', function($scope, ctx,RiskAssessment,Employee,$state){
       $scope.user = ctx;
-      $scope.months = [
-        {
-        "name": "January",
-        "number": 0
-        },
-        {
-          "name": "Feburary",
-          "number": 1
-        },
-        {
-          "name": "March",
-          "number": 2
-        },
-        {
-          "name": "April",
-          "number": 3
-        },
-        {
-          "name": "May",
-          "number": 4
-        },
-        {
-          "name": "June",
-          "number": 5
-        },
-        {
-          "name": "July",
-          "number": 6
-        },
-        {
-          "name": "August",
-          "number": 7
-        },
-        {
-          "name": "September",
-          "number": 8
-        },
-        {
-          "name": "October",
-          "number": 9
-        },
-        {
-          "name": "November",
-          "number": 10
-        },
-        {
-          "name": "December",
-          "number": 11
-        }
-      ];
+      $scope.month = moment().format('MMMM');
+      console.log($scope.month);
+      $scope.months = moment.months();
       $scope.quarters = [1,2,3,4];
       $scope.years = [moment().subtract(5,'year').year(),moment().subtract(4,'year').year(), moment().subtract(3,'year').year(),moment().subtract(2,'year').year(),moment().subtract(1,'year').year(), moment().year()];
       $scope.currentYear = moment().year();
@@ -95,6 +48,8 @@
       };
 
       $scope.queryByMonth = function(yr,mo){
+        console.log(yr,mo);
+
         $state.go('ra-mobile.monthly', {yr:yr,mo:mo});
              };
       $scope.queryByQtr = function(yr,qtr){

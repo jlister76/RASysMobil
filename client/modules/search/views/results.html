@@ -9,23 +9,26 @@
           </div>
         </md-header>
         <md-card-content layout="column" style="width:100%;margin:1rem;">
-          <div layout layout-align="space-between center">
+          <div layout layout-align="space-between center" style="width:100%;">
             <div>
               <img
                 src="https://maps.googleapis.com/maps/api/staticmap?&zoom=17&size=220x200&maptype=roadmap&markers=color:blue%7Clabel:S%7C{{result.location.lat}},{{result.location.lng}}&scale=2&key={{key}}"
                 alt="Location Map">
             </div>
-            <div>
-              <div>
+            <div layout='column' layout-align="space-between start" style="text-align:center;width:100%;height:100%;border:dashed 2px orange;">
+              <div style="width:100%;">
                 <span class="md-display-2" style="font-weight: bolder;margin:1rem;"> {{ result.employee.fname }} {{ result.employee.lname }}</span>
               </div>
-              <div style="margin:1rem;">
-             <span ng-if="result.employee_verification === 'sent'" >
-            <a layout layout-align="center start" href="" ng-click="rotate = true;rotated= true" ng-class="{rotate: rotate,disabled:rotated}"><i class="material-icons"  style="font-size:6rem;color:darkgreen;">refresh</i></a>
-          </span>
-                <span ng-if="result.employee_verification === 'true'" >
-            <a layout layout-align="center start" href=""><i class="material-icons" style="font-size:5rem;color:darkgreen;">verified_user</i></a>
-          </span>
+              <div style="margin:1rem;" style="width:100%; border:solid 2px blue;">
+                <div ng-if="result.employee_verification === 'sent'"
+                     style="width:100%;border:dashed 2px blue;">
+                  <md-button layout layout-align="center center" ng-click="rotate=true;rotated=true" class="active"><i
+                    class="material-icons" ng-class="{rotate:rotate,disable:rotated}"
+                    style="font-size:6rem;color:white;">refresh</i></md-button>
+                </div>
+                <div ng-if="result.employee_verification === 'true'">
+            <div layout layout-align="center center"><i class="material-icons" style="font-size:4rem;color:darkgreen;">verified_user</i> Verified</div>
+          </div>
               </div>
               <div style="margin:1rem;">
                 <span>{{ result.condition}} weather conditions</span>
@@ -37,8 +40,9 @@
             </div>
           </div>
           <div>
-            <div ng-click="showHazards = !showHazards" ng-init="showHazards = false"layout layout-align="space-between center" class="active md-padding" style="margin:2rem .5rem;">
-              <span class="md-display-2" >Hazards & Reactions ({{ result.identifiedHazards.length | number:0 }})</span>
+            <div ng-click="showHazards = !showHazards" ng-init="showHazards = false" layout
+                 layout-align="space-between center" class="active md-padding" style="margin:2rem .5rem;">
+              <span class="md-display-2">Hazards & Reactions ({{ result.identifiedHazards.length | number:0 }})</span>
               <span ng-if="!showHazards"><i class="material-icons" style="font-size:4rem;">expand_less</i></span>
               <span ng-if="showHazards"><i class="material-icons" style="font-size:4rem;">expand_more</i></span>
             </div>
@@ -47,22 +51,22 @@
                 <h4>Evaluation</h4>
               </div>
               <div ng-repeat="hazard in result.identifiedHazards">
-                <div ng-if="hazard.phase === 'Evaluation'"  style="padding:2rem;margin:1rem;">
-                    <div layout="column">
-                      <div layout>
-                        <span  style="margin:1rem;font-size:2.4rem;">Hazard:</span>
-                        <span  style="margin:1rem;font-size:2.4rem;">{{ hazard.type }}</span>
-                      </div>
-                      <div layout >
-                        <span style="margin:1rem;font-size:2.4rem;">Reaction: </span>
-                        <span style="margin:1rem;font-size:2.4rem;">{{ hazard.reaction }}</span>
-                      </div>
-                      <div layout >
-                        <span style="margin:1rem;font-size:2.4rem;">Comments: </span>
-                        <span style="margin:1rem;font-size:2.4rem;">{{ hazard.comments }}</span>
-                      </div>
+                <div ng-if="hazard.phase === 'Evaluation'" style="padding:2rem;margin:1rem;">
+                  <div layout="column">
+                    <div layout>
+                      <span style="margin:1rem;font-size:2.4rem;">Hazard:</span>
+                      <span style="margin:1rem;font-size:2.4rem;">{{ hazard.type }}</span>
                     </div>
-                    <md-divider></md-divider>
+                    <div layout>
+                      <span style="margin:1rem;font-size:2.4rem;">Reaction: </span>
+                      <span style="margin:1rem;font-size:2.4rem;">{{ hazard.reaction }}</span>
+                    </div>
+                    <div layout>
+                      <span style="margin:1rem;font-size:2.4rem;">Comments: </span>
+                      <span style="margin:1rem;font-size:2.4rem;">{{ hazard.comments }}</span>
+                    </div>
+                  </div>
+                  <md-divider></md-divider>
                 </div>
               </div>
               <div><h4>Recognize & React</h4></div>
@@ -71,14 +75,14 @@
 
                   <div layout="column">
                     <div layout>
-                      <span  style="margin:1rem;font-size:2.4rem;">Hazard:</span>
-                      <span  style="margin:1rem;font-size:2.4rem;">{{ hazard.type }}</span>
+                      <span style="margin:1rem;font-size:2.4rem;">Hazard:</span>
+                      <span style="margin:1rem;font-size:2.4rem;">{{ hazard.type }}</span>
                     </div>
-                    <div layout >
+                    <div layout>
                       <span style="margin:1rem;font-size:2.4rem;">Reaction: </span>
                       <span style="margin:1rem;font-size:2.4rem;">{{ hazard.reaction }}</span>
                     </div>
-                    <div layout >
+                    <div layout>
                       <span style="margin:1rem;font-size:2.4rem;">Comments: </span>
                       <span style="margin:1rem;font-size:2.4rem;">{{ hazard.comments }}</span>
                     </div>
