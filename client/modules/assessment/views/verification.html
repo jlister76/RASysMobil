@@ -9,7 +9,7 @@
           <h4 style="margin:1rem;">Summary</h4>
         </div>
         <div layout layout-align="end center" style="width:100%;">
-          <form name="completeAssessmentForm" ng-submit="complete(assessment)">
+          <form name="completeAssessmentForm" ng-submit="complete(assessment,lat,lng)">
             <md-button ng-disabled="isDisabled()" type="submit" class="md-padding"
                        ng-class="{active:reqsMet(),disabled: isDisabled()}"
                        style="padding:.5rem; width:auto;height:6rem;border:solid thin lightgray;text-align:center; font-size:2rem;">

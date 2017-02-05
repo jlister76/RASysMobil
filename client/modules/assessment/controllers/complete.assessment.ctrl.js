@@ -417,6 +417,8 @@
         var lat = position.coords.latitude;
         var lng = position.coords.longitude;
         console.log(lat,lng,position.coords.accuracy);
+        $scope.lat = lat;
+        $scope.lng = lng;
         sessionStorage.setItem("latitude", lat);
         sessionStorage.setItem("longitude", lng);
       }
@@ -596,7 +598,7 @@
               return true;            }
             return false;
           };
-          $scope.complete = function(assessment){
+          $scope.complete = function(assessment,lat,lng){
 
             complete(assessment);
 
@@ -604,7 +606,7 @@
 
               $http.post('api/Riskassessments/verify', {"assessment":assessment})
                 .then(function(success){console.log(success);
-                  RiskAssessment.updateAttributes({id:assessment[0].id, employee_verification: "sent",active: false})
+                  RiskAssessment.updateAttributes({id:assessment[0].id, location:{"lat": lat, "lng":lng},employee_verification: "sent",active: false})
                     .$promise
                     .then(function(success){console.log(success); $state.go('ra-mobile.main')})
                     .catch(function(err){console.error(err)});

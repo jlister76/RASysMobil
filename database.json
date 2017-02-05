@@ -12,8 +12,8 @@
     "project": 2,
     "group": 2,
     "employee": 2,
-    "riskAssessment": 93,
-    "identifiedHazard": 106
+    "riskAssessment": 96,
+    "identifiedHazard": 114
   },
   "models": {
     "User": {},
@@ -99,7 +99,8 @@
       "84": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":\"2018-02-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":2000,\"phase2Timer\":2700,\"phase3Timer\":24865,\"duration\":0.49275,\"employee_verification\":\"sent\",\"condition\":\"Snowing\",\"employeeId\":1,\"appuserId\":1,\"id\":84,\"completed_on\":\"2017-02-01T11:39:08.159Z\"}",
       "90": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":null,\"validLicense\":true,\"phase1Timer\":19512,\"phase2Timer\":20631,\"phase3Timer\":63647,\"duration\":300000,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"quarter\":1,\"year\":2017,\"month\":1,\"id\":90,\"completed_on\":\"2017-02-03T03:43:47.272Z\",\"driverLicenseExpiration\":\"2018-02-05T06:00:00.000Z\"}",
       "91": "{\"active\":false,\"phase\":\"Verification\",\"expirationDate\":null,\"validLicense\":false,\"phase1Timer\":27577,\"phase2Timer\":15509,\"phase3Timer\":50800,\"duration\":550000,\"employee_verification\":\"sent\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"quarter\":1,\"year\":2017,\"month\":1,\"id\":91,\"completed_on\":\"2017-02-03T04:28:49.894Z\",\"driverLicenseExpiration\":\"2018-02-02T06:00:00.000Z\"}",
-      "92": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driverLicenseExpiration\":\"2018-03-03T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":51821,\"phase2Timer\":24127,\"phase3Timer\":147457,\"duration\":3.7234166666666666,\"employee_verification\":\"sent\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":92,\"completed_on\":\"2017-02-04T23:05:25.047Z\"}"
+      "92": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driverLicenseExpiration\":\"2018-03-03T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":51821,\"phase2Timer\":24127,\"phase3Timer\":147457,\"duration\":3.7234166666666666,\"employee_verification\":\"sent\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":92,\"completed_on\":\"2017-02-04T23:05:25.047Z\"}",
+      "95": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driverLicenseExpiration\":\"2019-02-03T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":27475,\"phase2Timer\":16121,\"phase3Timer\":53973,\"duration\":1.62615,\"employee_verification\":\"sent\",\"condition\":\"Wet\",\"employeeId\":1,\"appuserId\":1,\"id\":95,\"completed_on\":\"2017-02-05T01:21:39.170Z\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046}}"
     },
     "identifiedHazard": {
       "41": "{\"type\":\"Snow/Ice\",\"reaction\":\"at-risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Risky!\",\"phase\":\"Evaluation\",\"riskAssessmentId\":56,\"id\":41}",
@@ -165,7 +166,15 @@
       "102": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.987879899999996,\"lng\":-96.83429269999999},\"comments\":\"Some comments\",\"phase\":\"Evaluation\",\"riskAssessmentId\":92,\"id\":102}",
       "103": "{\"type\":\"Snow/Ice\",\"reaction\":\"At Risk\",\"location\":{\"lat\":32.987879899999996,\"lng\":-96.83429269999999},\"comments\":\"risky comments\",\"phase\":\"Evaluation\",\"riskAssessmentId\":92,\"id\":103}",
       "104": "{\"type\":\"Wet Grass/Mud\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.9878802,\"lng\":-96.8342928},\"comments\":\"more comments about stuff\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":92,\"id\":104}",
-      "105": "{\"type\":\"Poison Ivy/Oak/Sumac\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.9878802,\"lng\":-96.8342928},\"comments\":\"Even more comments cause thats what we do.\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":92,\"id\":105}"
+      "105": "{\"type\":\"Poison Ivy/Oak/Sumac\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.9878802,\"lng\":-96.8342928},\"comments\":\"Even more comments cause thats what we do.\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":92,\"id\":105}",
+      "106": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Safe employee\",\"phase\":\"Evaluation\",\"riskAssessmentId\":93,\"id\":106}",
+      "107": "{\"type\":\"Overgrown Vegetation\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Safer employee\",\"phase\":\"Evaluation\",\"riskAssessmentId\":93,\"id\":107}",
+      "108": "{\"type\":\"Snow/Ice\",\"reaction\":\"At Risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Risky employee!\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":93,\"id\":108}",
+      "109": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"At Risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Realy risky!!\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":93,\"id\":109}",
+      "110": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Safety first\",\"phase\":\"Evaluation\",\"riskAssessmentId\":94,\"id\":110}",
+      "111": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"At Risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Risky!!\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":94,\"id\":111}",
+      "112": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Safety comments\",\"phase\":\"Evaluation\",\"riskAssessmentId\":95,\"id\":112}",
+      "113": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"At Risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Risky comments!\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":95,\"id\":113}"
     }
   }
 }
