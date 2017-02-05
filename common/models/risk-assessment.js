@@ -26,8 +26,8 @@ module.exports = function(Riskassessment) {
 
     if(host === "localhost"){
       var url = "http://"+host+":"+port+"/api/riskassessments/"+id+"/verified";
-    }else if(host != "localhost"){
-       url = "http://"+host+"/api/riskassessments/"+id+"/verified";
+    }if(host != "localhost"){
+      url = "http://"+host+"/api/riskassessments/"+id+"/verified";
     }
     console.log(url);
   for(var i=0; i<hazards.length; i++){
@@ -69,9 +69,9 @@ module.exports = function(Riskassessment) {
       evaluation = [], recognize =[],
       key = process.env.MAP_KEY;
     if(host === "localhost"){
-      var url = ":"+port+"/api/riskassessments/"+id+"/verified";
+      var url = "http://"+host+":"+port+"/api/riskassessments/"+id+"/verified";
     }if(host != "localhost"){
-       url = "/api/riskassessments/"+id+"/verified";
+       url = "http://"+host+"/api/riskassessments/"+id+"/verified";
     }
     console.log(url);
 
