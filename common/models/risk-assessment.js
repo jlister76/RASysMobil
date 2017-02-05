@@ -17,13 +17,19 @@ module.exports = function(Riskassessment) {
   var id = ra[0].id,
     user = ra[0].appuser,
     employee = ra[0].employee,
+    validLicense = ra[0].validLicense,
     hazards = ra[0].identifiedHazards,
     completed_on = moment().format('dddd, MMM Do YYYY'),
     conditions = ra[0].condition,
     evaluation = [], recognize =[],
     key = process.env.MAP_KEY;
 
-
+    if(host === "localhost"){
+      var url = "http://"+host+":"+port+"/api/riskassessments/"+id+"/verified";
+    }else{
+      var url = "http://"+host+"/api/riskassessments/"+id+"/verified";
+    }
+    console.log(url);
   for(var i=0; i<hazards.length; i++){
     if(hazards[i].phase === "Evaluation"){
       evaluation.push(hazards[i]);
@@ -33,7 +39,7 @@ module.exports = function(Riskassessment) {
   }
 
     // create a custom object your want to pass to the email template. You can create as many key-value pairs as you want
-    var messageVars = {host:host, id: id, user: user, employee: employee, evaluation: evaluation, recognize:recognize, date: completed_on,conditions: conditions,key:key};
+    var messageVars = {host:host,url:url, id: id, user: user, employee: employee, evaluation: evaluation, recognize:recognize, date: completed_on,conditions: conditions,key:key,licExp:validLicense};
 
     // prepare a loopback template renderer
     var renderer = loopback.template(path.resolve(__dirname, '../../server/views/email-template.ejs'));
@@ -56,12 +62,18 @@ module.exports = function(Riskassessment) {
     var id = ra.id,
       user = ra.appuser,
       employee = ra.employee,
+      validLicense = ra.validLicense,
       hazards = ra.identifiedHazards,
       completed_on = moment().format('dddd, MMM Do YYYY'),
       conditions = ra.condition,
       evaluation = [], recognize =[],
       key = process.env.MAP_KEY;
-    console.log()
+    if(host === "localhost"){
+      var url = "http://"+host+":"+port+"/api/riskassessments/"+id+"/verified";
+    }else{
+      var url = "http://"+host+"/api/riskassessments/"+id+"/verified";
+    }
+    console.log(url);
 
     for(var i=0; i<hazards.length; i++){
       if(hazards[i].phase === "Evaluation"){
@@ -72,7 +84,7 @@ module.exports = function(Riskassessment) {
     }
 
     // create a custom object your want to pass to the email template. You can create as many key-value pairs as you want
-    var messageVars = {host:host, id: id, user: user, employee: employee, evaluation: evaluation, recognize:recognize, date: completed_on,conditions: conditions,key:key};
+    var messageVars = {host:host,url:url, id: id, user: user, employee: employee, evaluation: evaluation, recognize:recognize, date: completed_on,conditions: conditions,key:key,licExp:validLicense};
 
     // prepare a loopback template renderer
     var renderer = loopback.template(path.resolve(__dirname, '../../server/views/email-template.ejs'));

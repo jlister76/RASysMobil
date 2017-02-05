@@ -460,7 +460,7 @@
           $scope.assessmentId = ra[0].id;
           $scope.assessmentStatus = ra[0].active;
           $scope.employee = ra[0].employee;
-          $scope.expirationDate = ra[0].driverLicenseExpiration;
+          $scope.expirationDate = ra[0].driversLicenseExpiration;
           $scope.weatherConditions = ["Fair","Windy","Wet","Foggy","Snowing","Icy"];
           $scope.safeReactions =[];
           $scope.allReactions = ra[0].identifiedHazards;
@@ -511,9 +511,9 @@
               .$promise.then(function(data){ $state.reload(); console.log(data)}).catch(function(err){console.error(err)})
           };
           if(ra[0].validLicense === true){
-            $scope.driverLicense = "Verified";
+            $scope.driversLicense = "Verified";
           }else if (ra[0].validLicense === false){
-            $scope.driverLicense = "Expired";
+            $scope.driversLicense = "Expired";
           }
 
           for(var h in ra[0].identifiedHazards){
@@ -539,7 +539,7 @@
           for (var x=0; x < 31; x++){var d = x+1; $scope.dates.push(d)}
           for (var x=0; x <= 6; x++){var yr = year++; $scope.years.push(yr)}
 
-          $scope.submitDriverLicense = function(m,d,y){
+          $scope.submitDriversLicense = function(m,d,y){
 
             var current = moment();
             m = m-1; //offset for zero index
@@ -553,7 +553,7 @@
             }
 
             function saveExpirationDate(raId,date, licenseStatus){
-              RiskAssessment.updateAttributes({id:raId, driverLicenseExpiration: date, validLicense: licenseStatus}).$promise.then(function(update){ $state.reload(); console.log(update, "Expiration date saved.")}).catch(function(err){console.error(err)})
+              RiskAssessment.updateAttributes({id:raId, driversLicenseExpiration: date, validLicense: licenseStatus}).$promise.then(function(update){ $state.reload(); console.log(update, "Expiration date saved.")}).catch(function(err){console.error(err)})
             };
           };
           var duration = (Number(ra[0].phase1Timer)+ Number(ra[0].phase2Timer) + Number(ra[0].phase3Timer)) / 60000;
@@ -588,13 +588,13 @@
           });
           $scope.isDisabled = function(){
 
-            if(ra[0].driverLicenseExpiration != null && ra[0].condition != null && ra[0].identifiedHazards.length > 0){
+            if(ra[0].driversLicenseExpiration != null && ra[0].condition != null && ra[0].identifiedHazards.length > 0){
               return false;
             }
               return true;
           };
           $scope.reqsMet = function(){
-            if(ra[0].driverLicenseExpiration != null && ra[0].condition != null && ra[0].identifiedHazards.length > 0){
+            if(ra[0].driversLicenseExpiration != null && ra[0].condition != null && ra[0].identifiedHazards.length > 0){
               return true;            }
             return false;
           };

@@ -25,11 +25,13 @@
 
       <p>Hello, <%= employee.fname %>. To evaluate your safety awareness you were recently observed
         by <%=user.first_name%> <%=user.last_name%>. A summary of these findings are shown below.</p>
+      <%if(licExp === false){%>
+      <span style="color:red"><strong>Drivers License Expired:</strong> According to the expiration date entered in this assessment the driver's license is expired.</span>
+      <%}%>
 
       <div id="content" style="background-color:#e2e2e2;padding:1rem;border-radius:2px;margin:1rem;">
         <div style="float: right;">
-          <a href="<%=host%>/api/riskassessments/<%=id%>/verified" style="text-decoration:none; padding:.5rem 1rem;background-color:#2db42d;color:white;border:solid thin limegreen;" >Verify Assessment</a>
-
+          <a href=<%=url%> style="text-decoration:none; padding:.5rem 1rem;background-color:#2db42d;color:white;border:solid thin limegreen;">Verify Assessment</a>
         </div>
         <header><h3>Summary</h3></header>
         <span style="color:#999999;"><small>This assessment was completed on <%= date %>.</small></span>
