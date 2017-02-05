@@ -6,8 +6,7 @@
       $scope.user = ctx;
       $scope.selectedMonth = moment().format('MMMM');
       $scope.months = moment.months();
-      console.log($scope.selectedMonth,$scope.months);
-      $scope.quarters = [1,2,3,4];
+      $scope.quarter = moment().quarter();
       $scope.years = [moment().subtract(5,'year').year(),moment().subtract(4,'year').year(), moment().subtract(3,'year').year(),moment().subtract(2,'year').year(),moment().subtract(1,'year').year(), moment().year()];
       $scope.currentYear = moment().year();
 
@@ -51,19 +50,18 @@
 
         var month = Number(moment().month(mo).format('M'))-1;//-1 months array index starts with zero
         console.log(yr,month);
-        $state.go('ra-mobile.monthly', {yr:yr,mo:month});
+        $state.go('ra-mobile.monthly-searchresults', {yr:yr,mo:month});
              };
       $scope.queryByQtr = function(yr,qtr){
-        RiskAssessment.find({filter:{include:['employee','identifiedHazards'],where: {active:false, appuserId: ctx.id, quarter: qtr, year: yr}}})
-          .$promise.then(function(results){$state.go('ra-mobile.results', {results:results});}).catch(function(err){console.error(err)})
+        console.log(yr,qtr);
+        $state.go('ra-mobile.quarterly-searchresults', {yr:yr,qtr:qtr});
       };
       $scope.queryByEmployee = function(yr,id){
         console.log(ctx.id,yr,id);
-        RiskAssessment.find({filter:{include:['employee','identifiedHazards'],where: {active: false, appuserId: ctx.id, employeeId: id, year: yr}}})
-          .$promise.then(function(results){$state.go('ra-mobile.results', {results:results}); console.log(results)}).catch(function(err){console.error(err)})
+        $state.go('ra-mobile.employee-searchresults');
       };
     })
-    .controller('MonthlyCtrl', function($scope,$stateParams,ctx,RiskAssessment,$http,KeyService){
+    .controller('SearchMonthlyResultsCtrl', function($scope,$stateParams,ctx,RiskAssessment,$http,KeyService){
       var yr = $stateParams.yr,
         mo = $stateParams.mo;
         $scope.key = KeyService.key;
@@ -73,11 +71,16 @@
         .$promise
         .then(function(results){
           console.log(results);
+          if(results.length < 1){
+            $scope.noResults = "No risk assessments found.";
+          }
           $scope.results = results;
 
 
         })
-        .catch(function(err){console.error(err)});
+        .catch(function(err){if(err){console.error(err)}
+
+        });
 
 
       $scope.resend = function(assessment){
@@ -88,5 +91,51 @@
 
       };
     })
+    .controller('SearchQtlyResultsCtrl', function($scope,$stateParams,ctx,RiskAssessment,$http,KeyService){
+      var yr = $stateParams.yr,
+        qtr = $stateParams.qtr;
+      $scope.key = KeyService.key;
 
+      RiskAssessment.find({filter:{include:['employee','identifiedHazards','appuser'],where: {active:false, appuserId: ctx.id, quarter: qtr, year: yr}}})
+        .$promise.then(function(results){
+        console.log(results);
+        if(results.length < 1){
+          $scope.noResults = "0 results found";
+        }
+        $scope.results = results;
+      }).catch(function(err){console.error(err)})
+
+      $scope.resend = function(assessment){
+        console.log("resending verification email", assessment);
+        $http.post('api/Riskassessments/resend', {"assessment":assessment})
+          .then(function(success){console.log(success)})
+          .catch(function(err){console.error(err)})
+
+      };
+    })
+    .controller('SearchEmployeeResultsCtrl', function($scope,$stateParams,ctx,RiskAssessment,$http,KeyService){
+        var yr = $stateParams.yr,
+          id = $stateParams.id;
+        $scope.key = KeyService.key;
+
+      RiskAssessment.find({filter:{include:['employee','identifiedHazards','appuser'],where: {active: false, appuserId: ctx.id, employeeId: id, year: yr}}})
+        .$promise.then(function(results){
+          console.log(results);
+        if(results.length < 1){
+          $scope.noResults = "0 results found";
+        }
+        $scope.results = results;
+
+        })
+        .catch(function(err){console.error(err)})
+
+      $scope.resend = function(assessment){
+        console.log("resending verification email", assessment);
+        $http.post('api/Riskassessments/resend', {"assessment":assessment})
+          .then(function(success){console.log(success)})
+          .catch(function(err){console.error(err)})
+
+      };
+
+    })
 })();

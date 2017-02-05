@@ -1,8 +1,8 @@
 <div layout="column" layout-align="center start" class="md-display-2">
   <div style="padding:1rem 1rem">
     <div layout layout-align="space-between start">
-      <a href="" ui-sref="ra-mobile.coaching({id:assessmentId,active:assessmentStatus})" class="md-padding" style="text-decoration:none;"><i class="material-icons" style="font-size:6rem;color:dodgerblue;">navigate_before</i></a>
-      <a href="" ui-sref="ra-mobile.verify({id:assessmentId,active:assessmentStatus})" class="md-padding" style="text-decoration:none;"><i class="material-icons" style="font-size:6rem;color:dodgerblue;">navigate_next</i></a>
+      <a href="" ui-sref="ra-mobile.coaching({id:assessmentId,active:assessmentStatus})" class="md-padding nav" style="text-decoration:none;"><i class="material-icons">navigate_before</i></a>
+      <a href="" ui-sref="ra-mobile.verify({id:assessmentId,active:assessmentStatus})" class="md-padding nav" style="text-decoration:none;"><i class="material-icons">navigate_next</i></a>
     </div>
     <div  style="width:100%;margin-top:1rem;">
       <div layout="column" style="padding:1rem;">
@@ -17,7 +17,7 @@
       <div style="width:100%;font-size:3rem;">
 
         <div layout="column" class="" md-whiteframe="2" style=";background: whitesmoke;margin:2rem;padding:1rem;">
-          <form name="identifiedHazardForm" ng-submit="save(selectedHazard,behavior,comments,lat,lng)">
+          <form name="identifiedHazardForm" ng-submit="save(assessmentId,selectedHazard,behavior,comments,lat,lng)">
             <div>
               <label for="hazards" style="margin-bottom:1rem;">Hazard</label><span class="isRequired">*</span>
               <select ng-model="selectedHazard" ng-options="x for x in hazards" id="hazards" required

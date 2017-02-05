@@ -13,7 +13,7 @@
     "group": 2,
     "employee": 2,
     "riskAssessment": 101,
-    "identifiedHazard": 123
+    "identifiedHazard": 125
   },
   "models": {
     "User": {},
@@ -85,7 +85,7 @@
       "97": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driversLicenseExpiration\":\"2017-01-01T06:00:00.000Z\",\"validLicense\":false,\"phase1Timer\":180822,\"phase2Timer\":94513,\"phase3Timer\":216416,\"duration\":8.19585,\"employee_verification\":\"true\",\"condition\":\"Windy\",\"employeeId\":1,\"appuserId\":1,\"id\":97,\"completed_on\":\"2017-02-05T04:52:58.672Z\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046}}",
       "98": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driversLicenseExpiration\":\"2019-02-04T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":2083,\"phase2Timer\":3263,\"phase3Timer\":26057,\"duration\":0.5233833333333333,\"employee_verification\":\"sent\",\"condition\":\"Windy\",\"employeeId\":1,\"appuserId\":1,\"id\":98,\"completed_on\":\"2017-02-05T05:44:49.284Z\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046}}",
       "99": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driversLicenseExpiration\":\"2018-03-03T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":79840,\"phase2Timer\":53675,\"phase3Timer\":210876,\"duration\":5.73985,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":99,\"completed_on\":\"2017-02-05T07:34:07.236Z\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046}}",
-      "100": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":true,\"phase\":\"Evaluation\",\"driversLicenseExpiration\":null,\"validLicense\":null,\"phase1Timer\":8734,\"phase2Timer\":0,\"phase3Timer\":0,\"duration\":0,\"employee_verification\":null,\"condition\":null,\"employeeId\":1,\"appuserId\":1,\"id\":100}"
+      "100": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":true,\"phase\":\"Recognize & React\",\"driversLicenseExpiration\":\"2019-03-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":468753,\"phase2Timer\":55138,\"phase3Timer\":50411,\"duration\":9.51535,\"employee_verification\":null,\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":100,\"completed_on\":\"2017-02-05T18:14:32.262Z\"}"
     },
     "identifiedHazard": {
       "114": "{\"type\":\"Snow/Ice\",\"reaction\":\"At Risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Risky behavior.\",\"phase\":\"Evaluation\",\"riskAssessmentId\":96,\"id\":114}",
@@ -96,7 +96,9 @@
       "119": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.987866499999996,\"lng\":-96.8342874},\"comments\":\"Comments about safety.\",\"phase\":\"Evaluation\",\"riskAssessmentId\":99,\"id\":119}",
       "120": "{\"type\":\"Snow/Ice\",\"reaction\":\"At Risk\",\"location\":{\"lat\":32.9878656,\"lng\":-96.8342874},\"comments\":\"This employee is accident prone. Will most likely fall down and break their neck before the week ends. :(\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":99,\"id\":120}",
       "121": "{\"type\":\"Snow/Ice\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Im giving this one to them.\",\"phase\":\"Evaluation\",\"riskAssessmentId\":99,\"id\":121}",
-      "122": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"At Risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Safety Matters.\",\"phase\":\"Evaluation\",\"riskAssessmentId\":100,\"id\":122}"
+      "122": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"At Risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Safety Matters.\",\"phase\":\"Evaluation\",\"riskAssessmentId\":100,\"id\":122}",
+      "123": "{\"type\":\"Snow/Ice\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Comments\",\"phase\":\"Evaluation\",\"riskAssessmentId\":100,\"id\":123}",
+      "124": "{\"type\":\"Loose Gravel/Dirt\",\"reaction\":\"Safe\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Comments\",\"phase\":\"Recognize & React\",\"riskAssessmentId\":100,\"id\":124}"
     }
   }
 }

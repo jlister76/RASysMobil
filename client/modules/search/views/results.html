@@ -1,8 +1,10 @@
 <div layout style="width:100%;">
   <div layout="column" class="md-padding" style="width:100%;">
-    <div layout layout-align="start start" style="padding:1rem 1rem;">
-      <a href="" ui-sref="ra-mobile.search" class="md-padding" style="text-decoration:none;"><i class="material-icons" style="font-size:6rem;color:dodgerblue;">navigate_before</i></a>
+    <div layout layout-align="space-between center" style="padding:1rem 1rem;">
+      <a href="" ui-sref="ra-mobile.search" class="md-padding nav" style="text-decoration:none;"><i class="material-icons" style="">navigate_before</i></a>
+      <span class="md-display-2" style="color:#999999;font-weight:bold;">({{ results.length }}) search results</span>
     </div>
+    <span layout layout-align="center center" ng-if="noResults"><h3 class="md-display-2" style="color:#999999;">{{ noResults }}</h3></span>
     <div ng-repeat="result in results" style="font-size:2rem;margin:1rem;">
       <md-card style="background-color:whitesmoke;padding:1rem;">
         <md-header layout layout-align="space-between center">

@@ -12,7 +12,6 @@
    </div>
 
     <md-card style="width:100%;margin:1rem;background-color:whitesmoke;">
-      <form name="monthly" ng-submit="queryByMonth(selectedYear,selectedMonth)">
       <md-card-header>
         <span ng-if="!showByMonth">
           <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
@@ -24,7 +23,7 @@
 
       </md-card-header>
       <md-card-content ng-if="showByMonth">
-
+        <form name="monthly" ng-submit="queryByMonth(selectedYear,selectedMonth)">
           <div style="margin: 2rem;width:100%;">
             <select ng-model="selectedMonth"  style="width:80%;" required>
               <option ng-repeat="m in months" value="{{ m }}">{{ m }}</option>
@@ -36,11 +35,10 @@
                      ng-disabled="monthly.$invalid"
                      style="margin-top:1.5rem;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">Search</md-button>
         </div>
+        </form>
       </md-card-content>
-      </form>
     </md-card>
     <md-card style="width:100%;margin:1rem;background-color:whitesmoke;">
-      <form name="qtly" ng-submit="queryByQtr(selectedYear,selectedQtr)">
       <md-card-header>
          <span ng-if="!showByQtr">
           <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
@@ -48,9 +46,11 @@
         <span ng-if="showByQtr">
           <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>
         </span>
+
         <span ng-click="showByQtr = !showByQtr;showByMonth =false;showByEmployee = false" ng-init="showByQtr = false" style="color:#0E4EA0;">search by quarter</span>
       </md-card-header>
       <md-card-content ng-if="showByQtr" >
+        <form name="qtly"  ng-submit="queryByQtr(selectedYear,selectedQtr)">
           <div layout layout-align="start center" style="width:100%;padding:2rem;">
               <input name="qtr" ng-model="selectedQtr" type="radio" value="1" id="q1" style="height:4rem;width:4rem;" required><label
               for="q1" style="margin-right:2rem;">Q1</label>
@@ -66,8 +66,9 @@
                      ng-disabled="qtly.$invalid"
                      style="margin-top:1.5rem;padding:.5rem; width:40%;height:6rem;text-align: center; font-size:2rem;">Search</md-button>
         </div>
+        </form>
       </md-card-content>
-      </form>
+
     </md-card>
     <md-card style="width:100%;margin:1rem;background-color:whitesmoke;">
       <md-card-header>
@@ -86,7 +87,6 @@
                     style="width:100%;" required>
               <option ng-repeat="employee in employeeList" value="{{employee.id}}">{{employee.fname}} {{employee.lname}}</option>
             </select>
-            {{ selectedEmployeeId }}
           </div>
           <div layout layout-align="end center" style="width:100%;margin-top:2rem;">
             <md-button type="submit" class="active"

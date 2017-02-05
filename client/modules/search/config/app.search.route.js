@@ -24,7 +24,7 @@
           templateUrl: 'modules/search/views/search.html',
           controller: 'SearchCtrl'
         })
-      .state('ra-mobile.monthly', {
+      .state('ra-mobile.monthly-searchresults', {
         url:'/monthly?yr&mo',
        resolve:{
           ctx: function(AuthService){
@@ -32,7 +32,27 @@
           }
        },
         templateUrl: 'modules/search/views/results.html',
-        controller: 'MonthlyCtrl'
+        controller: 'SearchMonthlyResultsCtrl'
       })
+        .state('ra-mobile.quarterly-searchresults', {
+          url:'/quarterly?yr&qtr',
+          resolve:{
+            ctx: function(AuthService){
+              return AuthService.getCurrent();
+            }
+          },
+          templateUrl: 'modules/search/views/results.html',
+          controller: 'SearchQtlyResultsCtrl'
+        })
+        .state('ra-mobile.employee-searchresults', {
+          url:'/employee?yr&id',
+          resolve:{
+            ctx: function(AuthService){
+              return AuthService.getCurrent();
+            }
+          },
+          templateUrl: 'modules/search/views/results.html',
+          controller: 'SearchEmployeeResultsCtrl'
+        })
     })
 })();

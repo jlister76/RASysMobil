@@ -73,13 +73,14 @@ module.exports = function(Riskassessment) {
     }if(host != "localhost"){
        url = "http://"+host+"/api/riskassessments/"+id+"/verified";
     }
-    console.log(url);
+    console.log(hazards);
 
     for(var i=0; i<hazards.length; i++){
       if(hazards[i].phase === "Evaluation"){
         evaluation.push(hazards[i]);
       } else if(hazards[i].phase === "Recognize & React"){
         recognize.push(hazards[i]);
+        console.log(hazards[i].location.lat, hazards[i].location.lng)
       }
     }
 

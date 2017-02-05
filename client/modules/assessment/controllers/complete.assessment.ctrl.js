@@ -359,11 +359,11 @@
           return true;
         }
       };
-      $scope.save = function(hazard,behavior,comments,lat,lng){
+      $scope.save = function(id,hazard,behavior,comments,lat,lng){
         console.log(hazard,behavior,comments,lat,lng);
 
 
-        IdentifiedHazard.create({type: hazard,location: {lat:lat,lng:lng},reaction: behavior, comments: comments, riskAssessmentId:$stateParams.id, phase: "Recognize & React"})
+        IdentifiedHazard.create({type: hazard,location: {lat:lat,lng:lng},reaction: behavior, comments: comments, riskAssessmentId:id, phase: "Recognize & React"})
           .$promise
           .then(function(ih){
             console.log(ih, " created successfully");
