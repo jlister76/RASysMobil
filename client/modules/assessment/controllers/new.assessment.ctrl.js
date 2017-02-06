@@ -107,19 +107,19 @@
           $scope.list = 0;
         }
         switch (type) {
-          case "regional":
+          case "Region":
             $scope.showDivisions = 1;
             getDivisionList();
             break;
-          case "division":
+          case "Division":
             $scope.showProjects = 1;
             getProjectList();
             break;
-          case "project":
+          case "Project":
             $scope.showGroups = 1;
             getGroupList();
             break;
-          case "group":
+          case "Group":
             console.log("Running employees from case");
             $scope.showEmployees = 1;
             getEmployeeList();

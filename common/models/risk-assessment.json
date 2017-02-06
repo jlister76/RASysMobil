@@ -1,60 +1,170 @@
 {
   "name": "riskAssessment",
   "base": "PersistedModel",
-  "idInjection": true,
   "options": {
-    "validateUpsert": true
+    "idInjection": true,
+    "validateUpsert": true,
+    "mssql": {
+      "schema": "RASys_schema",
+      "table": "riskAssessment"
+    }
   },
   "properties": {
     "quarter": {
-      "type": "number",
-      "required": true
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "quarter",
+        "dataType": "INT",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"}
     },
     "year": {
-      "type": "number",
-      "required": true
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "year",
+        "dataType": "INT",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"}
     },
     "month": {
-      "type": "number",
-      "required": true
+      "type": "Number",
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mssql": {
+        "columnName": "month",
+        "dataType": "INT",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"}
     },
     "active": {
       "type": "Boolean",
-      "required": true
+      "required": true,
+      "mssql": {
+        "columnName": "active",
+        "dataType": "BIT"
+      }
     },
     "location": {
-      "type": "geopoint"
+      "type": "geopoint",
+      "required": false,
+      "mssql": {
+      "columnName": "location",
+        "dataType": "FLOAT"
+      }
     },
     "phase": {
       "type": "String",
-      "required": true
+      "required": true,
+      "length": 64,
+      "precision": null,
+      "scale": null,
+      "id": 1,
+      "mssql": {
+        "columnName": "phase",
+        "dataType": "VARCHAR",
+        "dataLength": 64,
+        "dataPrecision": null,
+        "dataScale": null,
+        "nullable": "NO"}
     },
     "driversLicenseExpiration": {
       "type": "Date",
-      "default": null
+      "default": null,
+      "mssql": {
+      "columnName": "drivers_license_expiration",
+        "dataType": "DATETIME"
+      }
     },
     "validLicense": {
       "type": "Boolean",
-      "default": null
+      "default": null,
+      "mssql":{
+        "columnName": "valid_license",
+        "dataType": "BIT"
+      }
     },
     "phase1Timer": {
-      "type": "number",
-      "default": 0
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "default": 0,
+      "mssql": {
+        "columnName": "phase1Timer",
+        "dataType": "INT",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"}
     },
     "phase2Timer": {
-      "type": "number",
-      "default": 0
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "default": 0,
+      "mssql": {
+        "columnName": "phase2Timer",
+        "dataType": "INT",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"}
     },
     "phase3Timer": {
-      "type": "number",
-      "default": 0
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "default": 0,
+      "mssql": {
+        "columnName": "phase3Timer",
+        "dataType": "INT",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"}
     },
     "duration": {
-      "type": "number",
-      "default": 0
+      "type": "Number",
+      "required": false,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "default": 0,
+      "mssql": {
+        "columnName": "duration",
+        "dataType": "INT",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "NO"}
     },
     "completed_on": {
-      "type": "date"
+      "type": "date",
+      "mssql": {
+      "columnName": "completed_on",
+        "dataType": "DATETIME"
+      }
     },
     "employee_verification": {
       "type": "string",
@@ -80,6 +190,16 @@
     "appuser": {
       "type": "belongsTo",
       "model": "appuser",
+      "foreignKey": ""
+    },
+    "monthly": {
+      "type": "belongsTo",
+      "model": "monthly",
+      "foreignKey": ""
+    },
+    "quarterly": {
+      "type": "belongsTo",
+      "model": "quarterly",
       "foreignKey": ""
     }
   },

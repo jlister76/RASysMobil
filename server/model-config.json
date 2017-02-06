@@ -61,7 +61,7 @@
     "public": true
   },
   "riskAssessment": {
-    "dataSource": "db",
+    "dataSource": "mssqldb",
     "public": true
   },
   "identifiedHazard": {
@@ -70,5 +70,13 @@
   },
   "Email": {
     "dataSource": "emailDataSource"
+  },
+  "quarterly": {
+    "dataSource": "mssqldb",
+    "public": true
+  },
+  "monthly": {
+    "dataSource": "mssqldb",
+    "public": true
   }
 }

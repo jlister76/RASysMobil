@@ -38,11 +38,6 @@
         })
         .state('ra-mobile.main', {
           url: '',
-          resolve: {
-            ctx: function(AuthService){
-              return AuthService.getCurrent();
-            }
-          },
           templateUrl: 'modules/core/views/main.html',
           controller: 'MainCtrl'
         });

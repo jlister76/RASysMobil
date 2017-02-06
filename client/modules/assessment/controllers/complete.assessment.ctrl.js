@@ -472,16 +472,16 @@
             var type = ra[0].appuser.accessLevelType;
             console.log(type);
             switch (type) {
-              case "regional":
+              case "Region":
                 getRegionalEmployees(ra[0].appuser.accessLevelAreaId);
                 break;
-              case "division":
+              case "Division":
                 getDivisionalEmployees(ra[0].appuser.accessLevelAreaId);
                 break;
-              case "project":
+              case "Project":
                 getProjectEmployees(ra[0].appuser.accessLevelAreaId);
                 break;
-              case "group":
+              case "Group":
                 getGroupEmployees(ra[0].appuser.accessLevelAreaId);
                 break;
 

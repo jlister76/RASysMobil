@@ -1,0 +1,73 @@
+{
+  "name": "monthly",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "created_on": {
+      "type": "date",
+      "required": true
+    },
+    "mo": {
+      "type": "number",
+      "required": true
+    },
+    "qtr": {
+      "type": "number",
+      "required": true
+    },
+    "yr": {
+      "type": "number",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true
+    },
+    "met_requirement": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "employee": {
+      "type": "belongsTo",
+      "model": "employee",
+      "foreignKey": ""
+    },
+    "riskAssessment": {
+      "type": "belongsTo",
+      "model": "riskAssessment",
+      "foreignKey": ""
+    },
+    "quarterly": {
+      "type": "belongsTo",
+      "model": "quarterly",
+      "foreignKey": ""
+    },
+    "group": {
+      "type": "belongsTo",
+      "model": "group",
+      "foreignKey": ""
+    },
+    "project": {
+      "type": "belongsTo",
+      "model": "project",
+      "foreignKey": ""
+    },
+    "division": {
+      "type": "belongsTo",
+      "model": "division",
+      "foreignKey": ""
+    },
+    "region": {
+      "type": "belongsTo",
+      "model": "region",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

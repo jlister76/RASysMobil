@@ -6,11 +6,46 @@ var path = require('path');
 var moment = require('moment');
 var host = app.get('host');
 var port = app.get('port');
+var ds = app.dataSources.mssqldb;
 
+var schema_v1 = {
+  "name": "RiskAssessment",
+  "options": {
 
+    "mssql": {
+      "idInjection": true,
+      "table": "RISK_ASSESSMENT"
+    }
+  },
+  "properties": {
+    "quarter": {
+      "type": "Number",
+      "required": true
+    },
+    "year": {
+      "type": "Number",
+      "required": true
+    },
+    "month": {
+      "type": "Number",
+      "required": true
+    }
+  }
+};
+
+ds.createModel(schema_v1.name, schema_v1.properties, schema_v1.options);
+
+ds.automigrate(function () {
+  ds.discoverModelProperties('RISK_ASSESSMENT', function (err, props) {
+    console.log(props);
+
+  });
+});
 module.exports = function(Riskassessment) {
 
-  // send an email
+
+
+
   Riskassessment.sendEmail = function(ra, cb) {
 
   //console.log(ra[0].id);
@@ -102,23 +137,19 @@ module.exports = function(Riskassessment) {
 
     });
   };
-
   Riskassessment.verify = function(a,next){
 
     Riskassessment.sendEmail(a);
     next();
   };
-
-  Riskassessment.remoteMethod('verify', {
-    accepts: {arg: 'assessment', type: 'array'},
-    http: {path: '/verify', verb: 'post'}
-  });
-
   Riskassessment.resend = function(a,next){
     Riskassessment.reSendEmail(a);
     next();
   };
-
+  Riskassessment.remoteMethod('verify', {
+    accepts: {arg: 'assessment', type: 'array'},
+    http: {path: '/verify', verb: 'post'}
+  });
   Riskassessment.remoteMethod('resend', {
     accepts: {arg: 'assessment', type:'Object'},
     http: {path: '/resend', verb:'post'}

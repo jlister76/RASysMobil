@@ -1,0 +1,74 @@
+{
+  "name": "quarterly",
+  "base": "PersistedModel",
+  "options": {
+    "idInjection": true,
+    "validateUpsert": true,
+    "mssql": {
+      "table": "qtly_status"
+    }
+  },
+  "properties": {
+    "created_on": {
+      "type": "date",
+      "required": true
+    },
+    "qtr": {
+      "type": "number",
+      "required": true
+    },
+    "yr": {
+      "type": "number",
+      "required": true
+    },
+    "required_count": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "completed_count": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "requirement_met": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "met_requirement": {
+      "type": "date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "employee": {
+      "type": "belongsTo",
+      "model": "employee",
+      "foreignKey": ""
+    },
+    "group": {
+      "type": "belongsTo",
+      "model": "group",
+      "foreignKey": ""
+    },
+    "project": {
+      "type": "belongsTo",
+      "model": "project",
+      "foreignKey": ""
+    },
+    "division": {
+      "type": "belongsTo",
+      "model": "division",
+      "foreignKey": ""
+    },
+    "region": {
+      "type": "belongsTo",
+      "model": "region",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

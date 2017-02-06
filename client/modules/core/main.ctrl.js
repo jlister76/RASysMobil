@@ -110,13 +110,72 @@
           });
       };
     })
-    .controller('MainCtrl', function(AuthService, $scope, $state, $mdSidenav,ctx){
-        console.log("In main ctrl",ctx.groupId,ctx.type);
-        var type,groupId;
-      $scope.isSidenavOpen = false;
-      $scope.openLeftMenu = function() {
-        $mdSidenav('left').toggle();
-      };
+    .controller('MainCtrl', function(AuthService,$scope,$state,$mdSidenav,Region,Division,Project,Group){
+        AuthService.getCurrent()
+          .$promise
+          .then(function(ctx){
+            var type = ctx.accessLevelType,
+              groupId = ctx.accessLevelGroupId;
+            console.log("In main ctrl",type);
+            init();
+            function init(){
+              switch (type) {
+                case "Region":
+                  console.log(type);
+                  $scope.groupType = type;
+                  getRegion(groupId);
+                  break;
+                case "Division":
+                  $scope.groupType = type;
+                  getDivision(groupId);
+                  break;
+                case "Project":
+                  $scope.groupType = type;
+                  getProject(groupId);
+                  break;
+                case "Group":
+                  $scope.groupType = type;
+                  getGroup(groupId);
+                  break;
+
+              }//matches users access type and loads the corresponding data
+              function getRegion(id){
+                console.log(id);
+                Region.findById({id:id})
+                  .$promise
+                  .then(function(region){
+                    $scope.group = region;
+                  })
+                  .catch(function(err){if(err){console.error(err)}})
+              };
+              function getDivision(id){
+                Division.findById({id:id})
+                  .$promise
+                  .then(function(region){
+
+                  })
+                  .catch(function(err){if(err){console.error(err)}})
+              };
+              function getProject(id){
+                Project.findById({id:id})
+                  .$promise
+                  .then(function(region){
+
+                  })
+                  .catch(function(err){if(err){console.error(err)}})
+              };
+              function getGroup(id){
+                Group.findById({id:id})
+                  .$promise
+                  .then(function(region){
+
+                  })
+                  .catch(function(err){if(err){console.error(err)}})
+              }
+            }
+
+          });
+
 
 
     })

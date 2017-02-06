@@ -1,7 +1,7 @@
 {
   "ids": {
     "User": 1,
-    "AccessToken": 80,
+    "AccessToken": 81,
     "ACL": 1,
     "RoleMapping": 1,
     "Role": 1,
@@ -52,19 +52,20 @@
       "RZUyyGdOhieJ4PkKw8AwzbqlJVt00sGGENLRPFjFjkUyGRUG4wnNl6AFflhT5c4o": "{\"id\":\"RZUyyGdOhieJ4PkKw8AwzbqlJVt00sGGENLRPFjFjkUyGRUG4wnNl6AFflhT5c4o\",\"ttl\":1209600,\"created\":\"2017-01-26T04:25:54.383Z\",\"userId\":1}",
       "T1p419eFnSHkd3frAp8mGI9PQ1ZlcoBKAZ87wJYxDqtpRPlUA9SkniHqBGcjLurd": "{\"id\":\"T1p419eFnSHkd3frAp8mGI9PQ1ZlcoBKAZ87wJYxDqtpRPlUA9SkniHqBGcjLurd\",\"ttl\":1209600,\"created\":\"2017-01-30T03:00:35.428Z\",\"userId\":1}",
       "qkxMGjHPr0MYBUXb7LklmQG2eEZX95XWOm7bRVOQzqpbxuK6NeaTrjChBwb92pBH": "{\"id\":\"qkxMGjHPr0MYBUXb7LklmQG2eEZX95XWOm7bRVOQzqpbxuK6NeaTrjChBwb92pBH\",\"ttl\":1209600,\"created\":\"2017-02-04T20:42:06.159Z\",\"userId\":1}",
-      "pxVJxe2AukgXUzovbXsS8bx7cibBHvpxQ8DnGp2oacDh1TFlvJw1tNyxJw5GeNb5": "{\"id\":\"pxVJxe2AukgXUzovbXsS8bx7cibBHvpxQ8DnGp2oacDh1TFlvJw1tNyxJw5GeNb5\",\"ttl\":1209600,\"created\":\"2017-02-04T20:46:32.399Z\",\"userId\":1}"
+      "pxVJxe2AukgXUzovbXsS8bx7cibBHvpxQ8DnGp2oacDh1TFlvJw1tNyxJw5GeNb5": "{\"id\":\"pxVJxe2AukgXUzovbXsS8bx7cibBHvpxQ8DnGp2oacDh1TFlvJw1tNyxJw5GeNb5\",\"ttl\":1209600,\"created\":\"2017-02-04T20:46:32.399Z\",\"userId\":1}",
+      "TW3F34h521VRufiBwgvz8JNZtEpFeNoC9RXuO3dmcbjg1H2HBycWo5aOLgfsuJ4u": "{\"id\":\"TW3F34h521VRufiBwgvz8JNZtEpFeNoC9RXuO3dmcbjg1H2HBycWo5aOLgfsuJ4u\",\"ttl\":1209600,\"created\":\"2017-02-05T22:51:31.384Z\",\"userId\":1}"
     },
     "ACL": {},
     "RoleMapping": {},
     "Role": {},
     "appuser": {
-      "1": "{\"id\":1,\"first_name\":\"Demo\",\"last_name\":\"Admin\",\"jobTitle\":\"Admin\",\"accessLevelGroupId\":\"1\",\"accessLevelType\":\"regional\",\"password\":\"$2a$10$NbPDJ3YOwPssu2woqtkz7O5xiEztyGmJ2z9DyBQAsqsQHaYmHGH52\",\"email\":\"j1@gmail.com\"}"
+      "1": "{\"id\":1,\"first_name\":\"Demo\",\"last_name\":\"Admin\",\"jobTitle\":\"Admin\",\"accessLevelGroupId\":\"1\",\"accessLevelType\":\"Region\",\"password\":\"$2a$10$NbPDJ3YOwPssu2woqtkz7O5xiEztyGmJ2z9DyBQAsqsQHaYmHGH52\",\"email\":\"j1@gmail.com\"}"
     },
     "region": {
-      "1": "{\"title\":\"west\",\"id\":1}"
+      "1": "{\"title\":\"West\",\"id\":1}"
     },
     "division": {
-      "1": "{\"id\":1,\"title\":\"Division_43\",\"regionId\":1}",
+      "1": "{\"id\":1,\"title\":\"Division 43\",\"regionId\":1}",
       "2": "{\"title\":\"Division 38\",\"regionId\":1,\"id\":2}"
     },
     "regionalRelationMapping": {
@@ -87,7 +88,7 @@
       "99": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driversLicenseExpiration\":\"2018-03-03T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":79840,\"phase2Timer\":53675,\"phase3Timer\":210876,\"duration\":5.73985,\"employee_verification\":\"true\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":99,\"completed_on\":\"2017-02-05T07:34:07.236Z\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046}}",
       "100": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driversLicenseExpiration\":\"2019-03-02T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":468753,\"phase2Timer\":55138,\"phase3Timer\":54054,\"duration\":9.632416666666666,\"employee_verification\":\"sent\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":100,\"completed_on\":\"2017-02-05T18:50:27.034Z\",\"location\":{\"lat\":32.987861699999996,\"lng\":-96.83425400000002}}",
       "101": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":false,\"phase\":\"Verification\",\"driversLicenseExpiration\":\"2019-02-03T06:00:00.000Z\",\"validLicense\":true,\"phase1Timer\":224822,\"phase2Timer\":261596,\"phase3Timer\":506847,\"duration\":16.55441666666667,\"employee_verification\":\"sent\",\"condition\":\"Fair\",\"employeeId\":1,\"appuserId\":1,\"id\":101,\"completed_on\":\"2017-02-05T18:58:59.392Z\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046}}",
-      "102": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":true,\"phase\":\"Recognize & React\",\"driversLicenseExpiration\":null,\"validLicense\":null,\"phase1Timer\":445213,\"phase2Timer\":254538,\"phase3Timer\":72849,\"duration\":12.876666666666667,\"employee_verification\":null,\"condition\":null,\"employeeId\":1,\"appuserId\":1,\"id\":102,\"completed_on\":\"2017-02-05T22:15:48.291Z\"}"
+      "102": "{\"quarter\":1,\"year\":2017,\"month\":1,\"active\":true,\"phase\":\"Recognize & React\",\"driversLicenseExpiration\":null,\"validLicense\":null,\"phase1Timer\":445213,\"phase2Timer\":254538,\"phase3Timer\":816942,\"duration\":12.876666666666667,\"employee_verification\":null,\"condition\":null,\"employeeId\":1,\"appuserId\":1,\"id\":102,\"completed_on\":\"2017-02-05T22:15:48.291Z\"}"
     },
     "identifiedHazard": {
       "114": "{\"type\":\"Snow/Ice\",\"reaction\":\"At Risk\",\"location\":{\"lat\":32.9985237,\"lng\":-96.84046},\"comments\":\"Risky behavior.\",\"phase\":\"Evaluation\",\"riskAssessmentId\":96,\"id\":114}",
