@@ -8,7 +8,7 @@ var host = app.get('host');
 var port = app.get('port');
 var ds = app.dataSources.mssqldb;
 
-var schema_v1 = {
+/*var schema_v1 = {
   "name": "RiskAssessment",
   "options": {
 
@@ -40,7 +40,7 @@ ds.automigrate(function () {
     console.log(props);
 
   });
-});
+});*/
 module.exports = function(Riskassessment) {
 
 

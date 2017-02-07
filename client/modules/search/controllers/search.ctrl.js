@@ -14,16 +14,16 @@
         var type = ctx.accessLevelType;
         console.log(type);
         switch (type) {
-          case "regional":
+          case "Region":
             getRegionalEmployees(ctx.accessLevelAreaId);
             break;
-          case "division":
+          case "Division":
             getDivisionalEmployees(ctx.accessLevelAreaId);
             break;
-          case "project":
+          case "Project":
             getProjectEmployees(ctx.accessLevelAreaId);
             break;
-          case "group":
+          case "Group":
             getGroupEmployees(ctx.accessLevelAreaId);
             break;
 
@@ -75,6 +75,10 @@
             $scope.noResults = "No risk assessments found.";
           }
           $scope.results = results;
+
+          for (var x =0; x <results.length; x++){
+            console.log(results[x].identifiedHazards);
+          }
 
 
         })

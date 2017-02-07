@@ -61,7 +61,7 @@
     "public": true
   },
   "riskAssessment": {
-    "dataSource": "mssqldb",
+    "dataSource": "db",
     "public": true
   },
   "identifiedHazard": {
