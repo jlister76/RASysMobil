@@ -12,7 +12,7 @@
    *
    */
   angular.module('com.module.assessment')
-    .config(function($stateProvider, $urlRouterProvider){
+    .config(function($stateProvider){
       $stateProvider
         .state('ra-mobile.new', {
           'abstract': true,
@@ -28,9 +28,48 @@
           template: '<div style="" ui-view></div>'
         })
         .state('ra-mobile.new.assessment', {
-        url: '/assessment',
-        templateUrl: 'modules/assessment/views/new.assessment.html',
-        controller: 'NewAssessmentCtrl'
+          url: '/assessment',
+          resolve:{
+            ctx: function(AuthService){
+              return AuthService.getCurrent().$promise;
+            }
+          },
+          templateUrl: 'modules/assessment/views/new.assessment.html',
+          controller: 'NewAssessmentCtrl'
+        })
+        .state('ra-mobile.new.showDivisions', {
+          url: '/show-divisions',
+          resolve: {
+            ctx: function(AuthService){ return AuthService.getCurrent().$promise}
+          },
+          templateUrl: 'modules/assessment/views/show-area.html',
+          controller: 'ShowDivisionsCtrl'
+        })
+        .state('ra-mobile.new.showProjects', {
+          url: '/show-projects',
+          params: {
+            areaId: null
+          },
+          templateUrl: 'modules/assessment/views/show-area.html',
+          controller: 'ShowProjectsCtrl'
+        })
+        .state('ra-mobile.new.showGroups', {
+          url: '/show-groups',
+          params: {
+            areaId: null
+          },
+          templateUrl: 'modules/assessment/views/show-area.html',
+          controller: 'ShowGroupsCtrl'
+        })
+        .state('ra-mobile.new.showEmployees', {
+          url: '/show-employees',
+          resolve: {
+            ctx: function (AuthService) {
+              return AuthService.getCurrent().$promise
+            }
+          },
+          templateUrl: 'modules/assessment/views/show-employees.html',
+          controller: 'ShowEmployeesCtrl'
         })
         .state('ra-mobile.list', {
           url: '/assessment-list',

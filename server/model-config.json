@@ -14,58 +14,54 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "mssqldb"
   },
   "AccessToken": {
-    "dataSource": "db",
+    "dataSource": "mssqldb",
     "public": false
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "mssqldb",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "mssqldb",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "mssqldb",
     "public": false
   },
   "appuser": {
-    "dataSource": "db",
+    "dataSource": "mssqldb",
     "public": true
   },
   "region": {
-    "dataSource": "db",
+    "dataSource": "mssqldb",
     "public": true
   },
   "division": {
-    "dataSource": "db",
+    "dataSource": "mssqldb",
     "public": true
   },
   "project": {
-    "dataSource": "db",
+    "dataSource": "mssqldb",
     "public": true
   },
   "group": {
-    "dataSource": "db",
+    "dataSource": "mssqldb",
     "public": true
   },
   "employee": {
-    "dataSource": "db",
-    "public": true
-  },
-  "regionalRelationMapping": {
-    "dataSource": "db",
+    "dataSource": "mssqldb",
     "public": true
   },
   "riskAssessment": {
-    "dataSource": "db",
+    "dataSource": "mssqldb",
     "public": true
   },
   "identifiedHazard": {
-    "dataSource": "db",
+    "dataSource": "mssqldb",
     "public": true
   },
   "Email": {

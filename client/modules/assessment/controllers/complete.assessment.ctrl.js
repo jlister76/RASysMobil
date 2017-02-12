@@ -518,8 +518,9 @@
 
           for(var h in ra[0].identifiedHazards){
             console.log(ra[0].identifiedHazards[h]);
-            if(ra[0].identifiedHazards[h].reaction === "safe"){
+            if(ra[0].identifiedHazards[h].reaction === "Safe"){
               $scope.safeReactions.push(h);
+              console.log($scope.safeReactions.length);
             }
           }
           $scope.setWeatherCondition = function(id,condition){

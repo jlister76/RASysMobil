@@ -6,15 +6,15 @@
     "validateUpsert": true
   },
   "properties": {
-    "first_name": {
+    "fname": {
       "type": "string"
     },
-    "last_name": {
+    "lname": {
       "type": "string"
     },
     "jobTitle": {
-      "type": "string",
-      "required": true
+      "type": "string"
+
     },
     "accessLevel": {
       "type": "string",

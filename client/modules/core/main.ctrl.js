@@ -114,8 +114,9 @@
         AuthService.getCurrent()
           .$promise
           .then(function(ctx){
-            var type = ctx.accessLevelType,
-              groupId = ctx.accessLevelGroupId;
+            console.log(ctx);
+            var type = ctx.accessLevel,
+              groupId = ctx.accessLevelAreaId;
             console.log("In main ctrl",type);
             init();
             function init(){

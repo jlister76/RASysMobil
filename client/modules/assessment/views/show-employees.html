@@ -1,0 +1,19 @@
+
+<div layout="column" layout-align="start start" class="md-display-2 md-padding">
+  <div layout layout-align="start start" >
+    <a href="" ng-click="previousState()" class="md-padding nav"><i class="material-icons" style="font-size:5rem;">navigate_before</i></a>
+  </div>
+  <div style="width:100%;"><h4>{{ type }}</h4>
+    <div  layout layout-align="start center" ng-repeat="employee in employees">
+      <a  href="" ng-click="start(employee);" ng-dblclick="preventClick()" style="color:#444444;width:100%; text-decoration: none;">
+        <div layout="column"  class="md-padding" style="width:100%;">
+          <md-card layout layout-align="space-between center" class="md-padding" style="width: 100%;height:10rem;background-color:whitesmoke;">
+            <span>{{ employee.fname }} , {{ employee.lname }}</span>
+            <span><i class="material-icons" style="color:#999;font-size: 5rem;">navigate_next</i></span>
+          </md-card>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</div>

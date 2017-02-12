@@ -60,8 +60,8 @@
           <div layout layout-align="space-between center" style="width:100%;">
             <div layout layout-align="start center">
               <h5 style="margin:1rem 1rem;">Weather Conditions <span>*</span></h5>
-              <span ng-if="condition === null"><small><em>not set</em></small></span>
-              <span>{{ condition  }}</span>
+              <span ng-if="condition === 'null'"><small><em>not set</em></small></span>
+              <span ng-if="condition != 'null'">{{ condition  }}</span>
             </div>
             <div>
               <a href="" ng-click="showWeatherConditionsForm = !showWeatherConditionsForm">update</a>
@@ -88,9 +88,9 @@
           <div layout layout-align="space-between center" style="width:100%;">
             <div layout layout-align="start center">
               <h5 style="margin:1rem 1rem;">Driver License <span>*</span></h5>
-              <span ng-if="validLicense != true"><small><em>not set</em></small></span>
+              <span ng-if="validLicense !== true && validLicense !== false"><small><em>not set</em></small></span>
               <span ng-class="{isError: validLicense != true,isValid: validLicense === true}">{{ driversLicense }} </span>
-              <span ng-if="validLicense === true" class="isValid" style="margin-left:.5rem;"></span>
+
             </div>
             <div layout>
               <a href="" ng-click="showLicenseForm =!showLicenseForm">update</a>

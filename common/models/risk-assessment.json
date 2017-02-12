@@ -7,20 +7,16 @@
   },
   "properties": {
     "quarter": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "year": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "month": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "active": {
-      "type": "Boolean",
-      "required": true
+      "type": "Boolean"
     },
     "location": {
       "type": "geopoint",
@@ -31,19 +27,17 @@
       "required": true
     },
     "driversLicenseExpiration": {
-      "type": "Date",
-      "default": null
+      "type": "Date"
     },
     "validLicense": {
-      "type": "Boolean",
-      "default": null
+      "type": "Boolean"
     },
     "phase1Timer": {
       "type": "number",
       "default": 0
     },
     "phase2Timer": {
-      "type": "Number",
+      "type": "number",
       "default": 0
     },
     "phase3Timer": {
@@ -59,11 +53,11 @@
     },
     "employee_verification": {
       "type": "string",
-      "default": null
+      "default": "null"
     },
     "condition": {
       "type": "string",
-      "default": null
+      "default": "null"
     }
   },
   "validations": [],

@@ -8,43 +8,8 @@ var host = app.get('host');
 var port = app.get('port');
 var ds = app.dataSources.mssqldb;
 
-/*var schema_v1 = {
-  "name": "RiskAssessment",
-  "options": {
 
-    "mssql": {
-      "idInjection": true,
-      "table": "RISK_ASSESSMENT"
-    }
-  },
-  "properties": {
-    "quarter": {
-      "type": "Number",
-      "required": true
-    },
-    "year": {
-      "type": "Number",
-      "required": true
-    },
-    "month": {
-      "type": "Number",
-      "required": true
-    }
-  }
-};
-
-ds.createModel(schema_v1.name, schema_v1.properties, schema_v1.options);
-
-ds.automigrate(function () {
-  ds.discoverModelProperties('RISK_ASSESSMENT', function (err, props) {
-    console.log(props);
-
-  });
-});*/
 module.exports = function(Riskassessment) {
-
-
-
 
   Riskassessment.sendEmail = function(ra, cb) {
 

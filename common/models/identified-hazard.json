@@ -1,8 +1,8 @@
 {
   "name": "identifiedHazard",
   "base": "PersistedModel",
-  "idInjection": true,
   "options": {
+    "idInjection": true,
     "validateUpsert": true
   },
   "properties": {
