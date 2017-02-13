@@ -1,10 +1,10 @@
 <div style="">
 
-  <div layout="column" class=md-padding style="height:95vh;">
+  <div layout="column" class=md-padding style="height:auto;">
 
-    <md-card class="md-padding" style="background-color:whitesmoke;">
+    <md-card class="md-padding md-display-2" style="background-color:whitesmoke;">
       <md-title>
-        <md-title-text class="md-display-2"><strong>Summary</strong></md-title-text>
+        <md-title-text><h4>Days Since Report</h4></md-title-text>
       </md-title>
       <md-card-content style="margin-top:3rem;">
         <p class="md-display-2" style="color:#333;">{{ group.title }} has gone <u>365</u> days without an injury or accident.</p>
@@ -15,18 +15,35 @@
         </div>
       </md-card-footer>
     </md-card>
-    <md-card class="md-padding" style="background-color:whitesmoke;">
-      <md-card-header>
-        <md-title>
-          <md-title-text class="md-display-2"><strong>Monthly Status</strong></md-title-text>
-        </md-title>
-      </md-card-header>
-      <md-card-content>
-        <ul class="md-display-2" style="list-style: none;color:#333;">
-          <li style="margin:1rem;"><u>00</u> completed audits</li>
-          <li style="margin:1rem;"><u>00</u> required audits</li>
-          <li style="margin:1rem;"><u>00</u> optional audits</li>
-        </ul>
+    <md-card layout="column" class="md-padding md-display-2" style="background-color:whitesmoke;height:100%;">
+      <md-title>
+        <md-title-text>
+          <h4 ><strong>Monthly Risk Assessments</strong></h4>
+        </md-title-text>
+      </md-title>
+
+      <md-card-content style="height:auto;">
+        <div layout layout-align="space-between center" style="margin:2rem;">
+          <div ng-init="showEmployees = false">{{ required.length }} required</div>
+          <span ng-click="showEmployees = !showEmployees"><small style="color:blue;"><span layout layout-align="center center" ng-if="!showEmployees">show employees <i class="material-icons" style="font-size:3rem;">expand_less</i></span><span ng-if="showEmployees" layout layout-align="center center">hide employees <i class="material-icons" style="font-size:3rem;">expand_more</i></span></small></span>
+        </div>
+        <div ng-if="showEmployees" layout layout-align="space-between center" ng-repeat="person in required" md-whiteframe="4" class="md-display-1" style="margin:3rem 2rem;padding:2rem;">
+          <div>{{ person.employee.fname }}{{ person.employee.lname }}</div>
+          <div>
+            <a href="" ng-click="start(person.employee)" ng-dblclick="preventClick()" class="nav"><i class="material-icons">navigate_next</i></a>
+          </div>
+        </div>
+        <md-divider></md-divider>
+        <div layout layout-align="space-between center" style="margin:2rem;">
+          <div ng-init="showOptionalEmployees = false">{{ optional.length }} optional</div>
+          <span ng-click="showOptionalEmployees = !showOptionalEmployees"><small style="color:blue;"><span layout layout-align="center center" ng-if="!showOptionalEmployees">show employees <i class="material-icons" style="font-size:3rem;">expand_less</i></span><span ng-if="showOptionalEmployees" layout layout-align="center center">hide employees <i class="material-icons" style="font-size:3rem;">expand_more</i></span></small></span>
+        </div>
+        <div ng-if="showOptionalEmployees" layout layout-align="space-between center" ng-repeat="person in optional" md-whiteframe="4" class="md-display-1" style="margin:3rem 2rem;padding:2rem;">
+          <div>{{ person.employee.fname }}{{ person.employee.lname }}</div>
+          <div>
+            <a href="" ng-click="start(person.employee)" ng-dblclick="preventClick()" class="nav"><i class="material-icons">navigate_next</i></a>
+          </div>
+        </div>
       </md-card-content>
     </md-card>
 

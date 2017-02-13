@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function(app){
 
   var ds = app.dataSources.mssqldb,
@@ -16,10 +18,10 @@ module.exports = function(app){
       'employee',
       'riskAssessment',
       'identifiedHazard',
-      'quarterly',
-      'monthly'
+      'quarterlyStatus',
+      'monthlyStatus'
     ];
- ds.automigrate(modelsAry, function(){
+ /*ds.automigrate(modelsAry, function(){
    buildDemoApp();
 
    function buildDemoApp(){
@@ -124,9 +126,9 @@ module.exports = function(app){
 
        //change hire date on every 3rd employee created
        if(inc === 3){
-         newEmployee.hire_date = "2016-01-01";
+         newEmployee.hire_date = new Date("2016/1/1");
        }else{
-         newEmployee.hire_date = "2017-01-01";
+         newEmployee.hire_date = new Date("2017/1/1");
        }
        employee.create(newEmployee, function(err,success){
          if(err){console.error(err)}
@@ -147,7 +149,7 @@ module.exports = function(app){
      appuser.create({"fname": "Group", "lname": "User", "accessLevel": "Group", "accessLevelAreaId": 4, "email": "groupuser@outlook.com", "password": "1234"})
 
    }
-  });
+  });*/
 
  //ds.autoupdate(modelsAry);
 

@@ -1,5 +1,5 @@
 {
-  "name": "monthly",
+  "name": "monthlyStatus",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -42,9 +42,9 @@
       "model": "riskAssessment",
       "foreignKey": ""
     },
-    "quarterly": {
+    "quarterlyStatus": {
       "type": "belongsTo",
-      "model": "quarterly",
+      "model": "quarterlyStatus",
       "foreignKey": ""
     },
     "group": {

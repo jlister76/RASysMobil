@@ -1,12 +1,9 @@
 {
-  "name": "quarterly",
+  "name": "quarterlyStatus",
   "base": "PersistedModel",
+  "idInjection": true,
   "options": {
-    "idInjection": true,
-    "validateUpsert": true,
-    "mssql": {
-      "table": "qtly_status"
-    }
+    "validateUpsert": true
   },
   "properties": {
     "created_on": {

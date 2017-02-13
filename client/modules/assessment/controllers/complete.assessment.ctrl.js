@@ -466,11 +466,10 @@
           $scope.allReactions = ra[0].identifiedHazards;
           $scope.condition = ra[0].condition;
           $scope.validLicense = ra[0].validLicense;
-          console.log(ra[0].appuser);
 
           $scope.getEmployeeList = function(user){
-            var type = ra[0].appuser.accessLevelType;
-            console.log(type);
+            var type = ra[0].appuser.accessLevel;
+            console.log(ra[0]);
             switch (type) {
               case "Region":
                 getRegionalEmployees(ra[0].appuser.accessLevelAreaId);
@@ -489,7 +488,7 @@
           };
           function getRegionalEmployees(areaId){
             Employee.find({filter:{where:{regionId: areaId}}})
-              .$promise.then(function(data){$scope.employeeList = data;})
+              .$promise.then(function(data){$scope.employeeList = data;console.log(data)})
           };
           function getDivisionalEmployees(areaId){
             Employee.find({filter:{where:{divisionId: areaId}}})

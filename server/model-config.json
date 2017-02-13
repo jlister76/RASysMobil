@@ -67,11 +67,11 @@
   "Email": {
     "dataSource": "emailDataSource"
   },
-  "quarterly": {
+  "quarterlyStatus": {
     "dataSource": "mssqldb",
     "public": true
   },
-  "monthly": {
+  "monthlyStatus": {
     "dataSource": "mssqldb",
     "public": true
   }

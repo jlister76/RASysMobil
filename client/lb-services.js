@@ -2449,6 +2449,12 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "POST",
             },
 
+            // INTERNAL. Use RiskAssessment.appuser() instead.
+            "::get::RiskAssessment::appuser": {
+              url: urlBase + "/riskAssessments/:id/appuser",
+              method: "GET",
+            },
+
             /**
              * @ngdoc method
              * @name lbServices.Appuser#getCurrent
@@ -2813,322 +2819,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
         urlBase + "/regions/:id",
           { 'id': '@id' },
           {
-
-            // INTERNAL. Use Region.divisions.findById() instead.
-            "prototype$__findById__divisions": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/divisions/:fk",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.divisions.destroyById() instead.
-            "prototype$__destroyById__divisions": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/divisions/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.divisions.updateById() instead.
-            "prototype$__updateById__divisions": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/divisions/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.divisions.link() instead.
-            "prototype$__link__divisions": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/divisions/rel/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.divisions.unlink() instead.
-            "prototype$__unlink__divisions": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/divisions/rel/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.divisions.exists() instead.
-            "prototype$__exists__divisions": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/divisions/rel/:fk",
-              method: "HEAD",
-            },
-
-            // INTERNAL. Use Region.projects.findById() instead.
-            "prototype$__findById__projects": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/projects/:fk",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.projects.destroyById() instead.
-            "prototype$__destroyById__projects": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/projects/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.projects.updateById() instead.
-            "prototype$__updateById__projects": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/projects/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.projects.link() instead.
-            "prototype$__link__projects": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/projects/rel/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.projects.unlink() instead.
-            "prototype$__unlink__projects": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/projects/rel/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.projects.exists() instead.
-            "prototype$__exists__projects": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/projects/rel/:fk",
-              method: "HEAD",
-            },
-
-            // INTERNAL. Use Region.groups.findById() instead.
-            "prototype$__findById__groups": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/groups/:fk",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.groups.destroyById() instead.
-            "prototype$__destroyById__groups": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/groups/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.groups.updateById() instead.
-            "prototype$__updateById__groups": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/groups/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.groups.link() instead.
-            "prototype$__link__groups": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/groups/rel/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.groups.unlink() instead.
-            "prototype$__unlink__groups": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/groups/rel/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.groups.exists() instead.
-            "prototype$__exists__groups": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/groups/rel/:fk",
-              method: "HEAD",
-            },
-
-            // INTERNAL. Use Region.employees.findById() instead.
-            "prototype$__findById__employees": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/employees/:fk",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.employees.destroyById() instead.
-            "prototype$__destroyById__employees": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/employees/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.employees.updateById() instead.
-            "prototype$__updateById__employees": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/employees/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.employees.link() instead.
-            "prototype$__link__employees": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/employees/rel/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.employees.unlink() instead.
-            "prototype$__unlink__employees": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/employees/rel/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.employees.exists() instead.
-            "prototype$__exists__employees": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/employees/rel/:fk",
-              method: "HEAD",
-            },
-
-            // INTERNAL. Use Region.divisions() instead.
-            "prototype$__get__divisions": {
-              isArray: true,
-              url: urlBase + "/regions/:id/divisions",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.divisions.create() instead.
-            "prototype$__create__divisions": {
-              url: urlBase + "/regions/:id/divisions",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Region.divisions.destroyAll() instead.
-            "prototype$__delete__divisions": {
-              url: urlBase + "/regions/:id/divisions",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.divisions.count() instead.
-            "prototype$__count__divisions": {
-              url: urlBase + "/regions/:id/divisions/count",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.projects() instead.
-            "prototype$__get__projects": {
-              isArray: true,
-              url: urlBase + "/regions/:id/projects",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.projects.create() instead.
-            "prototype$__create__projects": {
-              url: urlBase + "/regions/:id/projects",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Region.projects.destroyAll() instead.
-            "prototype$__delete__projects": {
-              url: urlBase + "/regions/:id/projects",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.projects.count() instead.
-            "prototype$__count__projects": {
-              url: urlBase + "/regions/:id/projects/count",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.groups() instead.
-            "prototype$__get__groups": {
-              isArray: true,
-              url: urlBase + "/regions/:id/groups",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.groups.create() instead.
-            "prototype$__create__groups": {
-              url: urlBase + "/regions/:id/groups",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Region.groups.destroyAll() instead.
-            "prototype$__delete__groups": {
-              url: urlBase + "/regions/:id/groups",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.groups.count() instead.
-            "prototype$__count__groups": {
-              url: urlBase + "/regions/:id/groups/count",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.employees() instead.
-            "prototype$__get__employees": {
-              isArray: true,
-              url: urlBase + "/regions/:id/employees",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.employees.create() instead.
-            "prototype$__create__employees": {
-              url: urlBase + "/regions/:id/employees",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Region.employees.destroyAll() instead.
-            "prototype$__delete__employees": {
-              url: urlBase + "/regions/:id/employees",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.employees.count() instead.
-            "prototype$__count__employees": {
-              url: urlBase + "/regions/:id/employees/count",
-              method: "GET",
-            },
 
             /**
              * @ngdoc method
@@ -3711,9 +3401,15 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "GET",
             },
 
-            // INTERNAL. Use RegionalRelationMapping.region() instead.
-            "::get::RegionalRelationMapping::region": {
-              url: urlBase + "/regionalRelationMappings/:id/region",
+            // INTERNAL. Use QuarterlyStatus.region() instead.
+            "::get::QuarterlyStatus::region": {
+              url: urlBase + "/quarterlyStatuses/:id/region",
+              method: "GET",
+            },
+
+            // INTERNAL. Use MonthlyStatus.region() instead.
+            "::get::MonthlyStatus::region": {
+              url: urlBase + "/monthlyStatuses/:id/region",
               method: "GET",
             },
           }
@@ -3965,1830 +3661,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
         */
         R.modelName = "Region";
 
-    /**
-     * @ngdoc object
-     * @name lbServices.Region.divisions
-     * @header lbServices.Region.divisions
-     * @object
-     * @description
-     *
-     * The object `Region.divisions` groups methods
-     * manipulating `Division` instances related to `Region`.
-     *
-     * Call {@link lbServices.Region#divisions Region.divisions()}
-     * to query all related instances.
-     */
-
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region#divisions
-             * @methodOf lbServices.Region
-             *
-             * @description
-             *
-             * Queries divisions of region.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `filter` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Array.<Object>,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Array.<Object>} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Division` object.)
-             * </em>
-             */
-        R.divisions = function() {
-          var TargetResource = $injector.get("Division");
-          var action = TargetResource["::get::Region::divisions"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.divisions#count
-             * @methodOf lbServices.Region.divisions
-             *
-             * @description
-             *
-             * Counts divisions of region.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `where` – `{object=}` - Criteria to match model instances
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `count` – `{number=}` -
-             */
-        R.divisions.count = function() {
-          var TargetResource = $injector.get("Division");
-          var action = TargetResource["::count::Region::divisions"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.divisions#create
-             * @methodOf lbServices.Region.divisions
-             *
-             * @description
-             *
-             * Creates a new instance in divisions of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Division` object.)
-             * </em>
-             */
-        R.divisions.create = function() {
-          var TargetResource = $injector.get("Division");
-          var action = TargetResource["::create::Region::divisions"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.divisions#createMany
-             * @methodOf lbServices.Region.divisions
-             *
-             * @description
-             *
-             * Creates a new instance in divisions of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Array.<Object>,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Array.<Object>} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Division` object.)
-             * </em>
-             */
-        R.divisions.createMany = function() {
-          var TargetResource = $injector.get("Division");
-          var action = TargetResource["::createMany::Region::divisions"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.divisions#destroyAll
-             * @methodOf lbServices.Region.divisions
-             *
-             * @description
-             *
-             * Deletes all divisions of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `where` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.divisions.destroyAll = function() {
-          var TargetResource = $injector.get("Division");
-          var action = TargetResource["::delete::Region::divisions"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.divisions#destroyById
-             * @methodOf lbServices.Region.divisions
-             *
-             * @description
-             *
-             * Delete a related item by id for divisions.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for divisions
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.divisions.destroyById = function() {
-          var TargetResource = $injector.get("Division");
-          var action = TargetResource["::destroyById::Region::divisions"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.divisions#exists
-             * @methodOf lbServices.Region.divisions
-             *
-             * @description
-             *
-             * Check the existence of divisions relation to an item by id.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for divisions
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Division` object.)
-             * </em>
-             */
-        R.divisions.exists = function() {
-          var TargetResource = $injector.get("Division");
-          var action = TargetResource["::exists::Region::divisions"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.divisions#findById
-             * @methodOf lbServices.Region.divisions
-             *
-             * @description
-             *
-             * Find a related item by id for divisions.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for divisions
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Division` object.)
-             * </em>
-             */
-        R.divisions.findById = function() {
-          var TargetResource = $injector.get("Division");
-          var action = TargetResource["::findById::Region::divisions"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.divisions#link
-             * @methodOf lbServices.Region.divisions
-             *
-             * @description
-             *
-             * Add a related item by id for divisions.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `fk` – `{*}` - Foreign key for divisions
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Division` object.)
-             * </em>
-             */
-        R.divisions.link = function() {
-          var TargetResource = $injector.get("Division");
-          var action = TargetResource["::link::Region::divisions"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.divisions#unlink
-             * @methodOf lbServices.Region.divisions
-             *
-             * @description
-             *
-             * Remove the divisions relation to an item by id.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for divisions
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.divisions.unlink = function() {
-          var TargetResource = $injector.get("Division");
-          var action = TargetResource["::unlink::Region::divisions"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.divisions#updateById
-             * @methodOf lbServices.Region.divisions
-             *
-             * @description
-             *
-             * Update a related item by id for divisions.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `fk` – `{*}` - Foreign key for divisions
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Division` object.)
-             * </em>
-             */
-        R.divisions.updateById = function() {
-          var TargetResource = $injector.get("Division");
-          var action = TargetResource["::updateById::Region::divisions"];
-          return action.apply(R, arguments);
-        };
-    /**
-     * @ngdoc object
-     * @name lbServices.Region.projects
-     * @header lbServices.Region.projects
-     * @object
-     * @description
-     *
-     * The object `Region.projects` groups methods
-     * manipulating `Project` instances related to `Region`.
-     *
-     * Call {@link lbServices.Region#projects Region.projects()}
-     * to query all related instances.
-     */
-
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region#projects
-             * @methodOf lbServices.Region
-             *
-             * @description
-             *
-             * Queries projects of region.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `filter` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Array.<Object>,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Array.<Object>} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Project` object.)
-             * </em>
-             */
-        R.projects = function() {
-          var TargetResource = $injector.get("Project");
-          var action = TargetResource["::get::Region::projects"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.projects#count
-             * @methodOf lbServices.Region.projects
-             *
-             * @description
-             *
-             * Counts projects of region.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `where` – `{object=}` - Criteria to match model instances
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `count` – `{number=}` -
-             */
-        R.projects.count = function() {
-          var TargetResource = $injector.get("Project");
-          var action = TargetResource["::count::Region::projects"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.projects#create
-             * @methodOf lbServices.Region.projects
-             *
-             * @description
-             *
-             * Creates a new instance in projects of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Project` object.)
-             * </em>
-             */
-        R.projects.create = function() {
-          var TargetResource = $injector.get("Project");
-          var action = TargetResource["::create::Region::projects"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.projects#createMany
-             * @methodOf lbServices.Region.projects
-             *
-             * @description
-             *
-             * Creates a new instance in projects of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Array.<Object>,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Array.<Object>} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Project` object.)
-             * </em>
-             */
-        R.projects.createMany = function() {
-          var TargetResource = $injector.get("Project");
-          var action = TargetResource["::createMany::Region::projects"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.projects#destroyAll
-             * @methodOf lbServices.Region.projects
-             *
-             * @description
-             *
-             * Deletes all projects of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `where` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.projects.destroyAll = function() {
-          var TargetResource = $injector.get("Project");
-          var action = TargetResource["::delete::Region::projects"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.projects#destroyById
-             * @methodOf lbServices.Region.projects
-             *
-             * @description
-             *
-             * Delete a related item by id for projects.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for projects
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.projects.destroyById = function() {
-          var TargetResource = $injector.get("Project");
-          var action = TargetResource["::destroyById::Region::projects"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.projects#exists
-             * @methodOf lbServices.Region.projects
-             *
-             * @description
-             *
-             * Check the existence of projects relation to an item by id.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for projects
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Project` object.)
-             * </em>
-             */
-        R.projects.exists = function() {
-          var TargetResource = $injector.get("Project");
-          var action = TargetResource["::exists::Region::projects"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.projects#findById
-             * @methodOf lbServices.Region.projects
-             *
-             * @description
-             *
-             * Find a related item by id for projects.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for projects
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Project` object.)
-             * </em>
-             */
-        R.projects.findById = function() {
-          var TargetResource = $injector.get("Project");
-          var action = TargetResource["::findById::Region::projects"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.projects#link
-             * @methodOf lbServices.Region.projects
-             *
-             * @description
-             *
-             * Add a related item by id for projects.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `fk` – `{*}` - Foreign key for projects
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Project` object.)
-             * </em>
-             */
-        R.projects.link = function() {
-          var TargetResource = $injector.get("Project");
-          var action = TargetResource["::link::Region::projects"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.projects#unlink
-             * @methodOf lbServices.Region.projects
-             *
-             * @description
-             *
-             * Remove the projects relation to an item by id.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for projects
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.projects.unlink = function() {
-          var TargetResource = $injector.get("Project");
-          var action = TargetResource["::unlink::Region::projects"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.projects#updateById
-             * @methodOf lbServices.Region.projects
-             *
-             * @description
-             *
-             * Update a related item by id for projects.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `fk` – `{*}` - Foreign key for projects
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Project` object.)
-             * </em>
-             */
-        R.projects.updateById = function() {
-          var TargetResource = $injector.get("Project");
-          var action = TargetResource["::updateById::Region::projects"];
-          return action.apply(R, arguments);
-        };
-    /**
-     * @ngdoc object
-     * @name lbServices.Region.groups
-     * @header lbServices.Region.groups
-     * @object
-     * @description
-     *
-     * The object `Region.groups` groups methods
-     * manipulating `Group` instances related to `Region`.
-     *
-     * Call {@link lbServices.Region#groups Region.groups()}
-     * to query all related instances.
-     */
-
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region#groups
-             * @methodOf lbServices.Region
-             *
-             * @description
-             *
-             * Queries groups of region.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `filter` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Array.<Object>,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Array.<Object>} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Group` object.)
-             * </em>
-             */
-        R.groups = function() {
-          var TargetResource = $injector.get("Group");
-          var action = TargetResource["::get::Region::groups"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.groups#count
-             * @methodOf lbServices.Region.groups
-             *
-             * @description
-             *
-             * Counts groups of region.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `where` – `{object=}` - Criteria to match model instances
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `count` – `{number=}` -
-             */
-        R.groups.count = function() {
-          var TargetResource = $injector.get("Group");
-          var action = TargetResource["::count::Region::groups"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.groups#create
-             * @methodOf lbServices.Region.groups
-             *
-             * @description
-             *
-             * Creates a new instance in groups of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Group` object.)
-             * </em>
-             */
-        R.groups.create = function() {
-          var TargetResource = $injector.get("Group");
-          var action = TargetResource["::create::Region::groups"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.groups#createMany
-             * @methodOf lbServices.Region.groups
-             *
-             * @description
-             *
-             * Creates a new instance in groups of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Array.<Object>,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Array.<Object>} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Group` object.)
-             * </em>
-             */
-        R.groups.createMany = function() {
-          var TargetResource = $injector.get("Group");
-          var action = TargetResource["::createMany::Region::groups"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.groups#destroyAll
-             * @methodOf lbServices.Region.groups
-             *
-             * @description
-             *
-             * Deletes all groups of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `where` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.groups.destroyAll = function() {
-          var TargetResource = $injector.get("Group");
-          var action = TargetResource["::delete::Region::groups"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.groups#destroyById
-             * @methodOf lbServices.Region.groups
-             *
-             * @description
-             *
-             * Delete a related item by id for groups.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for groups
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.groups.destroyById = function() {
-          var TargetResource = $injector.get("Group");
-          var action = TargetResource["::destroyById::Region::groups"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.groups#exists
-             * @methodOf lbServices.Region.groups
-             *
-             * @description
-             *
-             * Check the existence of groups relation to an item by id.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for groups
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Group` object.)
-             * </em>
-             */
-        R.groups.exists = function() {
-          var TargetResource = $injector.get("Group");
-          var action = TargetResource["::exists::Region::groups"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.groups#findById
-             * @methodOf lbServices.Region.groups
-             *
-             * @description
-             *
-             * Find a related item by id for groups.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for groups
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Group` object.)
-             * </em>
-             */
-        R.groups.findById = function() {
-          var TargetResource = $injector.get("Group");
-          var action = TargetResource["::findById::Region::groups"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.groups#link
-             * @methodOf lbServices.Region.groups
-             *
-             * @description
-             *
-             * Add a related item by id for groups.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `fk` – `{*}` - Foreign key for groups
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Group` object.)
-             * </em>
-             */
-        R.groups.link = function() {
-          var TargetResource = $injector.get("Group");
-          var action = TargetResource["::link::Region::groups"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.groups#unlink
-             * @methodOf lbServices.Region.groups
-             *
-             * @description
-             *
-             * Remove the groups relation to an item by id.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for groups
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.groups.unlink = function() {
-          var TargetResource = $injector.get("Group");
-          var action = TargetResource["::unlink::Region::groups"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.groups#updateById
-             * @methodOf lbServices.Region.groups
-             *
-             * @description
-             *
-             * Update a related item by id for groups.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `fk` – `{*}` - Foreign key for groups
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Group` object.)
-             * </em>
-             */
-        R.groups.updateById = function() {
-          var TargetResource = $injector.get("Group");
-          var action = TargetResource["::updateById::Region::groups"];
-          return action.apply(R, arguments);
-        };
-    /**
-     * @ngdoc object
-     * @name lbServices.Region.employees
-     * @header lbServices.Region.employees
-     * @object
-     * @description
-     *
-     * The object `Region.employees` groups methods
-     * manipulating `Employee` instances related to `Region`.
-     *
-     * Call {@link lbServices.Region#employees Region.employees()}
-     * to query all related instances.
-     */
-
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region#employees
-             * @methodOf lbServices.Region
-             *
-             * @description
-             *
-             * Queries employees of region.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `filter` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Array.<Object>,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Array.<Object>} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Employee` object.)
-             * </em>
-             */
-        R.employees = function() {
-          var TargetResource = $injector.get("Employee");
-          var action = TargetResource["::get::Region::employees"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.employees#count
-             * @methodOf lbServices.Region.employees
-             *
-             * @description
-             *
-             * Counts employees of region.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `where` – `{object=}` - Criteria to match model instances
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `count` – `{number=}` -
-             */
-        R.employees.count = function() {
-          var TargetResource = $injector.get("Employee");
-          var action = TargetResource["::count::Region::employees"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.employees#create
-             * @methodOf lbServices.Region.employees
-             *
-             * @description
-             *
-             * Creates a new instance in employees of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Employee` object.)
-             * </em>
-             */
-        R.employees.create = function() {
-          var TargetResource = $injector.get("Employee");
-          var action = TargetResource["::create::Region::employees"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.employees#createMany
-             * @methodOf lbServices.Region.employees
-             *
-             * @description
-             *
-             * Creates a new instance in employees of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Array.<Object>,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Array.<Object>} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Employee` object.)
-             * </em>
-             */
-        R.employees.createMany = function() {
-          var TargetResource = $injector.get("Employee");
-          var action = TargetResource["::createMany::Region::employees"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.employees#destroyAll
-             * @methodOf lbServices.Region.employees
-             *
-             * @description
-             *
-             * Deletes all employees of this model.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `where` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.employees.destroyAll = function() {
-          var TargetResource = $injector.get("Employee");
-          var action = TargetResource["::delete::Region::employees"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.employees#destroyById
-             * @methodOf lbServices.Region.employees
-             *
-             * @description
-             *
-             * Delete a related item by id for employees.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for employees
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.employees.destroyById = function() {
-          var TargetResource = $injector.get("Employee");
-          var action = TargetResource["::destroyById::Region::employees"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.employees#exists
-             * @methodOf lbServices.Region.employees
-             *
-             * @description
-             *
-             * Check the existence of employees relation to an item by id.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for employees
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Employee` object.)
-             * </em>
-             */
-        R.employees.exists = function() {
-          var TargetResource = $injector.get("Employee");
-          var action = TargetResource["::exists::Region::employees"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.employees#findById
-             * @methodOf lbServices.Region.employees
-             *
-             * @description
-             *
-             * Find a related item by id for employees.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for employees
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Employee` object.)
-             * </em>
-             */
-        R.employees.findById = function() {
-          var TargetResource = $injector.get("Employee");
-          var action = TargetResource["::findById::Region::employees"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.employees#link
-             * @methodOf lbServices.Region.employees
-             *
-             * @description
-             *
-             * Add a related item by id for employees.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `fk` – `{*}` - Foreign key for employees
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Employee` object.)
-             * </em>
-             */
-        R.employees.link = function() {
-          var TargetResource = $injector.get("Employee");
-          var action = TargetResource["::link::Region::employees"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.employees#unlink
-             * @methodOf lbServices.Region.employees
-             *
-             * @description
-             *
-             * Remove the employees relation to an item by id.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `fk` – `{*}` - Foreign key for employees
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * This method returns no data.
-             */
-        R.employees.unlink = function() {
-          var TargetResource = $injector.get("Employee");
-          var action = TargetResource["::unlink::Region::employees"];
-          return action.apply(R, arguments);
-        };
-
-            /**
-             * @ngdoc method
-             * @name lbServices.Region.employees#updateById
-             * @methodOf lbServices.Region.employees
-             *
-             * @description
-             *
-             * Update a related item by id for employees.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - region id
-             *
-             *  - `fk` – `{*}` - Foreign key for employees
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Employee` object.)
-             * </em>
-             */
-        R.employees.updateById = function() {
-          var TargetResource = $injector.get("Employee");
-          var action = TargetResource["::updateById::Region::employees"];
-          return action.apply(R, arguments);
-        };
 
 
         return R;
@@ -6436,92 +4308,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "POST",
             },
 
-            // INTERNAL. Use Region.divisions.findById() instead.
-            "::findById::Region::divisions": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/divisions/:fk",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.divisions.destroyById() instead.
-            "::destroyById::Region::divisions": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/divisions/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.divisions.updateById() instead.
-            "::updateById::Region::divisions": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/divisions/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.divisions.link() instead.
-            "::link::Region::divisions": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/divisions/rel/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.divisions.unlink() instead.
-            "::unlink::Region::divisions": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/divisions/rel/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.divisions.exists() instead.
-            "::exists::Region::divisions": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/divisions/rel/:fk",
-              method: "HEAD",
-            },
-
-            // INTERNAL. Use Region.divisions() instead.
-            "::get::Region::divisions": {
-              isArray: true,
-              url: urlBase + "/regions/:id/divisions",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.divisions.create() instead.
-            "::create::Region::divisions": {
-              url: urlBase + "/regions/:id/divisions",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Region.divisions.createMany() instead.
-            "::createMany::Region::divisions": {
-              isArray: true,
-              url: urlBase + "/regions/:id/divisions",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Region.divisions.destroyAll() instead.
-            "::delete::Region::divisions": {
-              url: urlBase + "/regions/:id/divisions",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.divisions.count() instead.
-            "::count::Region::divisions": {
-              url: urlBase + "/regions/:id/divisions/count",
-              method: "GET",
-            },
-
             // INTERNAL. Use Project.division() instead.
             "::get::Project::division": {
               url: urlBase + "/projects/:id/division",
@@ -6537,6 +4323,18 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
             // INTERNAL. Use Employee.division() instead.
             "::get::Employee::division": {
               url: urlBase + "/employees/:id/division",
+              method: "GET",
+            },
+
+            // INTERNAL. Use QuarterlyStatus.division() instead.
+            "::get::QuarterlyStatus::division": {
+              url: urlBase + "/quarterlyStatuses/:id/division",
+              method: "GET",
+            },
+
+            // INTERNAL. Use MonthlyStatus.division() instead.
+            "::get::MonthlyStatus::division": {
+              url: urlBase + "/monthlyStatuses/:id/division",
               method: "GET",
             },
           }
@@ -7764,92 +5562,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "POST",
             },
 
-            // INTERNAL. Use Region.projects.findById() instead.
-            "::findById::Region::projects": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/projects/:fk",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.projects.destroyById() instead.
-            "::destroyById::Region::projects": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/projects/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.projects.updateById() instead.
-            "::updateById::Region::projects": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/projects/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.projects.link() instead.
-            "::link::Region::projects": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/projects/rel/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.projects.unlink() instead.
-            "::unlink::Region::projects": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/projects/rel/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.projects.exists() instead.
-            "::exists::Region::projects": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/projects/rel/:fk",
-              method: "HEAD",
-            },
-
-            // INTERNAL. Use Region.projects() instead.
-            "::get::Region::projects": {
-              isArray: true,
-              url: urlBase + "/regions/:id/projects",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.projects.create() instead.
-            "::create::Region::projects": {
-              url: urlBase + "/regions/:id/projects",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Region.projects.createMany() instead.
-            "::createMany::Region::projects": {
-              isArray: true,
-              url: urlBase + "/regions/:id/projects",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Region.projects.destroyAll() instead.
-            "::delete::Region::projects": {
-              url: urlBase + "/regions/:id/projects",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.projects.count() instead.
-            "::count::Region::projects": {
-              url: urlBase + "/regions/:id/projects/count",
-              method: "GET",
-            },
-
             // INTERNAL. Use Division.projects.findById() instead.
             "::findById::Division::projects": {
               params: {
@@ -7918,6 +5630,18 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
             // INTERNAL. Use Employee.project() instead.
             "::get::Employee::project": {
               url: urlBase + "/employees/:id/project",
+              method: "GET",
+            },
+
+            // INTERNAL. Use QuarterlyStatus.project() instead.
+            "::get::QuarterlyStatus::project": {
+              url: urlBase + "/quarterlyStatuses/:id/project",
+              method: "GET",
+            },
+
+            // INTERNAL. Use MonthlyStatus.project() instead.
+            "::get::MonthlyStatus::project": {
+              url: urlBase + "/monthlyStatuses/:id/project",
               method: "GET",
             },
           }
@@ -8856,95 +6580,21 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "POST",
             },
 
-            // INTERNAL. Use Region.groups.findById() instead.
-            "::findById::Region::groups": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/groups/:fk",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.groups.destroyById() instead.
-            "::destroyById::Region::groups": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/groups/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.groups.updateById() instead.
-            "::updateById::Region::groups": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/groups/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.groups.link() instead.
-            "::link::Region::groups": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/groups/rel/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.groups.unlink() instead.
-            "::unlink::Region::groups": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/groups/rel/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.groups.exists() instead.
-            "::exists::Region::groups": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/groups/rel/:fk",
-              method: "HEAD",
-            },
-
-            // INTERNAL. Use Region.groups() instead.
-            "::get::Region::groups": {
-              isArray: true,
-              url: urlBase + "/regions/:id/groups",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.groups.create() instead.
-            "::create::Region::groups": {
-              url: urlBase + "/regions/:id/groups",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Region.groups.createMany() instead.
-            "::createMany::Region::groups": {
-              isArray: true,
-              url: urlBase + "/regions/:id/groups",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Region.groups.destroyAll() instead.
-            "::delete::Region::groups": {
-              url: urlBase + "/regions/:id/groups",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.groups.count() instead.
-            "::count::Region::groups": {
-              url: urlBase + "/regions/:id/groups/count",
-              method: "GET",
-            },
-
             // INTERNAL. Use Employee.group() instead.
             "::get::Employee::group": {
               url: urlBase + "/employees/:id/group",
+              method: "GET",
+            },
+
+            // INTERNAL. Use QuarterlyStatus.group() instead.
+            "::get::QuarterlyStatus::group": {
+              url: urlBase + "/quarterlyStatuses/:id/group",
+              method: "GET",
+            },
+
+            // INTERNAL. Use MonthlyStatus.group() instead.
+            "::get::MonthlyStatus::group": {
+              url: urlBase + "/monthlyStatuses/:id/group",
               method: "GET",
             },
           }
@@ -9929,95 +7579,21 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "POST",
             },
 
-            // INTERNAL. Use Region.employees.findById() instead.
-            "::findById::Region::employees": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/employees/:fk",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.employees.destroyById() instead.
-            "::destroyById::Region::employees": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/employees/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.employees.updateById() instead.
-            "::updateById::Region::employees": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/employees/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.employees.link() instead.
-            "::link::Region::employees": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/employees/rel/:fk",
-              method: "PUT",
-            },
-
-            // INTERNAL. Use Region.employees.unlink() instead.
-            "::unlink::Region::employees": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/employees/rel/:fk",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.employees.exists() instead.
-            "::exists::Region::employees": {
-              params: {
-                'fk': '@fk',
-              },
-              url: urlBase + "/regions/:id/employees/rel/:fk",
-              method: "HEAD",
-            },
-
-            // INTERNAL. Use Region.employees() instead.
-            "::get::Region::employees": {
-              isArray: true,
-              url: urlBase + "/regions/:id/employees",
-              method: "GET",
-            },
-
-            // INTERNAL. Use Region.employees.create() instead.
-            "::create::Region::employees": {
-              url: urlBase + "/regions/:id/employees",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Region.employees.createMany() instead.
-            "::createMany::Region::employees": {
-              isArray: true,
-              url: urlBase + "/regions/:id/employees",
-              method: "POST",
-            },
-
-            // INTERNAL. Use Region.employees.destroyAll() instead.
-            "::delete::Region::employees": {
-              url: urlBase + "/regions/:id/employees",
-              method: "DELETE",
-            },
-
-            // INTERNAL. Use Region.employees.count() instead.
-            "::count::Region::employees": {
-              url: urlBase + "/regions/:id/employees/count",
-              method: "GET",
-            },
-
             // INTERNAL. Use RiskAssessment.employee() instead.
             "::get::RiskAssessment::employee": {
               url: urlBase + "/riskAssessments/:id/employee",
+              method: "GET",
+            },
+
+            // INTERNAL. Use QuarterlyStatus.employee() instead.
+            "::get::QuarterlyStatus::employee": {
+              url: urlBase + "/quarterlyStatuses/:id/employee",
+              method: "GET",
+            },
+
+            // INTERNAL. Use MonthlyStatus.employee() instead.
+            "::get::MonthlyStatus::employee": {
+              url: urlBase + "/monthlyStatuses/:id/employee",
               method: "GET",
             },
           }
@@ -10436,889 +8012,6 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
 
 /**
  * @ngdoc object
- * @name lbServices.RegionalRelationMapping
- * @header lbServices.RegionalRelationMapping
- * @object
- *
- * @description
- *
- * A $resource object for interacting with the `RegionalRelationMapping` model.
- *
- * ## Example
- *
- * See
- * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
- * for an example of using this object.
- *
- */
-  module.factory(
-    "RegionalRelationMapping",
-    [
-      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
-      function(LoopBackResource, LoopBackAuth, $injector, $q) {
-        var R = LoopBackResource(
-        urlBase + "/regionalRelationMappings/:id",
-          { 'id': '@id' },
-          {
-
-            // INTERNAL. Use RegionalRelationMapping.region() instead.
-            "prototype$__get__region": {
-              url: urlBase + "/regionalRelationMappings/:id/region",
-              method: "GET",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#create
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Create a new instance of the model and persist it into the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *   This method does not accept any parameters.
-             *   Supply an empty object or omit this argument altogether.
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `data` – `{object=}` - Model instance data
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-            "create": {
-              url: urlBase + "/regionalRelationMappings",
-              method: "POST",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#createMany
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Create a new instance of the model and persist it into the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *   This method does not accept any parameters.
-             *   Supply an empty object or omit this argument altogether.
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `data` – `{object=}` - Model instance data
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Array.<Object>,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Array.<Object>} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-            "createMany": {
-              isArray: true,
-              url: urlBase + "/regionalRelationMappings",
-              method: "POST",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#patchOrCreate
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Patch an existing model instance or insert a new one into the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `data` – `{object=}` - Model instance data
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-            "patchOrCreate": {
-              url: urlBase + "/regionalRelationMappings",
-              method: "PATCH",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#replaceOrCreate
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Replace an existing model instance or insert a new one into the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *   This method does not accept any parameters.
-             *   Supply an empty object or omit this argument altogether.
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `data` – `{object=}` - Model instance data
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-            "replaceOrCreate": {
-              url: urlBase + "/regionalRelationMappings/replaceOrCreate",
-              method: "POST",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#upsertWithWhere
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Update an existing model instance or insert a new one into the data source based on the where criteria.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `where` – `{object=}` - Criteria to match model instances
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `data` – `{object=}` - An object of model property name/value pairs
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-            "upsertWithWhere": {
-              url: urlBase + "/regionalRelationMappings/upsertWithWhere",
-              method: "POST",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#exists
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Check whether a model instance exists in the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Model id
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `exists` – `{boolean=}` -
-             */
-            "exists": {
-              url: urlBase + "/regionalRelationMappings/:id/exists",
-              method: "GET",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#findById
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Find a model instance by {{id}} from the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Model id
-             *
-             *  - `filter` – `{object=}` - Filter defining fields and include
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-            "findById": {
-              url: urlBase + "/regionalRelationMappings/:id",
-              method: "GET",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#replaceById
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Replace attributes for a model instance and persist it into the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Model id
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `data` – `{object=}` - Model instance data
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-            "replaceById": {
-              url: urlBase + "/regionalRelationMappings/:id/replace",
-              method: "POST",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#find
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Find all instances of the model matched by filter from the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Array.<Object>,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Array.<Object>} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-            "find": {
-              isArray: true,
-              url: urlBase + "/regionalRelationMappings",
-              method: "GET",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#findOne
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Find first instance of the model matched by filter from the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-            "findOne": {
-              url: urlBase + "/regionalRelationMappings/findOne",
-              method: "GET",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#updateAll
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Update instances of the model matched by {{where}} from the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `where` – `{object=}` - Criteria to match model instances
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `data` – `{object=}` - An object of model property name/value pairs
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Information related to the outcome of the operation
-             */
-            "updateAll": {
-              url: urlBase + "/regionalRelationMappings/update",
-              method: "POST",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#deleteById
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Delete a model instance by {{id}} from the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Model id
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-            "deleteById": {
-              url: urlBase + "/regionalRelationMappings/:id",
-              method: "DELETE",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#count
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Count instances of the model matched by where from the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `where` – `{object=}` - Criteria to match model instances
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `count` – `{number=}` -
-             */
-            "count": {
-              url: urlBase + "/regionalRelationMappings/count",
-              method: "GET",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#prototype$patchAttributes
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Patch attributes for a model instance and persist it into the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - regionalRelationMapping id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` - An object of model property name/value pairs
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-            "prototype$patchAttributes": {
-              url: urlBase + "/regionalRelationMappings/:id",
-              method: "PATCH",
-            },
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#createChangeStream
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Create a change stream.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *   This method does not accept any parameters.
-             *   Supply an empty object or omit this argument altogether.
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Data properties:
-             *
-             *  - `changes` – `{ReadableStream=}` -
-             */
-            "createChangeStream": {
-              url: urlBase + "/regionalRelationMappings/change-stream",
-              method: "POST",
-            },
-          }
-        );
-
-
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#upsert
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Patch an existing model instance or insert a new one into the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `data` – `{object=}` - Model instance data
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-        R["upsert"] = R["patchOrCreate"];
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#updateOrCreate
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Patch an existing model instance or insert a new one into the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `data` – `{object=}` - Model instance data
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-        R["updateOrCreate"] = R["patchOrCreate"];
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#patchOrCreateWithWhere
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Update an existing model instance or insert a new one into the data source based on the where criteria.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `where` – `{object=}` - Criteria to match model instances
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `data` – `{object=}` - An object of model property name/value pairs
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-        R["patchOrCreateWithWhere"] = R["upsertWithWhere"];
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#update
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Update instances of the model matched by {{where}} from the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `where` – `{object=}` - Criteria to match model instances
-             *
-             * @param {Object} postData Request data.
-             *
-             *  - `data` – `{object=}` - An object of model property name/value pairs
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * Information related to the outcome of the operation
-             */
-        R["update"] = R["updateAll"];
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#destroyById
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Delete a model instance by {{id}} from the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Model id
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-        R["destroyById"] = R["deleteById"];
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#removeById
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Delete a model instance by {{id}} from the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - Model id
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-        R["removeById"] = R["deleteById"];
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#updateAttributes
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Patch attributes for a model instance and persist it into the data source.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - regionalRelationMapping id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `data` – `{object=}` - An object of model property name/value pairs
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `RegionalRelationMapping` object.)
-             * </em>
-             */
-        R["updateAttributes"] = R["prototype$patchAttributes"];
-
-
-        /**
-        * @ngdoc property
-        * @name lbServices.RegionalRelationMapping#modelName
-        * @propertyOf lbServices.RegionalRelationMapping
-        * @description
-        * The name of the model represented by this $resource,
-        * i.e. `RegionalRelationMapping`.
-        */
-        R.modelName = "RegionalRelationMapping";
-
-
-            /**
-             * @ngdoc method
-             * @name lbServices.RegionalRelationMapping#region
-             * @methodOf lbServices.RegionalRelationMapping
-             *
-             * @description
-             *
-             * Fetches belongsTo relation region.
-             *
-             * @param {Object=} parameters Request parameters.
-             *
-             *  - `id` – `{*}` - regionalRelationMapping id
-             *
-             *  - `options` – `{object=}` -
-             *
-             *  - `refresh` – `{boolean=}` -
-             *
-             *  - `options` – `{object=}` -
-             *
-             * @param {function(Object,Object)=} successCb
-             *   Success callback with two arguments: `value`, `responseHeaders`.
-             *
-             * @param {function(Object)=} errorCb Error callback with one argument:
-             *   `httpResponse`.
-             *
-             * @returns {Object} An empty reference that will be
-             *   populated with the actual data once the response is returned
-             *   from the server.
-             *
-             * <em>
-             * (The remote method definition does not provide any description.
-             * This usually means the response is a `Region` object.)
-             * </em>
-             */
-        R.region = function() {
-          var TargetResource = $injector.get("Region");
-          var action = TargetResource["::get::RegionalRelationMapping::region"];
-          return action.apply(R, arguments);
-        };
-
-
-        return R;
-      }]);
-
-/**
- * @ngdoc object
  * @name lbServices.RiskAssessment
  * @header lbServices.RiskAssessment
  * @object
@@ -11347,6 +8040,12 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
             // INTERNAL. Use RiskAssessment.employee() instead.
             "prototype$__get__employee": {
               url: urlBase + "/riskAssessments/:id/employee",
+              method: "GET",
+            },
+
+            // INTERNAL. Use RiskAssessment.appuser() instead.
+            "prototype$__get__appuser": {
+              url: urlBase + "/riskAssessments/:id/appuser",
               method: "GET",
             },
 
@@ -11959,9 +8658,89 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
               method: "POST",
             },
 
+            /**
+             * @ngdoc method
+             * @name lbServices.RiskAssessment#verify
+             * @methodOf lbServices.RiskAssessment
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `assessment` – `{*=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+            "verify": {
+              url: urlBase + "/riskAssessments/verify",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.RiskAssessment#resend
+             * @methodOf lbServices.RiskAssessment
+             *
+             * @description
+             *
+             * <em>
+             * (The remote method definition does not provide any description.)
+             * </em>
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `assessment` – `{Object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * This method returns no data.
+             */
+            "resend": {
+              url: urlBase + "/riskAssessments/resend",
+              method: "POST",
+            },
+
             // INTERNAL. Use IdentifiedHazard.riskAssessment() instead.
             "::get::IdentifiedHazard::riskAssessment": {
               url: urlBase + "/identifiedHazards/:id/riskAssessment",
+              method: "GET",
+            },
+
+            // INTERNAL. Use MonthlyStatus.riskAssessment() instead.
+            "::get::MonthlyStatus::riskAssessment": {
+              url: urlBase + "/monthlyStatuses/:id/riskAssessment",
               method: "GET",
             },
           }
@@ -12251,6 +9030,46 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
         R.employee = function() {
           var TargetResource = $injector.get("Employee");
           var action = TargetResource["::get::RiskAssessment::employee"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.RiskAssessment#appuser
+             * @methodOf lbServices.RiskAssessment
+             *
+             * @description
+             *
+             * Fetches belongsTo relation appuser.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - riskAssessment id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Appuser` object.)
+             * </em>
+             */
+        R.appuser = function() {
+          var TargetResource = $injector.get("Appuser");
+          var action = TargetResource["::get::RiskAssessment::appuser"];
           return action.apply(R, arguments);
         };
     /**
@@ -13528,6 +10347,2285 @@ if (typeof module !== 'undefined' && typeof exports !== 'undefined' &&
         R.riskAssessment = function() {
           var TargetResource = $injector.get("RiskAssessment");
           var action = TargetResource["::get::IdentifiedHazard::riskAssessment"];
+          return action.apply(R, arguments);
+        };
+
+
+        return R;
+      }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.Email
+ * @header lbServices.Email
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Email` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+  module.factory(
+    "Email",
+    [
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
+        urlBase + "/Emails/:id",
+          { 'id': '@id' },
+          {
+          }
+        );
+
+
+
+
+        /**
+        * @ngdoc property
+        * @name lbServices.Email#modelName
+        * @propertyOf lbServices.Email
+        * @description
+        * The name of the model represented by this $resource,
+        * i.e. `Email`.
+        */
+        R.modelName = "Email";
+
+
+
+        return R;
+      }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.QuarterlyStatus
+ * @header lbServices.QuarterlyStatus
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `QuarterlyStatus` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+  module.factory(
+    "QuarterlyStatus",
+    [
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
+        urlBase + "/quarterlyStatuses/:id",
+          { 'id': '@id' },
+          {
+
+            // INTERNAL. Use QuarterlyStatus.employee() instead.
+            "prototype$__get__employee": {
+              url: urlBase + "/quarterlyStatuses/:id/employee",
+              method: "GET",
+            },
+
+            // INTERNAL. Use QuarterlyStatus.group() instead.
+            "prototype$__get__group": {
+              url: urlBase + "/quarterlyStatuses/:id/group",
+              method: "GET",
+            },
+
+            // INTERNAL. Use QuarterlyStatus.project() instead.
+            "prototype$__get__project": {
+              url: urlBase + "/quarterlyStatuses/:id/project",
+              method: "GET",
+            },
+
+            // INTERNAL. Use QuarterlyStatus.division() instead.
+            "prototype$__get__division": {
+              url: urlBase + "/quarterlyStatuses/:id/division",
+              method: "GET",
+            },
+
+            // INTERNAL. Use QuarterlyStatus.region() instead.
+            "prototype$__get__region": {
+              url: urlBase + "/quarterlyStatuses/:id/region",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#create
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Create a new instance of the model and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - Model instance data
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+            "create": {
+              url: urlBase + "/quarterlyStatuses",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#createMany
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Create a new instance of the model and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - Model instance data
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+            "createMany": {
+              isArray: true,
+              url: urlBase + "/quarterlyStatuses",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#patchOrCreate
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `data` – `{object=}` - Model instance data
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+            "patchOrCreate": {
+              url: urlBase + "/quarterlyStatuses",
+              method: "PATCH",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#replaceOrCreate
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Replace an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - Model instance data
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+            "replaceOrCreate": {
+              url: urlBase + "/quarterlyStatuses/replaceOrCreate",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#upsertWithWhere
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Update an existing model instance or insert a new one into the data source based on the where criteria.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - An object of model property name/value pairs
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+            "upsertWithWhere": {
+              url: urlBase + "/quarterlyStatuses/upsertWithWhere",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#exists
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Check whether a model instance exists in the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `exists` – `{boolean=}` -
+             */
+            "exists": {
+              url: urlBase + "/quarterlyStatuses/:id/exists",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#findById
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Find a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             *  - `filter` – `{object=}` - Filter defining fields and include
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+            "findById": {
+              url: urlBase + "/quarterlyStatuses/:id",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#replaceById
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Replace attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - Model instance data
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+            "replaceById": {
+              url: urlBase + "/quarterlyStatuses/:id/replace",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#find
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Find all instances of the model matched by filter from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+            "find": {
+              isArray: true,
+              url: urlBase + "/quarterlyStatuses",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#findOne
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Find first instance of the model matched by filter from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+            "findOne": {
+              url: urlBase + "/quarterlyStatuses/findOne",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#updateAll
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Update instances of the model matched by {{where}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - An object of model property name/value pairs
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Information related to the outcome of the operation
+             */
+            "updateAll": {
+              url: urlBase + "/quarterlyStatuses/update",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#deleteById
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+            "deleteById": {
+              url: urlBase + "/quarterlyStatuses/:id",
+              method: "DELETE",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#count
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Count instances of the model matched by where from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+            "count": {
+              url: urlBase + "/quarterlyStatuses/count",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#prototype$patchAttributes
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Patch attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - quarterlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `data` – `{object=}` - An object of model property name/value pairs
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+            "prototype$patchAttributes": {
+              url: urlBase + "/quarterlyStatuses/:id",
+              method: "PATCH",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#createChangeStream
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Create a change stream.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `changes` – `{ReadableStream=}` -
+             */
+            "createChangeStream": {
+              url: urlBase + "/quarterlyStatuses/change-stream",
+              method: "POST",
+            },
+
+            // INTERNAL. Use MonthlyStatus.quarterlyStatus() instead.
+            "::get::MonthlyStatus::quarterlyStatus": {
+              url: urlBase + "/monthlyStatuses/:id/quarterlyStatus",
+              method: "GET",
+            },
+          }
+        );
+
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#upsert
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `data` – `{object=}` - Model instance data
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+        R["upsert"] = R["patchOrCreate"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#updateOrCreate
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `data` – `{object=}` - Model instance data
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+        R["updateOrCreate"] = R["patchOrCreate"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#patchOrCreateWithWhere
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Update an existing model instance or insert a new one into the data source based on the where criteria.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - An object of model property name/value pairs
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+        R["patchOrCreateWithWhere"] = R["upsertWithWhere"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#update
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Update instances of the model matched by {{where}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - An object of model property name/value pairs
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Information related to the outcome of the operation
+             */
+        R["update"] = R["updateAll"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#destroyById
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+        R["destroyById"] = R["deleteById"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#removeById
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+        R["removeById"] = R["deleteById"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#updateAttributes
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Patch attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - quarterlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `data` – `{object=}` - An object of model property name/value pairs
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+        R["updateAttributes"] = R["prototype$patchAttributes"];
+
+
+        /**
+        * @ngdoc property
+        * @name lbServices.QuarterlyStatus#modelName
+        * @propertyOf lbServices.QuarterlyStatus
+        * @description
+        * The name of the model represented by this $resource,
+        * i.e. `QuarterlyStatus`.
+        */
+        R.modelName = "QuarterlyStatus";
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#employee
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Fetches belongsTo relation employee.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - quarterlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Employee` object.)
+             * </em>
+             */
+        R.employee = function() {
+          var TargetResource = $injector.get("Employee");
+          var action = TargetResource["::get::QuarterlyStatus::employee"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#group
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Fetches belongsTo relation group.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - quarterlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Group` object.)
+             * </em>
+             */
+        R.group = function() {
+          var TargetResource = $injector.get("Group");
+          var action = TargetResource["::get::QuarterlyStatus::group"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#project
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Fetches belongsTo relation project.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - quarterlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Project` object.)
+             * </em>
+             */
+        R.project = function() {
+          var TargetResource = $injector.get("Project");
+          var action = TargetResource["::get::QuarterlyStatus::project"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#division
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Fetches belongsTo relation division.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - quarterlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Division` object.)
+             * </em>
+             */
+        R.division = function() {
+          var TargetResource = $injector.get("Division");
+          var action = TargetResource["::get::QuarterlyStatus::division"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.QuarterlyStatus#region
+             * @methodOf lbServices.QuarterlyStatus
+             *
+             * @description
+             *
+             * Fetches belongsTo relation region.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - quarterlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Region` object.)
+             * </em>
+             */
+        R.region = function() {
+          var TargetResource = $injector.get("Region");
+          var action = TargetResource["::get::QuarterlyStatus::region"];
+          return action.apply(R, arguments);
+        };
+
+
+        return R;
+      }]);
+
+/**
+ * @ngdoc object
+ * @name lbServices.MonthlyStatus
+ * @header lbServices.MonthlyStatus
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `MonthlyStatus` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+  module.factory(
+    "MonthlyStatus",
+    [
+      'LoopBackResource', 'LoopBackAuth', '$injector', '$q',
+      function(LoopBackResource, LoopBackAuth, $injector, $q) {
+        var R = LoopBackResource(
+        urlBase + "/monthlyStatuses/:id",
+          { 'id': '@id' },
+          {
+
+            // INTERNAL. Use MonthlyStatus.employee() instead.
+            "prototype$__get__employee": {
+              url: urlBase + "/monthlyStatuses/:id/employee",
+              method: "GET",
+            },
+
+            // INTERNAL. Use MonthlyStatus.riskAssessment() instead.
+            "prototype$__get__riskAssessment": {
+              url: urlBase + "/monthlyStatuses/:id/riskAssessment",
+              method: "GET",
+            },
+
+            // INTERNAL. Use MonthlyStatus.quarterlyStatus() instead.
+            "prototype$__get__quarterlyStatus": {
+              url: urlBase + "/monthlyStatuses/:id/quarterlyStatus",
+              method: "GET",
+            },
+
+            // INTERNAL. Use MonthlyStatus.group() instead.
+            "prototype$__get__group": {
+              url: urlBase + "/monthlyStatuses/:id/group",
+              method: "GET",
+            },
+
+            // INTERNAL. Use MonthlyStatus.project() instead.
+            "prototype$__get__project": {
+              url: urlBase + "/monthlyStatuses/:id/project",
+              method: "GET",
+            },
+
+            // INTERNAL. Use MonthlyStatus.division() instead.
+            "prototype$__get__division": {
+              url: urlBase + "/monthlyStatuses/:id/division",
+              method: "GET",
+            },
+
+            // INTERNAL. Use MonthlyStatus.region() instead.
+            "prototype$__get__region": {
+              url: urlBase + "/monthlyStatuses/:id/region",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#create
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Create a new instance of the model and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - Model instance data
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+            "create": {
+              url: urlBase + "/monthlyStatuses",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#createMany
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Create a new instance of the model and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - Model instance data
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+            "createMany": {
+              isArray: true,
+              url: urlBase + "/monthlyStatuses",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#patchOrCreate
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `data` – `{object=}` - Model instance data
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+            "patchOrCreate": {
+              url: urlBase + "/monthlyStatuses",
+              method: "PATCH",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#replaceOrCreate
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Replace an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - Model instance data
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+            "replaceOrCreate": {
+              url: urlBase + "/monthlyStatuses/replaceOrCreate",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#upsertWithWhere
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Update an existing model instance or insert a new one into the data source based on the where criteria.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - An object of model property name/value pairs
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+            "upsertWithWhere": {
+              url: urlBase + "/monthlyStatuses/upsertWithWhere",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#exists
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Check whether a model instance exists in the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `exists` – `{boolean=}` -
+             */
+            "exists": {
+              url: urlBase + "/monthlyStatuses/:id/exists",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#findById
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Find a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             *  - `filter` – `{object=}` - Filter defining fields and include
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+            "findById": {
+              url: urlBase + "/monthlyStatuses/:id",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#replaceById
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Replace attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - Model instance data
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+            "replaceById": {
+              url: urlBase + "/monthlyStatuses/:id/replace",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#find
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Find all instances of the model matched by filter from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Array.<Object>,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Array.<Object>} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+            "find": {
+              isArray: true,
+              url: urlBase + "/monthlyStatuses",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#findOne
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Find first instance of the model matched by filter from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+            "findOne": {
+              url: urlBase + "/monthlyStatuses/findOne",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#updateAll
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Update instances of the model matched by {{where}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - An object of model property name/value pairs
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Information related to the outcome of the operation
+             */
+            "updateAll": {
+              url: urlBase + "/monthlyStatuses/update",
+              method: "POST",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#deleteById
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+            "deleteById": {
+              url: urlBase + "/monthlyStatuses/:id",
+              method: "DELETE",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#count
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Count instances of the model matched by where from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `count` – `{number=}` -
+             */
+            "count": {
+              url: urlBase + "/monthlyStatuses/count",
+              method: "GET",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#prototype$patchAttributes
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Patch attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - monthlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `data` – `{object=}` - An object of model property name/value pairs
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+            "prototype$patchAttributes": {
+              url: urlBase + "/monthlyStatuses/:id",
+              method: "PATCH",
+            },
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#createChangeStream
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Create a change stream.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *   This method does not accept any parameters.
+             *   Supply an empty object or omit this argument altogether.
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Data properties:
+             *
+             *  - `changes` – `{ReadableStream=}` -
+             */
+            "createChangeStream": {
+              url: urlBase + "/monthlyStatuses/change-stream",
+              method: "POST",
+            },
+          }
+        );
+
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#upsert
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `data` – `{object=}` - Model instance data
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+        R["upsert"] = R["patchOrCreate"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#updateOrCreate
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Patch an existing model instance or insert a new one into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `data` – `{object=}` - Model instance data
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+        R["updateOrCreate"] = R["patchOrCreate"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#patchOrCreateWithWhere
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Update an existing model instance or insert a new one into the data source based on the where criteria.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - An object of model property name/value pairs
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+        R["patchOrCreateWithWhere"] = R["upsertWithWhere"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#update
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Update instances of the model matched by {{where}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `where` – `{object=}` - Criteria to match model instances
+             *
+             * @param {Object} postData Request data.
+             *
+             *  - `data` – `{object=}` - An object of model property name/value pairs
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * Information related to the outcome of the operation
+             */
+        R["update"] = R["updateAll"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#destroyById
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+        R["destroyById"] = R["deleteById"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#removeById
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Delete a model instance by {{id}} from the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - Model id
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+        R["removeById"] = R["deleteById"];
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#updateAttributes
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Patch attributes for a model instance and persist it into the data source.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - monthlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `data` – `{object=}` - An object of model property name/value pairs
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `MonthlyStatus` object.)
+             * </em>
+             */
+        R["updateAttributes"] = R["prototype$patchAttributes"];
+
+
+        /**
+        * @ngdoc property
+        * @name lbServices.MonthlyStatus#modelName
+        * @propertyOf lbServices.MonthlyStatus
+        * @description
+        * The name of the model represented by this $resource,
+        * i.e. `MonthlyStatus`.
+        */
+        R.modelName = "MonthlyStatus";
+
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#employee
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Fetches belongsTo relation employee.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - monthlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Employee` object.)
+             * </em>
+             */
+        R.employee = function() {
+          var TargetResource = $injector.get("Employee");
+          var action = TargetResource["::get::MonthlyStatus::employee"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#riskAssessment
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Fetches belongsTo relation riskAssessment.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - monthlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `RiskAssessment` object.)
+             * </em>
+             */
+        R.riskAssessment = function() {
+          var TargetResource = $injector.get("RiskAssessment");
+          var action = TargetResource["::get::MonthlyStatus::riskAssessment"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#quarterlyStatus
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Fetches belongsTo relation quarterlyStatus.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - monthlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `QuarterlyStatus` object.)
+             * </em>
+             */
+        R.quarterlyStatus = function() {
+          var TargetResource = $injector.get("QuarterlyStatus");
+          var action = TargetResource["::get::MonthlyStatus::quarterlyStatus"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#group
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Fetches belongsTo relation group.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - monthlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Group` object.)
+             * </em>
+             */
+        R.group = function() {
+          var TargetResource = $injector.get("Group");
+          var action = TargetResource["::get::MonthlyStatus::group"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#project
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Fetches belongsTo relation project.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - monthlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Project` object.)
+             * </em>
+             */
+        R.project = function() {
+          var TargetResource = $injector.get("Project");
+          var action = TargetResource["::get::MonthlyStatus::project"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#division
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Fetches belongsTo relation division.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - monthlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Division` object.)
+             * </em>
+             */
+        R.division = function() {
+          var TargetResource = $injector.get("Division");
+          var action = TargetResource["::get::MonthlyStatus::division"];
+          return action.apply(R, arguments);
+        };
+
+            /**
+             * @ngdoc method
+             * @name lbServices.MonthlyStatus#region
+             * @methodOf lbServices.MonthlyStatus
+             *
+             * @description
+             *
+             * Fetches belongsTo relation region.
+             *
+             * @param {Object=} parameters Request parameters.
+             *
+             *  - `id` – `{*}` - monthlyStatus id
+             *
+             *  - `options` – `{object=}` -
+             *
+             *  - `refresh` – `{boolean=}` -
+             *
+             *  - `options` – `{object=}` -
+             *
+             * @param {function(Object,Object)=} successCb
+             *   Success callback with two arguments: `value`, `responseHeaders`.
+             *
+             * @param {function(Object)=} errorCb Error callback with one argument:
+             *   `httpResponse`.
+             *
+             * @returns {Object} An empty reference that will be
+             *   populated with the actual data once the response is returned
+             *   from the server.
+             *
+             * <em>
+             * (The remote method definition does not provide any description.
+             * This usually means the response is a `Region` object.)
+             * </em>
+             */
+        R.region = function() {
+          var TargetResource = $injector.get("Region");
+          var action = TargetResource["::get::MonthlyStatus::region"];
           return action.apply(R, arguments);
         };
 

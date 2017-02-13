@@ -110,21 +110,21 @@
           });
       };
     })
-    .controller('MainCtrl', function(AuthService,$scope,$state,$mdSidenav,Region,Division,Project,Group){
+    .controller('MainCtrl', function(AuthService,$scope,$state,$mdSidenav,Region,Division,Project,Group,MonthlyStatus,RiskAssessment){
         AuthService.getCurrent()
           .$promise
           .then(function(ctx){
             console.log(ctx);
             var type = ctx.accessLevel,
               groupId = ctx.accessLevelAreaId;
-            console.log("In main ctrl",type);
+            console.log("In main ctrl",type, ctx.id);
             init();
             function init(){
               switch (type) {
                 case "Region":
                   console.log(type);
-                  $scope.groupType = type;
                   getRegion(groupId);
+                  getRegionMonthlyStatuses(groupId);
                   break;
                 case "Division":
                   $scope.groupType = type;
@@ -146,6 +146,7 @@
                   .$promise
                   .then(function(region){
                     $scope.group = region;
+                    console.log($scope.group.title);
                   })
                   .catch(function(err){if(err){console.error(err)}})
               };
@@ -172,6 +173,41 @@
 
                   })
                   .catch(function(err){if(err){console.error(err)}})
+              };
+              function getRegionMonthlyStatuses (id){
+                return MonthlyStatus.find({filter:{include:'employee',where:{regionId:id}}}).$promise
+                  .then(function (statuses) {
+
+                    $scope.required = [],
+                      $scope.optional = [];
+
+                   for(var i =0; i < statuses.length;i++){
+                     if(statuses[i].status === "required"){
+                       $scope.required.push(statuses[i])
+                     }else if(statuses[i].status === "optional"){
+                       $scope.optional.push(statuses[i])
+                     }
+                   }
+
+                  })
+              };
+              $scope.preventClick = function(){return false;};
+              $scope.start = function (employee){
+                  var qtr = moment().quarter(),
+                    yr = moment().year(),
+                    mo = moment().month();
+                  console.log(employee.id);
+
+                  RiskAssessment.create({appuserId: ctx.id, employeeId: employee.id, quarter: qtr, year: yr, month: mo, phase:"Evaluation", active: 1})
+                    .$promise
+                    .then(function(assessment){
+                      console.log(assessment);
+                      $state.go('ra-mobile.evaluation',{id:assessment.id,active: true});
+                    })
+                    .catch(function(err){
+                      console.error("Error creating risk assessment", err);
+                    })
+
               }
             }
 

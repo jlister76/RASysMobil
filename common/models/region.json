@@ -12,32 +12,7 @@
     }
   },
   "validations": [],
-  "relations": {
-    "divisions": {
-      "type": "hasMany",
-      "model": "division",
-      "foreignKey": "",
-      "through": "regionalRelationMapping"
-    },
-    "projects": {
-      "type": "hasMany",
-      "model": "project",
-      "foreignKey": "",
-      "through": "regionalRelationMapping"
-    },
-    "groups": {
-      "type": "hasMany",
-      "model": "group",
-      "foreignKey": "",
-      "through": "regionalRelationMapping"
-    },
-    "employees": {
-      "type": "hasMany",
-      "model": "employee",
-      "foreignKey": "",
-      "through": "regionalRelationMapping"
-    }
-  },
+  "relations": {},
   "acls": [
     {
       "accessType": "*",
