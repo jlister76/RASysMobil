@@ -124,19 +124,22 @@
                 case "Region":
                   console.log(type);
                   getRegion(groupId);
-                  getRegionMonthlyStatuses(groupId);
+                  getStatusesByRegion(groupId);
                   break;
                 case "Division":
-                  $scope.groupType = type;
+                  console.log(type);
                   getDivision(groupId);
+                  getStatusesByDivision(groupId);
                   break;
                 case "Project":
-                  $scope.groupType = type;
+
                   getProject(groupId);
+                  getStatusesByProject(groupId);
                   break;
                 case "Group":
-                  $scope.groupType = type;
+
                   getGroup(groupId);
+                  getStatusesByGroup(groupId);
                   break;
 
               }//matches users access type and loads the corresponding data
@@ -153,28 +156,31 @@
               function getDivision(id){
                 Division.findById({id:id})
                   .$promise
-                  .then(function(region){
-
+                  .then(function(division){
+                    $scope.group = division;
+                    console.log($scope.group.title);
                   })
                   .catch(function(err){if(err){console.error(err)}})
               };
               function getProject(id){
                 Project.findById({id:id})
                   .$promise
-                  .then(function(region){
-
+                  .then(function(project){
+                    $scope.group = project;
+                    console.log($scope.group.title);
                   })
                   .catch(function(err){if(err){console.error(err)}})
               };
               function getGroup(id){
                 Group.findById({id:id})
                   .$promise
-                  .then(function(region){
-
+                  .then(function(group){
+                    $scope.group = group;
+                    console.log($scope.group.title);
                   })
                   .catch(function(err){if(err){console.error(err)}})
               };
-              function getRegionMonthlyStatuses (id){
+              function getStatusesByRegion (id){
                 return MonthlyStatus.find({filter:{include:'employee',where:{regionId:id}}}).$promise
                   .then(function (statuses) {
 
@@ -188,6 +194,57 @@
                        $scope.optional.push(statuses[i])
                      }
                    }
+
+                  })
+              };
+              function getStatusesByDivision (id){
+                return MonthlyStatus.find({filter:{include:'employee',where:{divisionId:id}}}).$promise
+                  .then(function (statuses) {
+
+                    $scope.required = [],
+                      $scope.optional = [];
+
+                    for(var i =0; i < statuses.length;i++){
+                      if(statuses[i].status === "required"){
+                        $scope.required.push(statuses[i])
+                      }else if(statuses[i].status === "optional"){
+                        $scope.optional.push(statuses[i])
+                      }
+                    }
+
+                  })
+              };
+              function getStatusesByProject (id){
+                return MonthlyStatus.find({filter:{include:'employee',where:{projectId:id}}}).$promise
+                  .then(function (statuses) {
+
+                    $scope.required = [],
+                      $scope.optional = [];
+
+                    for(var i =0; i < statuses.length;i++){
+                      if(statuses[i].status === "required"){
+                        $scope.required.push(statuses[i])
+                      }else if(statuses[i].status === "optional"){
+                        $scope.optional.push(statuses[i])
+                      }
+                    }
+
+                  })
+              };
+              function getStatusesByGroup (id){
+                return MonthlyStatus.find({filter:{include:'employee',where:{groupId:id}}}).$promise
+                  .then(function (statuses) {
+
+                    $scope.required = [],
+                      $scope.optional = [];
+
+                    for(var i =0; i < statuses.length;i++){
+                      if(statuses[i].status === "required"){
+                        $scope.required.push(statuses[i])
+                      }else if(statuses[i].status === "optional"){
+                        $scope.optional.push(statuses[i])
+                      }
+                    }
 
                   })
               };
