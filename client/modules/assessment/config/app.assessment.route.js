@@ -40,23 +40,56 @@
         .state('ra-mobile.new.showDivisions', {
           url: '/show-divisions',
           resolve: {
-            ctx: function(AuthService){ return AuthService.getCurrent().$promise}
+            ctx: function(AuthService){ return AuthService.getCurrent().$promise},
+            data: function (ctx,Division) {
+              return Division.find({filter:{where:{regionId:ctx.accessLevelAreaId}}}).$promise
+            }
           },
           templateUrl: 'modules/assessment/views/show-area.html',
           controller: 'ShowDivisionsCtrl'
         })
         .state('ra-mobile.new.showProjects', {
           url: '/show-projects',
-          params: {
-            areaId: null
+          resolve: {
+            ctx: function (AuthService) {
+              return AuthService.getCurrent().$promise
+            },
+            data: function(ctx,Project){
+              console.log(ctx.accessLevelAreaId);
+              var accessLevel = ctx.accessLevel;
+              switch (accessLevel){
+                case "Division":
+                  return Project.find({filter:{where:{divisionId:ctx.accessLevelAreaId}}}).$promise
+                  break;
+                default:
+                  var id = sessionStorage.getItem('id');
+                  return Project.find({filter:{where:{divisionId:id}}}).$promise
+              }
+
+            }
           },
           templateUrl: 'modules/assessment/views/show-area.html',
           controller: 'ShowProjectsCtrl'
         })
         .state('ra-mobile.new.showGroups', {
           url: '/show-groups',
-          params: {
-            areaId: null
+          resolve: {
+            ctx: function (AuthService) {
+              return AuthService.getCurrent().$promise
+            },
+            data: function(ctx,Group){
+              console.log(ctx.accessLevelAreaId);
+              var accessLevel = ctx.accessLevel;
+              switch (accessLevel){
+                case "Project":
+                  return Group.find({filter:{where:{projectId:ctx.accessLevelAreaId}}}).$promise
+                  break;
+                default:
+                  var id = sessionStorage.getItem('id');
+                  return Group.find({filter:{where:{projectId:id}}}).$promise
+              }
+
+            }
           },
           templateUrl: 'modules/assessment/views/show-area.html',
           controller: 'ShowGroupsCtrl'
@@ -66,6 +99,19 @@
           resolve: {
             ctx: function (AuthService) {
               return AuthService.getCurrent().$promise
+            },
+            data: function(ctx,Employee){
+              console.log(ctx.accessLevelAreaId);
+              var accessLevel = ctx.accessLevel;
+              switch (accessLevel){
+                case "Group":
+                  return Employee.find({filter:{where:{groupId:ctx.accessLevelAreaId}}}).$promise
+                break;
+                default:
+                  var id = sessionStorage.getItem('id');
+                  return Employee.find({filter:{where:{groupId:id}}}).$promise
+              }
+
             }
           },
           templateUrl: 'modules/assessment/views/show-employees.html',

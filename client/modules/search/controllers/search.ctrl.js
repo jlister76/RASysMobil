@@ -61,30 +61,41 @@
         $state.go('ra-mobile.employee-searchresults');
       };
     })
-    .controller('SearchMonthlyResultsCtrl', function($scope,$stateParams,ctx,RiskAssessment,$http,KeyService){
-      var yr = $stateParams.yr,
-        mo = $stateParams.mo;
-        $scope.key = KeyService.key;
-        console.log(mo);
+    .controller('MonthlyResultsCtrl', function($scope,$stateParams,AuthService,RiskAssessment,$http,KeyService){
 
-      RiskAssessment.find({filter:{include:['employee','identifiedHazards','appuser'],where:{active:false, appuserId: ctx.id, month: mo, year: yr}}})
+      AuthService.getCurrent()
         .$promise
-        .then(function(results){
-          console.log(results);
-          if(results.length < 1){
-            $scope.noResults = "No risk assessments found.";
-          }
-          $scope.results = results;
-
-          for (var x =0; x <results.length; x++){
-            console.log(results[x].identifiedHazards);
-          }
-
-
+        .then(function (ctx) {
+          return ctx;
         })
-        .catch(function(err){if(err){console.error(err)}
+        .then(function (ctx) {
+          var yr = $stateParams.yr,
+            mo = $stateParams.mo;
+          $scope.key = KeyService.key;
+          console.log(mo, ctx.id);
+          RiskAssessment.find({filter:{include:['employee','identifiedHazards','appuser'],where:{active:0, appuserId: ctx.id, month: mo, year: yr}}})
+            .$promise
+            .then(function(results){
+              console.log(results);
+              if(results.length < 1){
+                $scope.noResults = "No risk assessments found.";
+              }
+              $scope.results = results;
+
+              for (var x =0; x <results.length; x++){
+                console.log(results[x].identifiedHazards);
+              }
+
+
+            })
+            .catch(function(err){if(err){console.error(err)}
+
+            });
 
         });
+
+
+
 
 
       $scope.resend = function(assessment){
@@ -95,7 +106,7 @@
 
       };
     })
-    .controller('SearchQtlyResultsCtrl', function($scope,$stateParams,ctx,RiskAssessment,$http,KeyService){
+    .controller('QtlyResultsCtrl', function($scope,$stateParams,ctx,RiskAssessment,$http,KeyService){
       var yr = $stateParams.yr,
         qtr = $stateParams.qtr;
       $scope.key = KeyService.key;
@@ -117,7 +128,7 @@
 
       };
     })
-    .controller('SearchEmployeeResultsCtrl', function($scope,$stateParams,ctx,RiskAssessment,$http,KeyService){
+    .controller('EmployeeResultsCtrl', function($scope,$stateParams,ctx,RiskAssessment,$http,KeyService){
         var yr = $stateParams.yr,
           id = $stateParams.id;
         $scope.key = KeyService.key;

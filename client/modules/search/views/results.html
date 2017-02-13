@@ -55,7 +55,7 @@
             <div ng-click="showHazards = !showHazards" ng-init="showHazards = false" layout
                  layout-align="space-between center" class="active md-padding" style="margin:2rem .5rem;">
               <span class="md-display-2">Hazards & Reactions ({{ result.identifiedHazards.length | number:0 }})</span>
-              <span ng-if="!showHazards"><i class="material-icons" style="font-size:4rem;">expand_less</i></span>
+              <span ng-if="!showHazards"><i class="material-icons" style="font-size:4rem;">chevron_right</i></span>
               <span ng-if="showHazards"><i class="material-icons" style="font-size:4rem;">expand_more</i></span>
             </div>
             <div ng-if="showHazards">

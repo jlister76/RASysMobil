@@ -3,11 +3,11 @@
     <a href="" ng-click="previousState()" class="md-padding nav"><i class="material-icons" style="font-size:5rem;">navigate_before</i></a>
   </div>
   <div style="width:100%;"><h4>{{ type }}</h4>
-    <div  ng-model="group.id" layout layout-align="start center" ng-repeat="group in groups">
+    <div  ng-model="group.id" layout layout-align="start center" ng-repeat="group in groups | orderBy: 'title'">
       <a  href="" ng-click="showList(group.id)" ng-dblclick="preventClick()" style="width:100%;">
         <div layout="column"  class="md-padding" style="width:100%;">
           <md-card layout layout-align="space-between center" class="md-padding" style="width: 100%;height:10rem;background-color:whitesmoke;">
-            <span style="color:#333;">{{ group.title }}</span>
+            <span style="color:#333;">{{ group.title}}</span>
             <span><i class="material-icons" style="color:#999;font-size: 5rem;">navigate_next</i></span>
           </md-card>
         </div>

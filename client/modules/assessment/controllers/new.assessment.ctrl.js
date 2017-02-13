@@ -83,84 +83,89 @@
       };
 
     })
-    .controller('ShowDivisionsCtrl', function($scope,ctx,$state,Division){
+    .controller('ShowDivisionsCtrl', function($scope,$state,ctx,data){
 
-          Division.find({filter:{where:{regionId: ctx.accessLevelAreaId}}})
-            .$promise
-            .then(function (divisions) {
-              $scope.previousState = function(){$state.go('ra-mobile.new.assessment')};
-              $scope.listType = "Divisions";
-              $scope.groups = divisions;
-            });
-          $scope.showList = function(id){
+      $scope.previousState = function(){$state.go('ra-mobile.new.assessment')};
+      $scope.listType = "Divisions";
+      $scope.groups = data;
+      $scope.showList = function(id){
             sessionStorage.setItem("id", id);
             $state.go('ra-mobile.new.showProjects')
           };
       $scope.preventClick = function(){return false;};
     })
-    .controller('ShowProjectsCtrl', function($scope,$state,Project){
-      var id = sessionStorage.getItem('id');
-      Project.find({filter:{where:{divisionId:id}}})
-        .$promise
-        .then(function (projects) {
-          $scope.previousState = function(){$state.go('ra-mobile.new.showDivisions')};
-          $scope.type = "Projects";
-          $scope.groups = projects;
-          $scope.showList = function(id){
-            sessionStorage.setItem('id',id);
-            $state.go('ra-mobile.new.showGroups')
-          }
-        });
+    .controller('ShowProjectsCtrl', function($scope,$state,ctx,data){
+      $scope.type = "Projects";
+      $scope.groups = data;
+      $scope.showList = function(id){
+        sessionStorage.setItem('id',id);
+        $state.go('ra-mobile.new.showGroups')
+      };
       $scope.preventClick = function(){return false;};
+      var accessLevel = ctx.accessLevel;
+      switch(accessLevel){
+        case "Division":
+          $scope.previousState = function () {$state.go('ra-mobile.new.assessment')};
+          break;
+        case "Region":
+          $scope.previousState = function(){ sessionStorage.setItem('id', ctx.accessLevelAreaId); $state.go('ra-mobile.new.showDivisions')};
+          break;
+      }
     })
-    .controller('ShowGroupsCtrl', function($scope,$state,Group){
-      var id = sessionStorage.getItem('id');
-      console.log(id);
-      Group.find({filter:{where:{projectId: id}}})
-        .$promise
-        .then(function (groups) {
-            $scope.previousState = function () { sessionStorage.setItem('id',groups[0].divisionId); $state.go('ra-mobile.new.showProjects') };
-            $scope.type = "Groups";
-            $scope.groups = groups;
-              console.log($scope.groups);
-            $scope.showList = function(id){
-              sessionStorage.setItem('id',id);
-              $state.go('ra-mobile.new.showEmployees')
-            };
-          $scope.preventClick = function(){return false;};
-        })
-    })
-    .controller('ShowEmployeesCtrl', function($scope,$state,ctx,Employee,RiskAssessment){
-      var id = sessionStorage.getItem('id');
-      Employee.find({filter:{where:{groupId: id}}})
-        .$promise
-        .then(function (employees) {
-          $scope.previousState = function () {sessionStorage.setItem('id', employees[0].projectId); $state.go('ra-mobile.new.showGroups')};
-          $scope.type = "Employees";
-          $scope.employees = employees;
-          $scope.start = function (employee){
-            sessionStorage.setItem('id', id);
-            start(employee);
-            function start(employee){
-              var qtr = moment().quarter(),
-                yr = moment().year(),
-                mo = moment().month();
-              console.log(ctx.id,employee.id,qtr,yr,mo);
-
-              RiskAssessment.create({appuserId: ctx.id, employeeId: employee.id, quarter: qtr, year: yr, month: mo, phase:"Evaluation", active: 1})
-                .$promise
-                .then(function(assessment){
-                  console.log(assessment);
-                  $state.go('ra-mobile.evaluation',{id:assessment.id,active: true});
-                })
-                .catch(function(err){
-                  console.error("Error creating risk assessment", err);
-                })
-
-
-            }
-          }
-        });
+    .controller('ShowGroupsCtrl', function($scope,$state,ctx,data){
+      $scope.type = "Groups";
+      $scope.groups = data;
+      $scope.showList = function(id){
+        sessionStorage.setItem('id',id);
+        $state.go('ra-mobile.new.showEmployees')};
       $scope.preventClick = function(){return false;};
+      var accessLevel = ctx.accessLevel;
+      switch(accessLevel){
+        case "Project":
+          $scope.previousState = function () {$state.go('ra-mobile.new.assessment')};
+          break;
+        default:
+          console.log('test')
+          $scope.previousState = function () {sessionStorage.setItem('id',data[0].divisionId); $state.go('ra-mobile.new.showProjects')};
+          break;
+      }
+
+    })
+    .controller('ShowEmployeesCtrl', function($scope,$state,ctx,data,RiskAssessment){
+      $scope.type = "Employees";
+      $scope.employees = data;
+      $scope.start = function (employee){
+        sessionStorage.removeItem('id');
+        start(employee);
+        function start(employee){
+          var qtr = moment().quarter(),
+            yr = moment().year(),
+            mo = moment().month();
+          console.log(ctx.id,employee.id,qtr,yr,mo);
+
+          RiskAssessment.create({appuserId: ctx.id, employeeId: employee.id, quarter: qtr, year: yr, month: mo, phase:"Evaluation", active: 1})
+            .$promise
+            .then(function(assessment){
+              console.log(assessment);
+              $state.go('ra-mobile.evaluation',{id:assessment.id,active: true});
+            })
+            .catch(function(err){
+              console.error("Error creating risk assessment", err);
+            })
+
+
+        }
+      }
+      $scope.preventClick = function(){return false;};
+      var accessLevel = ctx.accessLevel;
+      switch(accessLevel){
+        case "Group":
+          $scope.previousState = function () {$state.go('ra-mobile.new.assessment')};
+          break;
+        default:
+          $scope.previousState = function(){ sessionStorage.setItem('id', data[0].projectId); $state.go('ra-mobile.new.showGroups')};
+          break;
+      }
+
     })
 })();

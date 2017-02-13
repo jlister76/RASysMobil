@@ -32,7 +32,7 @@
           }
        },
         templateUrl: 'modules/search/views/results.html',
-        controller: 'SearchMonthlyResultsCtrl'
+        controller: 'MonthlyResultsCtrl'
       })
         .state('ra-mobile.quarterly-searchresults', {
           url:'/quarterly?yr&qtr',
@@ -42,7 +42,7 @@
             }
           },
           templateUrl: 'modules/search/views/results.html',
-          controller: 'SearchQtlyResultsCtrl'
+          controller: 'QtlyResultsCtrl'
         })
         .state('ra-mobile.employee-searchresults', {
           url:'/employee?yr&id',
@@ -52,7 +52,7 @@
             }
           },
           templateUrl: 'modules/search/views/results.html',
-          controller: 'SearchEmployeeResultsCtrl'
+          controller: 'EmployeeResultsCtrl'
         })
     })
 })();
