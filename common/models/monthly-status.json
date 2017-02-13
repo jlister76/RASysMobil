@@ -7,24 +7,19 @@
   },
   "properties": {
     "created_on": {
-      "type": "date",
-      "required": true
+      "type": "date"
     },
     "mo": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "qtr": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "yr": {
-      "type": "number",
-      "required": true
+      "type": "number"
     },
     "status": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "met_requirement": {
       "type": "date"

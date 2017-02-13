@@ -86,6 +86,16 @@
       "type": "belongsTo",
       "model": "quarterly",
       "foreignKey": ""
+    },
+    "monthlyStatus": {
+      "type": "belongsTo",
+      "model": "monthlyStatus",
+      "foreignKey": ""
+    },
+    "quarterlyStatus": {
+      "type": "belongsTo",
+      "model": "quarterlyStatus",
+      "foreignKey": ""
     }
   },
   "acls": [],

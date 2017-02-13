@@ -151,6 +151,6 @@ module.exports = function(app){
    }
   });*/
 
- //ds.autoupdate(modelsAry);
+ ds.autoupdate(modelsAry);
 
 };

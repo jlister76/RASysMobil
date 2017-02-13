@@ -400,7 +400,7 @@
 
 
     })
-    .controller('VerficationCtrl', function($scope,$state,$stateParams,RiskAssessment,IdentifiedHazard,Employee,Timer,KeyService,$http){
+    .controller('VerficationCtrl', function($scope,$state,$stateParams,RiskAssessment,IdentifiedHazard,Employee,Timer,KeyService,$http,MonthlyStatus,QuarterlyStatus){
 
       //Geo Location
       navigator.geolocation.getCurrentPosition(successCallback,
@@ -608,7 +608,53 @@
                 .then(function(success){console.log(success);
                   RiskAssessment.updateAttributes({id:assessment[0].id, location:{"lat": lat, "lng":lng},employee_verification: "sent",active: false})
                     .$promise
-                    .then(function(success){console.log(success); $state.go('ra-mobile.main')})
+                    .then(function(riskAssessmentUpdate){
+                      console.log(riskAssessmentUpdate);
+                      $state.go('ra-mobile.main');
+
+                        MonthlyStatus.find({filter:{where:{employeeId: riskAssessmentUpdate.employeeId, mo: riskAssessmentUpdate.month, qtr: riskAssessmentUpdate.quarter}}})
+                          .$promise
+                          .then(function (monthlyStatus) {
+                            console.log(monthlyStatus);
+                          //status: "complete", met_requirement: new Date(), riskAssessmentId: success.id,
+                            var id = monthlyStatus[0].id,
+                              status = "Complete",
+                              completed_date = riskAssessmentUpdate.completed_on,
+                              riskAssessmentId = riskAssessmentUpdate.id;
+
+                          console.log(id,status,completed_date,riskAssessmentId);
+                         MonthlyStatus.updateAttributes({id:id, status:status,met_requirement:completed_date,riskAssessmentId: riskAssessmentId})
+                           .$promise
+                           .then( function (monthlyStatusUpdate) {
+                             console.log("Monthly status updated");
+
+                             QuarterlyStatus.findById({id: monthlyStatusUpdate.quarterlyStatusId})
+                               .$promise
+                               .then( function (quarterlyStatus) {
+                                 console.log("Retrieved quarterly status", quarterlyStatus);
+                                 var id = quarterlyStatus.id,
+                                   count = quarterlyStatus.completed_count +1;
+                                 console.log(count);
+                                 if(quarterlyStatus.required_count === count){
+                                   console.info("Updating requirements");
+                                   var requirement_met = true,
+                                     met_requirement = monthlyStatusUpdate.completed_on;
+                                 }else{
+                                   requirement_met = false;
+                                   met_requirement = null;
+                                 }
+                                 QuarterlyStatus.updateAttributes({id: id, completed_count: count,requirement_met: requirement_met, met_requirement: met_requirement})
+                                   .$promise
+                                   .then(function (quarterlyStatusUpdate){
+                                     console.log("Quarterly status updated");
+                                   })
+                               })
+                           })
+                        })
+
+
+
+                    })
                     .catch(function(err){console.error(err)});
                 });
             };
