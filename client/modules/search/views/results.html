@@ -2,10 +2,14 @@
   <div layout="column" class="md-padding" style="width:100%;">
     <div layout layout-align="space-between center" style="padding:1rem 1rem;">
       <a href="" ui-sref="ra-mobile.search" class="md-padding nav" style="text-decoration:none;"><i class="material-icons" style="">navigate_before</i></a>
-      <span class="md-display-2" style="color:#999999;font-weight:bold;">({{ results.length }}) search results</span>
+      <span ng-click="sort='completed_on'; reverse=!reverse" class="md-display-2" style="color:#999999;font-size:3rem;font-weight:bold;">
+        ({{ results.length }}) search results
+        <i ng-if="!reverse" class="material-icons" style="color:#999999;font-size:3rem;font-weight:bold;">expand_less</i>
+        <i ng-if="reverse" class="material-icons" style="color:#999999;font-size:3rem;font-weight:bold;">expand_more</i>
+      </span>
     </div>
     <span layout layout-align="center center" ng-if="noResults"><h3 class="md-display-2" style="color:#999999;">{{ noResults }}</h3></span>
-    <div ng-repeat="result in results" style="font-size:2rem;margin:1rem;">
+    <div ng-repeat="result in results | orderBy: sort:!reverse" style="font-size:2rem;margin:1rem;">
       <md-card style="background-color:whitesmoke;padding:1rem;">
         <md-header layout layout-align="space-between center">
 
@@ -109,7 +113,7 @@
           <div layout style="color:#666666;">
 
             <div style="margin-right:.5rem;"><em>Assessment duration:</em></div>
-            <div ng-if="result.duration < 90 && result.duration > 1">{{ result.duration |number:0}} minutes</div><!--milliseconds in a minute-->
+            <div ng-if="result.duration < 90 && result.duration >= 1">{{ result.duration |number:0}} minutes</div><!--milliseconds in a minute-->
             <div ng-if="result.duration >= 90">90+ minutes</div>
             <div ng-if="result.duration < 1">less than one minute</div>
           </div>

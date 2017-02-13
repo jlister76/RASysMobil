@@ -62,7 +62,9 @@
       };
     })
     .controller('MonthlyResultsCtrl', function($scope,$stateParams,AuthService,RiskAssessment,$http,KeyService){
-
+      $scope.sortBy = function (prop){
+        var reverse = !reverse;
+      };
       AuthService.getCurrent()
         .$promise
         .then(function (ctx) {
