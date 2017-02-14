@@ -588,13 +588,13 @@
           });
           $scope.isDisabled = function(){
 
-            if(ra[0].driversLicenseExpiration != null && ra[0].condition != null && ra[0].identifiedHazards.length > 0){
+            if(ra[0].driversLicenseExpiration != "null" && ra[0].condition != "null" && ra[0].identifiedHazards.length > 0){
               return false;
             }
               return true;
           };
           $scope.reqsMet = function(){
-            if(ra[0].driversLicenseExpiration != null && ra[0].condition != null && ra[0].identifiedHazards.length > 0){
+            if(ra[0].driversLicenseExpiration != "null" && ra[0].condition != "null" && ra[0].identifiedHazards.length > 0){
               return true;            }
             return false;
           };

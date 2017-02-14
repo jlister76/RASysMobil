@@ -24,7 +24,7 @@
     <div id="message">
 
       <p>Hello, <%= employee.fname %>. To evaluate your safety awareness you were recently observed
-        by <%=user.first_name%> <%=user.last_name%>. A summary of these findings are shown below.</p>
+        by <%=user.fname%> <%=user.lname%>. A summary of these findings are shown below.</p>
       <%if(licExp === false){%>
       <span style="color:red"><strong>Drivers License Expired:</strong> According to the expiration date entered in this assessment the driver's license is expired.</span>
       <%}%>

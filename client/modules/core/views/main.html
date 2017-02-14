@@ -28,20 +28,20 @@
           <div ng-click="showEmployees = !showEmployees" style="color:blue;">
             <div ng-if="!showEmployees"  style="color:blue;">
               <small layout layout-align="center center">
+                <i class="material-icons" style="font-size:3rem;">chevron_right</i>
                 show
-              <i class="material-icons" style="font-size:3rem;">chevron_right</i>
               </small>
             </div>
             <div ng-if="showEmployees" layout layout-align="center center">
               <small layout layout-align="center center">
-                hide
                 <i class="material-icons" style="font-size:3rem;">expand_more</i>
+                hide
               </small>
             </div>
           </div>
         </div>
         <div ng-if="showEmployees" layout layout-align="space-between center" ng-repeat="person in required"
-             md-whiteframe="3" class="md-display-1" style="margin:3rem 2rem;padding:2rem;">
+              class="md-display-1" style="margin:3rem 2rem;padding:2rem;background-color:#ededed;border:solid thin #888;">
           <a layout layout-align="space-between center" href="" ng-click="start(person.employee)" ng-dblclick="preventClick()" style="width:100%;">
             <div>{{ person.employee.fname }} {{ person.employee.lname }}</div>
             <span class="nav">
@@ -55,20 +55,20 @@
           <div ng-click="showOptionalEmployees = !showOptionalEmployees" style="color:blue;">
             <div ng-if="!showOptionalEmployees"  style="color:blue;">
               <small layout layout-align="center center">
-                show
                 <i class="material-icons" style="font-size:3rem;">chevron_right</i>
+                show
               </small>
             </div>
             <div ng-if="showOptionalEmployees" layout layout-align="center center">
               <small layout layout-align="center center">
-                hide
                 <i class="material-icons" style="font-size:3rem;">expand_more</i>
+                hide
               </small>
             </div>
           </div>
         </div>
         <div ng-if="showOptionalEmployees" ng-repeat="person in optional"
-             md-whiteframe="3" class="md-display-1" style="margin:3rem 2rem;padding:2rem;">
+              class="md-display-1" style="margin:3rem 2rem;padding:2rem;background-color:#ededed;border:solid thin #888;">
           <a layout layout-align="space-between center" href="" ng-click="start(person.employee)" ng-dblclick="preventClick()" style="width:100%;">
             <div>{{ person.employee.fname }} {{ person.employee.lname }}</div>
             <span class="nav">
