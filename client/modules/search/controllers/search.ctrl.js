@@ -11,9 +11,9 @@
       $scope.currentYear = moment().year();
 
       $scope.getEmployeeList = function(user){
-        var type = ctx.accessLevelType;
-        console.log(type);
-        switch (type) {
+        var accessLevel = ctx.accessLevel;
+
+        switch (accessLevel) {
           case "Region":
             getRegionalEmployees(ctx.accessLevelAreaId);
             break;
@@ -61,40 +61,33 @@
         $state.go('ra-mobile.employee-searchresults');
       };
     })
-    .controller('MonthlyResultsCtrl', function($scope,$stateParams,AuthService,RiskAssessment,$http,KeyService){
+    .controller('MonthlyResultsCtrl', function($scope,$stateParams,ctx,RiskAssessment,$http,KeyService){
       $scope.sortBy = function (prop){
         var reverse = !reverse;
       };
-      AuthService.getCurrent()
+      var yr = $stateParams.yr,
+        mo = $stateParams.mo;
+      $scope.key = KeyService.key;
+      console.log(mo, ctx.id);
+      RiskAssessment.find({filter:{include:['employee','identifiedHazards','appuser'],where:{active:0, appuserId: ctx.id, month: mo, year: yr}}})
         .$promise
-        .then(function (ctx) {
-          return ctx;
+        .then(function(results){
+          console.log(results);
+          if(results.length < 1){
+            $scope.noResults = "No risk assessments found.";
+          }
+          $scope.results = results;
+
+          for (var x =0; x <results.length; x++){
+            console.log(results[x].identifiedHazards);
+          }
+
+
         })
-        .then(function (ctx) {
-          var yr = $stateParams.yr,
-            mo = $stateParams.mo;
-          $scope.key = KeyService.key;
-          console.log(mo, ctx.id);
-          RiskAssessment.find({filter:{include:['employee','identifiedHazards','appuser'],where:{active:0, appuserId: ctx.id, month: mo, year: yr}}})
-            .$promise
-            .then(function(results){
-              console.log(results);
-              if(results.length < 1){
-                $scope.noResults = "No risk assessments found.";
-              }
-              $scope.results = results;
-
-              for (var x =0; x <results.length; x++){
-                console.log(results[x].identifiedHazards);
-              }
-
-
-            })
-            .catch(function(err){if(err){console.error(err)}
-
-            });
+        .catch(function(err){if(err){console.error(err)}
 
         });
+
 
 
 
@@ -112,7 +105,7 @@
       var yr = $stateParams.yr,
         qtr = $stateParams.qtr;
       $scope.key = KeyService.key;
-
+      console.log(ctx.id);
       RiskAssessment.find({filter:{include:['employee','identifiedHazards','appuser'],where: {active:false, appuserId: ctx.id, quarter: qtr, year: yr}}})
         .$promise.then(function(results){
         console.log(results);

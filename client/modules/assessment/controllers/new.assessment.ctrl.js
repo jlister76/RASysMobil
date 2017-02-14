@@ -146,7 +146,7 @@
           RiskAssessment.create({appuserId: ctx.id, employeeId: employee.id, quarter: qtr, year: yr, month: mo, phase:"Evaluation", active: 1})
             .$promise
             .then(function(assessment){
-              console.log(assessment);
+
               $state.go('ra-mobile.evaluation',{id:assessment.id,active: true});
             })
             .catch(function(err){

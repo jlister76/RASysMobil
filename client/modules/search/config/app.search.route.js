@@ -18,7 +18,7 @@
           url: '/search',
           resolve: {
             ctx: function(AuthService){
-              return AuthService.getCurrent();
+              return AuthService.getCurrent().$promise;
             }
           },
           templateUrl: 'modules/search/views/search.html',
@@ -28,7 +28,7 @@
         url:'/monthly?yr&mo',
        resolve:{
           ctx: function(AuthService){
-            return AuthService.getCurrent();
+            return AuthService.getCurrent().$promise;
           }
        },
         templateUrl: 'modules/search/views/results.html',
@@ -38,7 +38,7 @@
           url:'/quarterly?yr&qtr',
           resolve:{
             ctx: function(AuthService){
-              return AuthService.getCurrent();
+              return AuthService.getCurrent().$promise;
             }
           },
           templateUrl: 'modules/search/views/results.html',
@@ -48,7 +48,7 @@
           url:'/employee?yr&id',
           resolve:{
             ctx: function(AuthService){
-              return AuthService.getCurrent();
+              return AuthService.getCurrent().$promise;
             }
           },
           templateUrl: 'modules/search/views/results.html',

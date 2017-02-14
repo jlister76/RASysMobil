@@ -13,13 +13,14 @@
 
     <md-card style="width:100%;margin:1rem;background-color:whitesmoke;">
       <md-card-header>
-        <span ng-click="showByMonth = !showByMonth;showByQtr=false;showByEmployee=false" ng-init="showByMonth = true" style="color:#0E4EA0;">search by month</span>
-        <span ng-if="!showByMonth">
+         <span ng-if="!showByMonth">
           <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">chevron_right</i>
         </span>
         <span ng-if="showByMonth">
-          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>
         </span>
+        <span ng-click="showByMonth = !showByMonth;showByQtr=false;showByEmployee=false" ng-init="showByMonth = true" style="color:#0E4EA0;">search by month</span>
+
       </md-card-header>
       <md-card-content ng-if="showByMonth">
         <form name="monthly" ng-submit="queryByMonth(selectedYear,selectedMonth)">
@@ -40,7 +41,7 @@
     <md-card style="width:100%;margin:1rem;background-color:whitesmoke;">
       <md-card-header>
          <span ng-if="!showByQtr">
-          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">chevron_right</i>
         </span>
         <span ng-if="showByQtr">
           <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>
@@ -72,7 +73,7 @@
     <md-card style="width:100%;margin:1rem;background-color:whitesmoke;">
       <md-card-header>
          <span ng-if="!showByEmployee">
-          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_less</i>
+          <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">chevron_right</i>
         </span>
         <span ng-if="showByEmployee">
           <i class="material-icons" style="font-size:3rem; color:#0E4EA0;">expand_more</i>

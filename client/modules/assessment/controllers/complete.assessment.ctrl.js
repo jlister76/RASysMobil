@@ -556,9 +556,9 @@
               RiskAssessment.updateAttributes({id:raId, driversLicenseExpiration: date, validLicense: licenseStatus}).$promise.then(function(update){ $state.reload(); console.log(update, "Expiration date saved.")}).catch(function(err){console.error(err)})
             };
           };
-          var duration = (Number(ra[0].phase1Timer)+ Number(ra[0].phase2Timer) + Number(ra[0].phase3Timer)) / 60000;
+          var duration = (Number(ra[0].phase1Timer)+ Number(ra[0].phase2Timer) + Number(ra[0].phase3Timer)) / 60000; //increments of one minute
           $scope.duration = duration;
-          var x = duration;
+
 
           $scope.deleteAssessment = function(id){
             console.log(id);
@@ -626,7 +626,7 @@
                          MonthlyStatus.updateAttributes({id:id, status:status,met_requirement:completed_date,riskAssessmentId: riskAssessmentId})
                            .$promise
                            .then( function (monthlyStatusUpdate) {
-                             console.log("Monthly status updated");
+                             console.log("Monthly status updated",monthlyStatusUpdate);
 
                              QuarterlyStatus.findById({id: monthlyStatusUpdate.quarterlyStatusId})
                                .$promise
@@ -638,7 +638,7 @@
                                  if(quarterlyStatus.required_count === count){
                                    console.info("Updating requirements");
                                    var requirement_met = true,
-                                     met_requirement = monthlyStatusUpdate.completed_on;
+                                     met_requirement = completed_date;
                                  }else{
                                    requirement_met = false;
                                    met_requirement = null;
